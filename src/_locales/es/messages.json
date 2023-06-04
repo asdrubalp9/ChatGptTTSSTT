@@ -1,0 +1,11 @@
+{
+    "defaultLanguage": {
+      "message": "es-ES",
+      "description": "Idioma predeterminado para la extensión"
+    },
+    "options": {
+      "message": "Español (España)",
+      "description": "Opción de idioma mostrada en la configuración"
+    }
+  }
+  

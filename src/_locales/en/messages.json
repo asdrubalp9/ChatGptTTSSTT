@@ -1,0 +1,11 @@
+{
+    "defaultLanguage": {
+      "message": "en-US",
+      "description": "Default language for the extension"
+    },
+    "options": {
+      "message": "English (United States)",
+      "description": "Language option displayed in the settings"
+    }
+  }
+  

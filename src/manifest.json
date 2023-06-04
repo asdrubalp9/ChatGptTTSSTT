@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Talk to ChatGPT",
+  "version": "1.0",
+  "description": "Talk to ChatGPT",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "downloads",
+    "audio",
+    "storage",
+    "scripting",
+    "tabs",
+    "notifications",
+    "clipboard",
+    "contextMenus",
+    "*://*.openai.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "default_locale": "es",
+  "content_scripts": [
+    {
+      "matches": ["*://*.openai.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "*://*.openai.com/*"
+  ]
+}
