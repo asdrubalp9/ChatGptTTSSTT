@@ -49,7 +49,7 @@ class FormGenerator {
         case 'separator':
           fieldElement = this.createSeparator(field);
           break;
-        case 'numeric':
+        case 'number':
         case 'text':
         case 'password':
         case 'email':
@@ -330,6 +330,12 @@ class FormGenerator {
     inputElement.className = `form-control ${field?.htmlClass || ''}`;
     inputElement.id = field?.htmlId || '';
     inputElement.name = field?.name || '';
+    
+    if(field?.type == 'number') {
+      inputElement.min = field?.min || '';
+      inputElement.max = field?.max || '';
+      inputElement.step = field?.step || '';
+    }
     inputElement.placeholder = field?.placeholder || '';
 
     const storedValue = await this.getStoredValue(field.name, field.defaultValue);
@@ -355,6 +361,18 @@ class FormGenerator {
 
     divElement.appendChild(labelElement);
     divElement.appendChild(inputElement);
+    if(field?.hint || field?.min || field?.max || field?.step) {
+      const hintLabelElement = document.createElement('label');
+      hintLabelElement.for = field.htmlId;
+      hintLabelElement.className = 'form-label text-muted text-small';
+      let hint = field.hint || '';
+      if(field?.type == 'number') {
+        hint += ` (${field?.min ?'min:'+ field.min +', ' : ''} ${field?.max ?'max:'+ field.max : ''} ${field?.step ?', step:'+ field.step : ''})`;
+      }
+      hintLabelElement.innerHTML = hint;
+      divElement.appendChild(hintLabelElement);
+      
+    }
 
     return divElement;
   }

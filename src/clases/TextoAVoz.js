@@ -6,8 +6,7 @@ export default class TextoAVoz {
     this.settings = {};
     this.state = 'playing';
     this.utterance.lang = "es-ES";
-    this.getSettings();
-    
+    this.initialized = this.init();
 
     chrome.storage.onChanged.addListener((changes, areaName) => {
       if (areaName === 'sync') {
@@ -15,6 +14,10 @@ export default class TextoAVoz {
       }
     });
   }
+  async init() {
+    await this.getSettings();
+  }
+  
   getSettings() {
     return new Promise((resolve, reject) => {
       
@@ -27,6 +30,7 @@ export default class TextoAVoz {
           for (const key of configKeys) {
             this.settings[key.name] = result[key.name] || key.defaultValue;
           }
+          console.log("Settings loaded:", this.settings);
           resolve();
         }
       });
@@ -50,7 +54,8 @@ export default class TextoAVoz {
   }
 
   setVelocidad() {
-    this.utterance.rate = this.settings.velocidad;
+    this.utterance.rate = this.settings.velocidad.value;
+
   }
 
   setTonada() {
@@ -142,12 +147,17 @@ export default class TextoAVoz {
       this.addScreenToCancel();
     }
   }
-
-  speak(texto) {
-    console.log('this.settings ---->', this.settings, this.settings.velocidad)
+  
+  async speak(text) {
+    await this.initialized;
+    this.prepareSpeech(text);
+  }
+  
+  prepareSpeech(texto) {
+    console.log('this.settings ---->', this.settings, this.settings.velocidad.value)
     this.setLanguage()
     this.setVoz()
-    //this.setVelocidad()
+    this.setVelocidad()
     this.setTonada()
     const chunks = this.chunkText(texto, 100); // Aquí ajustas el tamaño máximo de cada chunk
     this.speakChunk(chunks, 0);
