@@ -14,11 +14,11 @@ export default class ConfigHandler {
     this.getSettings();
   }
 
-    static async create() {
-        const handler = new ConfigHandler();
-        await handler.initialize();
-        return handler;
-    }
+  static async create() {
+    const handler = new ConfigHandler();
+    await handler.initialize();
+    return handler;
+  }
 
   getSettings() {
     return new Promise((resolve, reject) => {
@@ -33,6 +33,19 @@ export default class ConfigHandler {
             this.settings[key.name] = result[key.name] || key.defaultValue;
           }
           console.log("Settings loaded:", this.settings);
+          resolve();
+        }
+      });
+    });
+  }
+
+  setSettings(newSettings) {
+    return new Promise((resolve, reject) => {
+      chrome.storage.sync.set(newSettings, () => {
+        if (chrome.runtime.lastError) {
+          reject(chrome.runtime.lastError);
+        } else {
+          console.log("Settings updated:", newSettings);
           resolve();
         }
       });
