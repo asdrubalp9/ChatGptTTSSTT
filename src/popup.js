@@ -1,4 +1,4 @@
-import FormGenerator from './clases/formGenerator.js';
+import FormGenerator from './clases/FormGenerator.js';
 import { config } from './config.js';
 import bootstrap from 'bootstrap';
 

@@ -12,9 +12,7 @@
     "scripting",
     "tabs",
     "notifications",
-    "clipboard",
-    "contextMenus",
-    "*://*.openai.com/*"
+    "contextMenus"
   ],
   "action": {
     "default_popup": "popup.html",

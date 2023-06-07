@@ -21,14 +21,11 @@ export default class AutoTalker extends TextoAVoz {
   }
 
   async initAutoTalker() {
+    console.log('iniciando auto talker')
     this.checkIntervalId = setInterval(() => {
       const drusPluginsDiv = document.getElementById('drusPlugins');
       if (drusPluginsDiv) {
-        this.elementMonitor.init(() => {
-          // This is called when the form element is found
-        });
-        console.log('AutoTalker.configHandler', this.configHandler)
-        console.log('AutoTalker.configHandler', this.configHandler.settings.autoTalk)
+        this.elementMonitor.init();
         clearInterval(this.checkIntervalId); 
         const button = document.createElement('button');
         button.id = 'autoTalk';
@@ -54,8 +51,9 @@ export default class AutoTalker extends TextoAVoz {
         drusPluginsDiv.appendChild(button);
 
         document.addEventListener(this.elementMonitor.eventName, () => {
-            console.log("Now I'll talk")
+          console.log("order heard. checking config")
           if (this.configHandler.settings.autoTalk == 'always') {
+            console.log("Now I'll talk")
             const sectores = document.querySelectorAll('main .group.bg-gray-50:nth-child(odd)')
             let speech = sectores[sectores.length - 1 ].innerText
             speech = speech.replace('ChatGPT\n','')

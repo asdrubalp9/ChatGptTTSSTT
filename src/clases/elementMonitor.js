@@ -1,27 +1,32 @@
-class ElementMonitor {
-  constructor(checkInterval = 200) {
+export default class ElementMonitor {
+  constructor( checkInterval = 200, eventName = "domMutationDetected", eventEmitter = document) {
     this.checkInterval = checkInterval;
-    this.trackedElement = null;
+    this.trackedSelector = 'FORM';
     this.observer = null;
-    const audioUrl = chrome.runtime.getURL('ding.mp3');
-    this.audio = new Audio(audioUrl);
+    this.eventEmitter = eventEmitter; 
+    this.eventName = eventName; 
+
   }
 
-  init() {
+  init(callback = () => { }){
     this.checkIntervalId = setInterval(() => {
-      const element = document.querySelector('form');
-      if (element && element.tagName === 'FORM') {
+      const element = document.querySelector(this.trackedSelector);
+      if (element) {
+        console.log('elemento encontrado')
         this.trackedElement = element;
         this.startMonitoring(element);
-        clearInterval(this.checkIntervalId); // Clear the interval once the element is found
+        clearInterval(this.checkIntervalId); 
+        callback();
       }
     }, this.checkInterval);
   }
 
   startMonitoring(element) {
     const config = { attributes: true, childList: true, subtree: true };
+    console.log('start monitoring')
     const callback = (mutationsList, observer) => {
-      if (this.trackedElement.outerHTML.includes('Stop generating')) {
+      console.log('start monitoring')
+      if (/(Stop generating)/i.test(this.trackedElement.outerHTML)) {
         this.observer.disconnect();
         this.waitForReturnToOriginal(element);
       }
@@ -33,36 +38,15 @@ class ElementMonitor {
 
   waitForReturnToOriginal(element) {
     const config = { attributes: true, childList: true, subtree: true };
-    const self = this; // store reference to 'this'
 
     const callback = (mutationsList, observer) => {
-      if (/(Regenerate response|New response|There was an error generating a response|Generate new response)/i.test(self.trackedElement.outerHTML)) {
-      //if (self.trackedElement.outerHTML.includes('Regenerate response')) {
-
-        // Get the sound setting from the Chrome storage
-        chrome.storage.sync.get(['sound'], (result) => {
-          const soundSetting = result.sound;
-
-          // If the sound setting is 'never', don't play the sound
-          if (soundSetting === 'never') {
-            return;
-          }
-
-          chrome.runtime.sendMessage({ message: 'getTabUrl' }, (response) => {
-            if (chrome.runtime.lastError) {
-              return;
-            }
-
-            // If the sound setting is 'notFocused' and the tab is focused, don't play the sound
-            if (soundSetting === 'notFocused' && response.tabUrl.includes('chat.openai.com')) {
-              return;
-            }
-
-            self.audio.play();
-            self.observer.disconnect();
-            self.startMonitoring(element);
-          });
-        });
+      console.log('waiting', /(Regenerate response|New response|There was an error generating a response|Generate new response)/i.test(this.trackedElement.outerHTML))
+      if (/(Regenerate response|New response|There was an error generating a response|Generate new response)/i.test(this.trackedElement.outerHTML)) {
+        console.log('--------------------finished responding ------------------')
+        this.observer.disconnect();
+        this.startMonitoring(element);
+        const event = new CustomEvent(this.eventName, { detail: { mutation: "regenerateResponse" } });
+        this.eventEmitter.dispatchEvent(event);
       }
     };
 
@@ -70,5 +54,3 @@ class ElementMonitor {
     this.observer.observe(element, config);
   }
 }
-
-export default ElementMonitor;

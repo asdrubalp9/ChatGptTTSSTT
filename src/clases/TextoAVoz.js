@@ -128,9 +128,8 @@ export default class TextoAVoz {
     }
   }
   stfu() {
-    this.speechSynth.cancel();
-    // Si quieres que la ventana desaparezca al cancelar la lectura, también podrías agregar la siguiente línea:
     this.screen.remove();
+    this.speechSynth.cancel();
   }
 
   chunkText(text, maxLength) {
@@ -154,7 +153,6 @@ export default class TextoAVoz {
   }
   
   prepareSpeech(texto) {
-    console.log('this.settings ---->', this.settings, this.settings.velocidad.value)
     this.setLanguage()
     this.setVoz()
     this.setVelocidad()
