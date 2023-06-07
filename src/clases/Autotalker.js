@@ -1,6 +1,8 @@
 import { config } from '../config.js';
 import TextoAVoz from './TextoAVoz.js';
 import ConfigHandler from './ConfigHandler.js';
+import ElementMonitor from './ElementMonitor.js'; // import the ElementMonitor class
+
 
 export default class AutoTalker extends TextoAVoz {
   constructor() {
@@ -10,6 +12,8 @@ export default class AutoTalker extends TextoAVoz {
     this.configHandler = null;
     this.initConfigHandler();
     this.initAutoTalker();
+    this.elementMonitor = new ElementMonitor(200, 'callAutoTalker', document);
+
   }
 
   async initConfigHandler() {
@@ -20,6 +24,9 @@ export default class AutoTalker extends TextoAVoz {
     this.checkIntervalId = setInterval(() => {
       const drusPluginsDiv = document.getElementById('drusPlugins');
       if (drusPluginsDiv) {
+        this.elementMonitor.init(() => {
+          // This is called when the form element is found
+        });
         console.log('AutoTalker.configHandler', this.configHandler)
         console.log('AutoTalker.configHandler', this.configHandler.settings.autoTalk)
         clearInterval(this.checkIntervalId); 
@@ -46,11 +53,14 @@ export default class AutoTalker extends TextoAVoz {
         };
         drusPluginsDiv.appendChild(button);
 
-        document.addEventListener('callAutoTalker', () => {
-            console.log('talk muda fucka!',this.configHandler)
+        document.addEventListener(this.elementMonitor.eventName, () => {
+            console.log("Now I'll talk")
           if (this.configHandler.settings.autoTalk == 'always') {
-            //buscar elemento, extraer texto y hablar
-            this.speak("El evento stopGenerating se ha disparado"); // Puedes reemplazar esto con el texto que quieres que se hable
+            const sectores = document.querySelectorAll('main .group.bg-gray-50:nth-child(odd)')
+            let speech = sectores[sectores.length - 1 ].innerText
+            speech = speech.replace('ChatGPT\n','')
+            console.log('speech', speech)
+            this.speak(speech);
           }
         });
       }
