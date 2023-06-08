@@ -12,8 +12,7 @@ export default class AutoTalker extends TextoAVoz {
     this.configHandler = null;
     this.initConfigHandler();
     this.initAutoTalker();
-    this.elementMonitor = new ElementMonitor(200, 'callAutoTalker', document);
-
+    this.elementMonitor = new ElementMonitor(/(Stop generating)/i, /(Regenerate response|New response|There was an error generating a response|Generate new response)/i, "eventStartTalking", document, 'FORM', 200);
   }
 
   async initConfigHandler() {

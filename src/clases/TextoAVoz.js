@@ -13,6 +13,11 @@ export default class TextoAVoz {
         this.updateSettings(changes);
       }
     });
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 'Escape') {
+        this.stopTalking();
+      }
+    })
   }
   async init() {
     await this.getSettings();
@@ -111,7 +116,7 @@ export default class TextoAVoz {
     const div = this.textToSpeechWindow(htmlContent);
     this.screen = div; // Guardamos el div para poder modificar su contenido en otras funciones
     this.screen.innerHTML = htmlContent; // Cambiamos el contenido del div a un botón
-    document.getElementById('cancelSpeech').addEventListener('click', () => this.stfu());
+    document.getElementById('cancelSpeech').addEventListener('click', () => this.stopTalking());
     document.getElementById('speechState').addEventListener('click', () => this.toggleSpeechState());
   }
 
@@ -127,7 +132,8 @@ export default class TextoAVoz {
       this.speechSynth.resume();
     }
   }
-  stfu() {
+  
+  stopTalking() {
     this.screen.remove();
     this.speechSynth.cancel();
   }

@@ -1,16 +1,18 @@
 export default class ElementMonitor {
-  constructor( checkInterval = 200, eventName = "domMutationDetected", eventEmitter = document) {
+  constructor(condicionInicial, condicionFinal, eventName = "domMutationDetected", eventEmitter = document, trackedSelector = 'FORM', checkInterval = 200) {
     this.checkInterval = checkInterval;
-    this.trackedSelector = 'FORM';
+    this.trackedSelector = trackedSelector || 'FORM';
     this.observer = null;
     this.eventEmitter = eventEmitter; 
     this.eventName = eventName; 
-
+    this.condicionInicial = condicionInicial
+    this.condicionFinal = condicionFinal
   }
 
   init(callback = () => { }){
     this.checkIntervalId = setInterval(() => {
       const element = document.querySelector(this.trackedSelector);
+      console.log('buscando ', this.eventName, element)
       if (element) {
         console.log('elemento encontrado')
         this.trackedElement = element;
@@ -26,7 +28,8 @@ export default class ElementMonitor {
     console.log('start monitoring')
     const callback = (mutationsList, observer) => {
       console.log('start monitoring')
-      if (/(Stop generating)/i.test(this.trackedElement.outerHTML)) {
+      // /(Stop generating)/i
+      if (this.condicionInicial.test(this.trackedElement.outerHTML)) {
         this.observer.disconnect();
         this.waitForReturnToOriginal(element);
       }
@@ -40,8 +43,9 @@ export default class ElementMonitor {
     const config = { attributes: true, childList: true, subtree: true };
 
     const callback = (mutationsList, observer) => {
-      console.log('waiting', /(Regenerate response|New response|There was an error generating a response|Generate new response)/i.test(this.trackedElement.outerHTML))
-      if (/(Regenerate response|New response|There was an error generating a response|Generate new response)/i.test(this.trackedElement.outerHTML)) {
+      console.log('waiting',this.condicionFinal.test(this.trackedElement.outerHTML))
+      // /(Regenerate response|New response|There was an error generating a response|Generate new response)/i.test(this.trackedElement.outerHTML)
+      if (this.condicionFinal.test(this.trackedElement.outerHTML)) {
         console.log('--------------------finished responding ------------------')
         this.observer.disconnect();
         this.startMonitoring(element);
