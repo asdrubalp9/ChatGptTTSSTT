@@ -28,7 +28,14 @@ export default class VozATexto {
             }
         })
         document.addEventListener('keyup', (e) => {
-            console.log('e.key: ', e.key);
+            const tagName = document.activeElement.tagName.toLowerCase();
+            if (tagName !== 'input' && tagName !== 'textarea') {
+                if (e.key === 'l') {
+                    this.startListening();
+                }
+            }
+        })
+        document.addEventListener('keyup', (e) => {
             const tagName = document.activeElement.tagName.toLowerCase();
             if (tagName !== 'input' && tagName !== 'textarea') {
                 if (e.key === 'r') {
@@ -143,6 +150,7 @@ export default class VozATexto {
                 </div>
             </div>
         `;
+        this.textArea = document.querySelector('#prompt-textarea');
         const div = this.textToSpeechWindow(htmlContent);
         this.screen = div; 
         this.screen.innerHTML = htmlContent;
@@ -158,7 +166,7 @@ export default class VozATexto {
         this.screen.remove();
         this.textArea.value = text;
         this.textArea.style.height = '264px';
-        this.textArea.focus();
+        // this.textArea.focus();
     }
     
     async startListening() {
