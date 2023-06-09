@@ -1,0 +1,78 @@
+{
+    "configTextToSpeech": {
+      "message": "Configuration de Texte à Parole"
+    },
+    "talkAfterResponse": {
+      "message": "Parler dès que chatGPT a terminé de répondre"
+    },
+    "always": {
+      "message": "Toujours"
+    },
+    "never": {
+      "message": "Jamais"
+    },
+    "TTSLanguage": {
+      "message": "Langue de Texte à Parole"
+    },
+    "englishUS": {
+      "message": "Anglais (Etats-Unis)"
+    },
+    "spanishSpain": {
+      "message": "Espagnol (Espagne)"
+    },
+    "frenchFrance": {
+      "message": "Français (France)"
+    },
+    "germanGermany": {
+      "message": "Allemand (Allemagne)"
+    },
+    "italianItaly": {
+      "message": "Italien (Italie)"
+    },
+    "japaneseJapan": {
+      "message": "Japonais (Japon)"
+    },
+    "portugueseBrazil": {
+      "message": "Portugais (Brésil)"
+    },
+    "chineseChina": {
+      "message": "Chinois (Chine)"
+    },
+    "setTalkingSpeed": {
+      "message": "Régler la vitesse de parole"
+    },
+    "setVoiceTone": {
+      "message": "Ajuster le ton de la voix"
+    },
+    "STTSettings": {
+      "message": "Paramètres de Parole à Texte"
+    },
+    "autoFocusAfterApproval": {
+      "message": "Mise au point automatique sur la zone de texte lorsque le texte est approuvé"
+    },
+    "SRlanguage": {
+      "message": "Langue de Reconnaissance Vocale"
+    },
+    "setContinuousMode": {
+      "message": "Régler le mode continu"
+    },
+    "continuousModeHint": {
+      "message": "Si les résultats continus sont retournés pour chaque reconnaissance, ou seulement un seul résultat"
+    },
+    "setInterimResults": {
+      "message": "Régler les résultats provisoires"
+    },
+    "interimResultsHint": {
+      "message": "Si les résultats provisoires doivent être retournés (vrai) ou non (faux)"
+    },
+    "elementRedaction": {
+      "message": "Rédaction d'élément"
+    },
+    "cssSelectorsInstruction": {
+      "message": "Utilisez des sélecteurs CSS pour sélectionner le contenu du HTML que vous souhaitez rédiger et sélectionnez l'option pour rédiger ou non rédiger le contenu de l'élément HTML sélectionné. Pour coller le contenu, appuyez simplement sur ctrl+shift+Z et il sera collé dans l'invite ou appuyez sur le bouton en dessous du bouton de téléchargement du chat."
+    },
+    "resetDefault": {
+      "message": "Réinitialiser par défaut"
+    }
+  }
+  

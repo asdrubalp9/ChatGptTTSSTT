@@ -1,0 +1,78 @@
+{
+    "configTextToSpeech": {
+      "message": "Text zu Sprache Einstellungen"
+    },
+    "talkAfterResponse": {
+      "message": "Sprechen, sobald chatGPT die Antwort beendet hat"
+    },
+    "always": {
+      "message": "Immer"
+    },
+    "never": {
+      "message": "Niemals"
+    },
+    "TTSLanguage": {
+      "message": "Text zu Sprache Sprache"
+    },
+    "englishUS": {
+      "message": "Englisch (Vereinigte Staaten)"
+    },
+    "spanishSpain": {
+      "message": "Spanisch (Spanien)"
+    },
+    "frenchFrance": {
+      "message": "Französisch (Frankreich)"
+    },
+    "germanGermany": {
+      "message": "Deutsch (Deutschland)"
+    },
+    "italianItaly": {
+      "message": "Italienisch (Italien)"
+    },
+    "japaneseJapan": {
+      "message": "Japanisch (Japan)"
+    },
+    "portugueseBrazil": {
+      "message": "Portugiesisch (Brasilien)"
+    },
+    "chineseChina": {
+      "message": "Chinesisch (China)"
+    },
+    "setTalkingSpeed": {
+      "message": "Sprechgeschwindigkeit einstellen"
+    },
+    "setVoiceTone": {
+      "message": "Stimmton anpassen"
+    },
+    "STTSettings": {
+      "message": "Sprache zu Text Einstellungen"
+    },
+    "autoFocusAfterApproval": {
+      "message": "Automatischer Fokus auf Textbereich, wenn der Text genehmigt ist"
+    },
+    "SRlanguage": {
+      "message": "Spracherkennungssprache"
+    },
+    "setContinuousMode": {
+      "message": "Kontinuierlichen Modus einstellen"
+    },
+    "continuousModeHint": {
+      "message": "Ob kontinuierliche Ergebnisse für jede Erkennung zurückgegeben werden oder nur ein einziges Ergebnis"
+    },
+    "setInterimResults": {
+      "message": "Vorläufige Ergebnisse festlegen"
+    },
+    "interimResultsHint": {
+      "message": "Ob vorläufige Ergebnisse zurückgegeben werden sollen (wahr) oder nicht (falsch)"
+    },
+    "elementRedaction": {
+      "message": "Elementzurücknahme"
+    },
+    "cssSelectorsInstruction": {
+      "message": "Verwenden Sie CSS-Selektoren, um den Inhalt des HTML auszuwählen, den Sie zurücknehmen möchten, und wählen Sie die Option, den Inhalt des ausgewählten HTML-Elements zurückzunehmen oder nicht zurückzunehmen. Zum Einfügen des Inhalts drücken Sie einfach Strg+Umschalt+Z, und er wird in der Eingabeaufforderung eingefügt, oder drücken Sie die Taste unter der Chat-Download-Taste."
+    },
+    "resetDefault": {
+      "message": "Auf Standard zurücksetzen"
+    }
+  }
+  

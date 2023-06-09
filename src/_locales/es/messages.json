@@ -1,11 +1,77 @@
 {
-    "defaultLanguage": {
-      "message": "es-ES",
-      "description": "Idioma predeterminado para la extensión"
-    },
-    "options": {
-      "message": "Español (España)",
-      "description": "Opción de idioma mostrada en la configuración"
-    }
+  "configTextToSpeech": {
+    "message": "Configuración de Text to speech"
+  },
+  "talkAfterResponse": {
+    "message": "Hablar en cuanto chatGPT termine de responder"
+  },
+  "always": {
+    "message": "Siempre"
+  },
+  "never": {
+    "message": "Nunca"
+  },
+  "TTSLanguage": {
+    "message": "Idioma de Texto a Voz"
+  },
+  "englishUS": {
+    "message": "Inglés (Estados Unidos)"
+  },
+  "spanishSpain": {
+    "message": "Español (España)"
+  },
+  "frenchFrance": {
+    "message": "Francés (Francia)"
+  },
+  "germanGermany": {
+    "message": "Alemán (Alemania)"
+  },
+  "italianItaly": {
+    "message": "Italiano (Italia)"
+  },
+  "japaneseJapan": {
+    "message": "Japonés (Japón)"
+  },
+  "portugueseBrazil": {
+    "message": "Portugués (Brasil)"
+  },
+  "chineseChina": {
+    "message": "Chino (China)"
+  },
+  "setTalkingSpeed": {
+    "message": "Establecer velocidad de habla"
+  },
+  "setVoiceTone": {
+    "message": "Ajustar tono de voz"
+  },
+  "STTSettings": {
+    "message": "Configuraciones de voz a texto"
+  },
+  "autoFocusAfterApproval": {
+    "message": "Enfoque automático en textarea cuando el texto es aprobado"
+  },
+  "SRlanguage": {
+    "message": "Idioma de Reconocimiento de Voz"
+  },
+  "setContinuousMode": {
+    "message": "Establecer modo continuo"
+  },
+  "continuousModeHint": {
+    "message": "Si se retornan resultados continuos para cada reconocimiento, o solo un único resultado"
+  },
+  "setInterimResults": {
+    "message": "Establecer resultados provisionales"
+  },
+  "interimResultsHint": {
+    "message": "Si se deben retornar resultados provisionales (verdadero) o no (falso)"
+  },
+  "elementRedaction": {
+    "message": "Redacción de Elemento"
+  },
+  "cssSelectorsInstruction": {
+    "message": "Utilice selectores CSS para seleccionar el contenido del HTML que desea redactar y seleccione la opción para redactar o no redactar el contenido del elemento HTML seleccionado. Para pegar el contenido, simplemente presione ctrl+shift+Z y se pegará en el indicador o presione el botón debajo del botón de descarga de chat."
+  },
+  "resetDefault": {
+    "message": "Restablecer a predeterminado"
   }
-  
+}

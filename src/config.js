@@ -1,7 +1,7 @@
 const config = [
   {
     type: 'separator',
-    label: 'Configuración de Text to speech',
+    label: chrome.i18n.getMessage('configTextToSpeech'),
   },
   {
     name: 'autoTalk',
@@ -68,17 +68,7 @@ const config = [
       },
     ],
   },
-  // {
-  //   name: 'setVoz',
-  //   label: 'Text To Speech language',
-  //   placeholder: 'Text To Speech language',
-  //   htmlId: 'setVoz',
-  //   htmlclass: '',
-  //   value: '',
-  //   defaultValue: 'es-ES',
-  //   type: 'voiceSelector',
-  //   Hint: '',
-  // },
+  
   {
     name: 'velocidad',
     label: 'Set talking speed',
@@ -107,7 +97,17 @@ const config = [
     type: 'number',
     Hint: '',
   },
-
+// {
+  //   name: 'setVoz',
+  //   label: 'Text To Speech language',
+  //   placeholder: 'Text To Speech language',
+  //   htmlId: 'setVoz',
+  //   htmlclass: '',
+  //   value: '',
+  //   defaultValue: 'es-ES',
+  //   type: 'voiceSelector',
+  //   Hint: '',
+  // },
 
 
   {
@@ -115,12 +115,12 @@ const config = [
     label: 'Speech to text settings',
   },
   {
-    name: 'oneLiner',
-    label: 'Eliminate breakspaces, double spaces and new lines',
-    htmlId: 'oneLiner',
+    name: 'autoFocus',
+    label: 'Auto focus on textarea when the text is approved',
+    htmlId: 'autoFocus',
     htmlclass: '',
     value: '',
-    defaultValue: 'always',
+    defaultValue: 'never',
     type: 'radio',
     Hint: '',
     options: [
@@ -133,6 +133,75 @@ const config = [
         value: 'never',
       },
     ],
+  },
+  {
+    name: 'language',
+    label: 'Speech Recognition language',
+    placeholder: 'Speech Recognition language',
+    htmlId: 'language',
+    htmlclass: '',
+    value: '',
+    defaultValue: 'es-ES',
+    type: 'select',
+    Hint: '',
+    options: [
+      {
+        value: "en-US",
+        label: "English (United States)"
+      },
+      {
+        value: "es-ES",
+        label: "Spanish (Spain)"
+      },
+      {
+        value: "fr-FR",
+        label: "French (France)"
+      },
+      {
+        value: "de-DE",
+        label: "German (Germany)"
+      },
+      {
+        value: "it-IT",
+        label: "Italian (Italy)"
+      },
+      {
+        value: "ja-JP",
+        label: "Japanese (Japan)"
+      },
+      {
+        value: "pt-BR",
+        label: "Portuguese (Brazil)"
+      },
+      {
+        value: "zh-CN",
+        label: "Chinese (China)"
+      },
+    ],
+  },
+  
+  {
+    name: 'continuous',
+    label: 'Set continuous mode',
+    placeholder: 'Set continuous mode',
+    htmlId: 'continuous',
+    htmlclass: '',
+    value: '',
+    defaultValue: 'false',
+    type: 'checkbox',
+    Hint: 'Whether continuous results are returned for each recognition, or only a single result',
+  },
+  
+  {
+    name: 'interimResults',
+    label: 'Set interim results',
+    placeholder: 'Set interim results',
+    htmlId: 'interimResults',
+    htmlclass: '',
+    value: '',
+    defaultValue: 'false',
+    type: 'checkbox',
+    Hint: 'Whether interim results should be returned (true) or not (false)',
   },
   {
     type: 'separator',

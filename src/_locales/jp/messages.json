@@ -1,0 +1,78 @@
+{
+    "configTextToSpeech": {
+      "message": "テキスト読み上げ設定"
+    },
+    "talkAfterResponse": {
+      "message": "chatGPTが応答終了後すぐに話す"
+    },
+    "always": {
+      "message": "常に"
+    },
+    "never": {
+      "message": "決して"
+    },
+    "TTSLanguage": {
+      "message": "テキスト読み上げの言語"
+    },
+    "englishUS": {
+      "message": "英語（アメリカ）"
+    },
+    "spanishSpain": {
+      "message": "スペイン語（スペイン）"
+    },
+    "frenchFrance": {
+      "message": "フランス語（フランス）"
+    },
+    "germanGermany": {
+      "message": "ドイツ語（ドイツ）"
+    },
+    "italianItaly": {
+      "message": "イタリア語（イタリア）"
+    },
+    "japaneseJapan": {
+      "message": "日本語（日本）"
+    },
+    "portugueseBrazil": {
+      "message": "ポルトガル語（ブラジル）"
+    },
+    "chineseChina": {
+      "message": "中国語（中国）"
+    },
+    "setTalkingSpeed": {
+      "message": "話す速度を設定する"
+    },
+    "setVoiceTone": {
+      "message": "音声トーンを調整する"
+    },
+    "STTSettings": {
+      "message": "音声テキスト設定"
+    },
+    "autoFocusAfterApproval": {
+      "message": "テキストが承認されたらテキストエリアに自動的にフォーカスする"
+    },
+    "SRlanguage": {
+      "message": "音声認識の言語"
+    },
+    "setContinuousMode": {
+      "message": "連続モードを設定する"
+    },
+    "continuousModeHint": {
+      "message": "各認識結果が連続して返されるか、または単一の結果のみが返されるかどうか"
+    },
+    "setInterimResults": {
+      "message": "中間結果を設定する"
+    },
+    "interimResultsHint": {
+      "message": "中間結果を返すべきか（true）、返さないか（false）"
+    },
+    "elementRedaction": {
+      "message": "エレメントの削除"
+    },
+    "cssSelectorsInstruction": {
+      "message": "CSSセレクタを使用して、削除したいHTMLのコンテンツを選択し、選択したHTMLエレメントのコンテンツを削除するか否かを選択します。 <br> コンテンツを貼り付けるには、Ctrl+Shift+Zを押すだけでプロンプトに貼り付けることができます。また、チャットダウンロードボタンの下のボタンを押すだけでも可能です。"
+    },
+    "resetDefault": {
+      "message": "デフォルトにリセットする"
+    }
+  }
+  

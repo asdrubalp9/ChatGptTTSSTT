@@ -1,11 +1,77 @@
 {
-    "defaultLanguage": {
-      "message": "en-US",
-      "description": "Default language for the extension"
-    },
-    "options": {
-      "message": "English (United States)",
-      "description": "Language option displayed in the settings"
-    }
+  "configTextToSpeech": {
+    "message": "Text to speech settings"
+  },
+  "talkAfterResponse": {
+    "message": "Talk as soon as chatGPT ends responding"
+  },
+  "always": {
+    "message": "Always"
+  },
+  "never": {
+    "message": "Never"
+  },
+  "TTSLanguage": {
+    "message": "Text To Speech language"
+  },
+  "englishUS": {
+    "message": "English (United States)"
+  },
+  "spanishSpain": {
+    "message": "Spanish (Spain)"
+  },
+  "frenchFrance": {
+    "message": "French (France)"
+  },
+  "germanGermany": {
+    "message": "German (Germany)"
+  },
+  "italianItaly": {
+    "message": "Italian (Italy)"
+  },
+  "japaneseJapan": {
+    "message": "Japanese (Japan)"
+  },
+  "portugueseBrazil": {
+    "message": "Portuguese (Brazil)"
+  },
+  "chineseChina": {
+    "message": "Chinese (China)"
+  },
+  "setTalkingSpeed": {
+    "message": "Set talking speed"
+  },
+  "setVoiceTone": {
+    "message": "Adjust voice tone"
+  },
+  "STTSettings": {
+    "message": "Speech to text settings"
+  },
+  "autoFocusAfterApproval": {
+    "message": "Auto focus on textarea when the text is approved"
+  },
+  "SRlanguage": {
+    "message": "Speech Recognition language"
+  },
+  "setContinuousMode": {
+    "message": "Set continuous mode"
+  },
+  "continuousModeHint": {
+    "message": "Whether continuous results are returned for each recognition, or only a single result"
+  },
+  "setInterimResults": {
+    "message": "Set interim results"
+  },
+  "interimResultsHint": {
+    "message": "Whether interim results should be returned (true) or not (false)"
+  },
+  "elementRedaction": {
+    "message": "Element Redaction"
+  },
+  "cssSelectorsInstruction": {
+    "message": "Use css selectors to select the content of the HTML you want to redact and select the option to redact or not redact the content of the selected HTML element. To paste the content, just press ctrl+shift+Z and it will paste it in the prompt or press the button bellow the download chat button."
+  },
+  "resetDefault": {
+    "message": "Reset to default"
   }
-  
+}

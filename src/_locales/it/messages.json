@@ -1,0 +1,78 @@
+{
+    "configTextToSpeech": {
+      "message": "Configurazione di Text to Speech"
+    },
+    "talkAfterResponse": {
+      "message": "Parla non appena chatGPT finisce di rispondere"
+    },
+    "always": {
+      "message": "Sempre"
+    },
+    "never": {
+      "message": "Mai"
+    },
+    "TTSLanguage": {
+      "message": "Lingua Text To Speech"
+    },
+    "englishUS": {
+      "message": "Inglese (Stati Uniti)"
+    },
+    "spanishSpain": {
+      "message": "Spagnolo (Spagna)"
+    },
+    "frenchFrance": {
+      "message": "Francese (Francia)"
+    },
+    "germanGermany": {
+      "message": "Tedesco (Germania)"
+    },
+    "italianItaly": {
+      "message": "Italiano (Italia)"
+    },
+    "japaneseJapan": {
+      "message": "Giapponese (Giappone)"
+    },
+    "portugueseBrazil": {
+      "message": "Portoghese (Brasile)"
+    },
+    "chineseChina": {
+      "message": "Cinese (Cina)"
+    },
+    "setTalkingSpeed": {
+      "message": "Imposta la velocità di parlato"
+    },
+    "setVoiceTone": {
+      "message": "Regola il tono della voce"
+    },
+    "STTSettings": {
+      "message": "Impostazioni di Speech to text"
+    },
+    "autoFocusAfterApproval": {
+      "message": "Auto focus sulla textarea quando il testo è approvato"
+    },
+    "SRlanguage": {
+      "message": "Lingua del riconoscimento vocale"
+    },
+    "setContinuousMode": {
+      "message": "Imposta modalità continua"
+    },
+    "continuousModeHint": {
+      "message": "Se restituire risultati continui per ogni riconoscimento, o solo un unico risultato"
+    },
+    "setInterimResults": {
+      "message": "Imposta risultati provvisori"
+    },
+    "interimResultsHint": {
+      "message": "Se restituire risultati provvisori (vero) o meno (falso)"
+    },
+    "elementRedaction": {
+      "message": "Censura dell'elemento"
+    },
+    "cssSelectorsInstruction": {
+      "message": "Utilizza i selettori CSS per selezionare il contenuto dell'HTML che vuoi censurare e seleziona l'opzione per censurare o non censurare il contenuto dell'elemento HTML selezionato. <br> Per incollare il contenuto, premi semplicemente ctrl+shift+Z e lo incollerà nel prompt o premi il pulsante sotto il pulsante di download della chat."
+    },
+    "resetDefault": {
+      "message": "Ripristina le impostazioni predefinite"
+    }
+  }
+  
