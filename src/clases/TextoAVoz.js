@@ -18,9 +18,16 @@ export default class TextoAVoz {
         this.stopTalking();
       }
     })
+
   }
   async init() {
     await this.getSettings();
+    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+      if (request.command === "speak") {
+        const tts = new TextoAVoz();
+        tts.speak(request.text);
+      }
+    });
   }
   
   getSettings() {
@@ -74,33 +81,6 @@ export default class TextoAVoz {
     document.body.appendChild(div);
     return div; // Devolvemos el div para poder modificar su contenido en otras funciones
   }
-
-  addScreenOnLoadingSpeech() {
-    const spinner = `
-    <style>
-    .spin {
-        animation-name: spin;
-        animation-duration: 5000ms;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear; 
-        }
-        @keyframes spin {
-        from {
-            transform:rotate(0deg);
-        }
-        to {
-            transform:rotate(360deg);
-        }
-    }
-    </style>
-    <svg xmlns="http://www.w3.org/2000/svg"
-    class="spin"
-        style="width: 100px;"
-        viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-        <path
-            d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z" />
-    </svg>`
-  }
   
   addScreenToCancel() {
     const htmlContent = `
@@ -132,7 +112,7 @@ export default class TextoAVoz {
       this.speechSynth.resume();
     }
   }
-  
+
   stopTalking() {
     this.screen.remove();
     this.speechSynth.cancel();

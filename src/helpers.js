@@ -14,6 +14,19 @@ export function HTMLInjector(HTML, selector, position) {
   }, 1000); // 1000ms = 1s
 }
 
+export function waitForElement(cssSelector) {
+  return new Promise((resolve, reject) => {
+    const interval = setInterval(() => {
+      const element = document.querySelector(cssSelector);
+      if (element) {
+        clearInterval(interval);
+        resolve(element);
+      }
+    }, 300);
+  });
+}
+
+
 export function delegateEventListener(selector, eventType, eventHandler) {
       // agregar el evento al document (elemento padre)
       document.addEventListener(eventType, function(event) {
