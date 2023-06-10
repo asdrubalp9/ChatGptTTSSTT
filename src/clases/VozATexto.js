@@ -165,6 +165,7 @@ export default class VozATexto {
         const div = this.textToSpeechWindow(htmlContent);
         this.screen = div; 
         this.screen.innerHTML = htmlContent;
+        document.getElementById('restart').addEventListener('click', () => this.listen());
         document.getElementById('cancelListening').addEventListener('click', () => this.stopListening());
         document.getElementById('aproveText').addEventListener('click', () => this.aprovedText());
         this.listeningDiv = document.getElementById('listeningState');

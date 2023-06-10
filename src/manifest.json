@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Talk to ChatGPT",
+  "name": "SonicGPT, Talk to ChatGPT FOR FREE",
   "version": "1.0",
-  "description": "Talk to ChatGPT",
+  "description": "Talk and listen to ChatGPT in your language!",
   "permissions": [
     "webRequest",
     "webRequestBlocking",

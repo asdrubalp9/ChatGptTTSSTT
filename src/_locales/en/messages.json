@@ -208,5 +208,8 @@
   },
   "refreshPageLabel": {
     "message": "If you notice that the plugin is not working properly, you just need to refresh the page by pressing ctrl+r or the f5 key."
+  },
+  "shortDescriptionLabel": {
+    "message": "Talk and listen to ChatGPT in your language!"
   }
 }

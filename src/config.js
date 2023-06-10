@@ -66,6 +66,10 @@ const config = [
         value: "zh-CN",
         label: chrome.i18n.getMessage("chineseChina")
       },
+      {
+        value: "hi-IN",
+        label: chrome.i18n.getMessage("hindiIndia")
+      }
     ],
   },
   

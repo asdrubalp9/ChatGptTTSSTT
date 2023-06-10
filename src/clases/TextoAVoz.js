@@ -77,6 +77,7 @@ export default class TextoAVoz {
   
   textToSpeechWindow(content) {
     const div = document.createElement('div');
+    div.classList.add('speechWindow');
     div.style.cssText = 'border-radius: 26px; background-color: white; position: fixed; padding: 3em; top: 50%; left: 50%; transform: translate(-50%, -50%);-webkit-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);';
     div.innerHTML = content;
     document.body.appendChild(div);
@@ -115,7 +116,9 @@ export default class TextoAVoz {
   }
 
   stopTalking() {
+    console.log('stopTalking')
     this.screen.remove();
+    document.querySelectorAll('.speechWindow').forEach((el) => el.remove());
     this.speechSynth.cancel();
   }
 
@@ -130,7 +133,8 @@ export default class TextoAVoz {
       this.speechSynth.speak(this.utterance);
       this.utterance.onend = () => this.speakChunk(chunks, index + 1);
     } else {
-      this.addScreenToCancel();
+      console.log('se acabo el texto')
+      this.stopTalking()
     }
   }
   
