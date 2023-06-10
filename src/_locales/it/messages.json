@@ -142,6 +142,72 @@
     },
     "indicatesRequiredLabel": {
       "message": "indique requis"
+    },
+    "hindiIndia": {
+      "message": "Hindi (India)"
+    },
+    "PressAToApprove": {
+      "message": "Premi A per approvare"
+    },
+    "PressRToRestart": {
+    "message": "Riavvia premendo R"
+    },
+    "PressEscToCancel": {
+    "message": "Annulla premendo ESC"
+    },
+    "HowToLabel": {
+    "message": "Come fare"
+    },
+    "beInTheLoopLabel": {
+    "message": "Rimani nel loop!"
+    },
+    "FeaturesLabel": {
+    "message": "Caratteristiche"
+    },
+    "feature1Label": {
+    "message": "Vivi un'interazione completamente senza mani con ChatGPT. Il nostro plugin presenta un'opzione configurabile che permette a ChatGPT di leggere ad alta voce tutte le risposte non appena sono generate. Questa funzione è particolarmente utile per le persone con limitazioni motorie, promuovendo un'esperienza utente inclusiva."
+    },
+    "feature2Label": {
+    "message": "Natura multilingue, il nostro plugin ti permette di parlare e ascoltare in otto lingue: inglese, spagnolo, tedesco, portoghese, francese, italiano, giapponese e hindi. Che tu voglia comunicare nella tua lingua madre o esplorare una nuova, siamo qui per rendere possibile."
+    },
+    "feature3Label": {
+    "message": "Aumenta la tua efficienza con le nostre scorciatoie da tastiera. Questi tasti permettono un'interazione rapida ed efficace, portando la tua esperienza a un livello completamente nuovo. Questo design accessibile facilita l'uso del plugin, soprattutto per chi ha sfide motorie."
+    },
+    "feature4Label": {
+    "message": "Personalizza la tua esperienza con la possibilità di regolare il tono e la velocità della voce a tuo piacimento. Che tu preferisca una conversazione rapida ed energica o una chiacchierata lenta e fluida, forniamo gli strumenti per farlo accadere."
+    },
+    "feature5Label": {
+    "message": "La nostra funzione di approvazione automatica del testo dopo l'ascolto elimina la necessità di trascrizione manuale, particolarmente utile per le persone con disabilità visive o motorie. Questo approccio focalizzato sull'accessibilità ci aiuta a garantire che tutti gli utenti possano godere di un'interazione fluida con ChatGPT."
+    },
+    "feature6Label": {
+    "message": "Il meglio di tutto, tutte queste incredibili funzionalità sono offerte completamente gratis. Che si tratti di conversione voce-testo o testo-voce, ci sforziamo di fornire i migliori strumenti senza imporre alcuna barriera di costo. Con il nostro plugin, un'interazione inclusiva e accessibile con ChatGPT è alla portata di tutti."
+    },
+    "defaultConfigurationLabel": {
+    "message": "C'è già una configurazione di default, ma puoi personalizzarla a tuo piacimento. Basta cliccare sull'icona del plugin e regolare i valori come desideri."
+    },
+    "chatGptSpeakingLabel": {
+    "message": "Per abilitare o disabilitare la funzione di ChatGPT che legge ad alta voce la sua risposta non appena finisce, basta cliccare sull'icona."
+    },
+    "microphoneButtonLabel": {
+    "message": "Per parlare, puoi cliccare sul pulsante del microfono nell'area di prompt, e si aprirà una finestra in modalità ascolto. Puoi iniziare a parlare e il testo apparirà nel modal."
+    },
+    "approveTextLabel": {
+    "message": "Dopo che il testo appare nel modal, puoi cliccare sul pulsante verde per approvare il testo e apparirà nel prompt della chat. Puoi anche colpire il pulsante scuro per riprovare, o premere il pulsante rosso per annullare."
+    },
+    "listeningCircleLabel": {
+    "message": "Se il cerchio nel modal diventa arancione, significa che puoi parlare e trasformerà il tuo discorso in testo."
+    },
+    "notListeningLabel": {
+    "message": "Quando mostra questo, significa che non sta più ascoltando e puoi approvare il testo o premere R o il pulsante scuro per riattivare la modalità di ascolto."
+    },
+    "hotkeysLabel": {
+    "message": "Ci sono anche scorciatoie da tastiera per rendere l'interazione più rapida. Puoi premere ESC per annullare la modalità di ascolto, R per riavviare, A per approvare il testo, e L per evitare di dover cliccare sul microfono (il cursore non dovrebbe essere nell'area del prompt)."
+    },
+    "cancelGptSpeakingLabel": {
+    "message": "Inoltre, se ChatGPT sta parlando la sua risposta, puoi annullare premendo escape o cliccando sul pulsante rosso, o metterlo in pausa cliccando sul pulsante di pausa."
+    },
+    "refreshPageLabel": {
+    "message": "Se noti che il plugin non funziona correttamente, devi solo aggiornare la pagina premendo ctrl+r o il tasto f5."
     }
   }
   

@@ -173,13 +173,14 @@ integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJ
 </head>
 
 <body>
+  
 
   <header class="site-header sticky-top py-1">
     <nav class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="#howto">How to</a>
-      <a class="py-2 d-none d-md-inline-block" href="#author">About the author</a>
-      <a class="py-2 d-none d-md-inline-block" href="#theLoop">Have an idea?</a>
-      <a class="py-2 d-none d-md-inline-block" href="#theLoop">Be in the loop!</a>
+      <a class="py-2 d-none d-md-inline-block" href="#howto" data-i18n="HowToLabel">How to</a>
+      <a class="py-2 d-none d-md-inline-block" href="#author" data-i18n="aboutTheAuthorLabel">About the author</a>
+      <a class="py-2 d-none d-md-inline-block" href="#theLoop" data-i18n="haveAnIdeaLabel">Have an idea?</a>
+      <a class="py-2 d-none d-md-inline-block" href="#theLoop" data-i18n="beInTheLoopLabel">Be in the loop!</a>
     </nav>
   </header>
 
@@ -191,23 +192,26 @@ integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJ
       <div class="col-md-6 d-flex align-items-center justify-content-center text-center">
         <div>
           <h1 class="display-4 fw-normal text-center">
-            Code redactor plugin for chatgpt
+            SonicGPT
           </h1>
           <p class="lead fw-normal">
             Enhance Your ChatGPT Experience with Our Powerful Chrome Plugin
           </p>
-          <p class="lead fw-normal">
+          <p class="lead fw-normal" data-i18n="FeaturesLabel">
             Features
           </p>
           <ul class="text-start">
-            <li>
-              Listen to a sound notification when chatGPT finished responding
+            <li data-i18n="feature1Label">
             </li>
-            <li>
-              Download your conversation with chatGPT
+            <li data-i18n="feature2Label">
             </li>
-            <li>
-              Effortlessly paste and optimize HTML content to the chatGPT prompt area for maximum information transfer
+            <li data-i18n="feature3Label">
+            </li>
+            <li data-i18n="feature4Label">
+            </li>
+            <li data-i18n="feature5Label">
+            </li>
+            <li data-i18n="feature6Label">
             </li>
           </ul>
           <p class=" fw-normal text-center text-danger" href="#" data-i18n="moreFeaturesSoonLabel">MORE FEATURES COMING SOON!</p>
@@ -219,41 +223,45 @@ integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJ
       <div class="col-md-6 d-flex align-items-center justify-content-center text-center">
         <div>
           <h1 class="display-4 fw-normal text-center" data-i18n="howToUsePluginLabel">
-            How to use this plugin
           </h1>
           <ul class="text-start">
             <li>
-              Configure the plugin here or click on the icon of the plugin to open the configuration tab
+              <span data-i18n="defaultConfigurationLabel">Ya existen una configuración por defecto, pero puedes cambiarla a tu gusto, solo haz click en el icono del plugin y luego cambia los valores a tu gusto</span>
             </li>
             <li>
-              <div class="container-fluid p-3">
-                <div class="toast align-items-center text-bg-success border-0 fade sticky-top" role="alert" aria-live="assertive"
-                    aria-atomic="true">
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            
-                        </div>
-                        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                    </div>
-                </div>
-                <form class="d-none row optionScreen">
-                </form>
-              </div>
+              <span data-i18n="chatGptSpeakingLabel">para habilitar o deshabilitar la función de que ChatGPT hable lo que dijo apenas termino de escribirlo, solo haz click en el icono </span>
+              <img src="images/stfubtn.png" />
             </li>
             <li>
-              Copy HTML code you'd like to redact
+              <span data-i18n="microphoneButtonLabel">Para hablar puedes hacer click en el boton del microfono que esta en el prompt area</span>
+              <img src="images/micBtn.png" />
             </li>
             <li>
-              Press Ctrl+shift+Z or click the button <img style="border-radius:50%; overflow:hidden;" src="images/pasteBtn.png"> bellow the download conversation button to paste the redacted code to the prompt
+              <img src="images/modal.png" />
             </li>
             <li>
-              You can also configure if you'd like to hear a sound when chatGPT finishes responding so you can do other things while waiting
+              <span data-i18n="approveTextLabel">Despues de que aparezca el texto en el modal, puedes hacer click en el boton verde, para aprobar el texto y que aparezca en el chat prompt, o puedes darle al boton negro para intentarlo de nuevo o presionar el rojo para cancelar.</span>
             </li>
             <li>
-              Do you like your current conversation with chatGPT? download it with the <img style="border-radius:50%; overflow:hidden;" src="images/downloadBtn.png"> button
+              <span data-i18n="listeningCircleLabel">Si en el modal se ve que el circulo esta naranja, significa que puedes hablar y va a convertir lo que digas en texto </span>
+              <img src="images/listening.png" />
+            </li>
+            <li>
+              <span data-i18n="notListeningLabel">Cuando esta en </span>
+              <img src="images/notListening.png" />
+              <span data-i18n="notListeningLabel2"> significa que ya no anda escuchando y ya puedes aprobar el texto o presionar R o el boton oscuro para activar de nuevo el modo escucha</span>
+            </li>
+            <li>
+              <span data-i18n="hotkeysLabel">Tambien existen hotkeys para hacer la interacción mas rapida, puedes presionar ESC para cancelar el modo escucha, R para reiniciar, A para aprobar el texto, y L para no tener que hacer click en el microfono (El cursor no debe estar en el prompt area).</span>
+            </li>
+            <li>
+              <span data-i18n="cancelGptSpeakingLabel">Adicionalmente, si ChatGPT esta hablando su respuesta, puedes cancelar presionando escape o hacer click en el boton rojo para cancelar o en el boton de pausa para pausar la charla.</span>
+            </li>
+            <li>
+              <span data-i18n="refreshPageLabel">Si notas que el plugin no funciona correctamente, solo debes refrescar la página presionado ctrl+r o la tecla f5</span>
             </li>
           </ul>
-          <p class=" fw-normal text-center text-danger" href="#" data-i18n="moreFeaturesSoonLabel">MORE FEATURES COMING SOON!</p>
+          <p class=" fw-normal text-center text-danger" href="#" data-i18n="moreFeaturesSoonLabel"></p>
         </div>
       </div>
     </div>
