@@ -42,7 +42,7 @@ export default class TextoAVoz {
           for (const key of configKeys) {
             this.settings[key.name] = result[key.name] || key.defaultValue;
           }
-          console.log("Settings loaded:", this.settings);
+          console.log("Texto a voz config:", this.settings);
           resolve();
         }
       });
@@ -57,7 +57,8 @@ export default class TextoAVoz {
   }
 
   setLanguage() {
-    this.utterance.lang = this.settings.language;
+    console.log('this.settings.TTSlanguage', this.settings.TTSlanguage)
+    this.utterance.lang = this.settings.TTSlanguage;
   }
 
   setVoz() {

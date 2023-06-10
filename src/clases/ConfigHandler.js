@@ -5,7 +5,7 @@ export default class ConfigHandler {
     this.settings = {};
     
     chrome.storage.onChanged.addListener((changes, areaName) => {
-        console.log('changes', changes, 'areaName', areaName)
+        console.log('Config handler changes', changes, 'areaName', areaName)
       if (areaName === 'sync') {
         this.updateSettings(changes);
       }
@@ -32,7 +32,7 @@ export default class ConfigHandler {
           for (const key of configKeys) {
             this.settings[key.name] = result[key.name] || key.defaultValue;
           }
-          console.log("Settings loaded:", this.settings);
+          console.log("Config handler config:", this.settings);
           resolve();
         }
       });
@@ -45,7 +45,7 @@ export default class ConfigHandler {
         if (chrome.runtime.lastError) {
           reject(chrome.runtime.lastError);
         } else {
-          console.log("Settings updated:", newSettings);
+          console.log("ConfigHandler Settings updated:", newSettings);
           resolve();
         }
       });

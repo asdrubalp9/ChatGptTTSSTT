@@ -8,11 +8,11 @@ import { HTMLInjector, delegateEventListener } from './helpers.js';
 
 const plugin = new DrusPlugins();
 
-const vosATexto = new VozATexto();
+const vozATexto = new VozATexto();
 const autoTalker = new AutoTalker();
-const talkingButtonAdder = new TalkingButtons();
-talkingButtonAdder.initTalkingButtons()
+// const talkingButtonAdder = new TalkingButtons();
+// talkingButtonAdder.initTalkingButtons()
 
 delegateEventListener('a', 'click', function(event) {
-  talkingButtonAdder.initTalkingButtons()
-});
+  // talkingButtonAdder.initTalkingButtons()
+}); 
