@@ -76,5 +76,71 @@
   },
   "resetDefault": {
     "message": "Restablecer a predeterminado"
+  },
+  "noBackersLabel": {
+    "message": "Aún no hay patrocinadores,"
+  },
+  "noBackersLabelLink": {
+    "message": "sé el primero"
+  },
+  "topSponsorsLabel": {
+    "message": "PATROCINADORES PRINCIPALES"
+  },
+  "sponsorThisLabel": {
+    "message": "¡PATROCINA ESTE PLUGIN! para que sea"
+  },
+  "sponsorThisContinuomLabel": {
+    "message": "¡libre de spyware y anuncios!"
+  },
+  "popupConfigurationLabel": {
+    "message": "Configuración"
+  },
+  "optionsLinkLabel": {
+    "message": "Abrir página de información"
+  },
+  "aboutTheAuthorLabel": {
+    "message": "Acerca del autor"
+  },
+  "moreFeaturesSoonLabel": {
+    "message": "¡PRÓXIMAMENTE MÁS FUNCIONALIDADES!"
+  },
+  "howToUsePluginLabel": {
+    "message": "Cómo usar este plugin"
+  },
+  "aboutAuthorDescriptionLabel": {
+    "message": "¡Hola! Soy un Desarrollador de Software Fullstack con más de 5 años de experiencia, especializado en JavaScript, PHP, HTML, CSS y jQuery. Mi amplia experiencia con bases de datos relacionales, diseño de esquemas de base de datos y MySQL me permite abordar incluso los problemas más complejos con facilidad y eficiencia."
+  },
+  "checkOutMyLinkedInLabel": {
+    "message": "Mírame en LinkedIn"
+  },
+  "freeOfSpywareLabel": {
+    "message": "libre de spyware y anuncios."
+  },
+  "helpPluginsBeFree": {
+    "message": "Ayuda a que mis plugins sean "
+  },
+  "sponsorMeOnPatreonLabel": {
+    "message": "PATROCÍNAME EN PATREON"
+  },
+  "haveAnIdeaLabel": {
+    "message": "¿Tienes una idea?"
+  },
+  "suggestFeaturesOrPluginsLabel": {
+    "message": "Sugiere características o plugins"
+  },
+  "keepUpToDateLabel": {
+    "message": "¡Mantente al día!"
+  },
+  "joinMailingListLabel": {
+    "message": "Únete a la lista de correo y te enviaré noticias de mis plugins y características"
+  },
+  "emailAdressLabel": {
+    "message": "Dirección de correo electrónico"
+  },
+  "subscribeLabel": {
+    "message": "Suscribirse"
+  },
+  "indicatesRequiredLabel": {
+    "message": "indica requerido"
   }
 }

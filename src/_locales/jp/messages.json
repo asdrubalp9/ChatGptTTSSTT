@@ -76,6 +76,72 @@
     },
     "resetDefault": {
       "message": "デフォルトにリセットする"
+    },
+    "noBackersLabel": {
+      "message": "まだバッカーはいません、"
+    },
+    "noBackersLabelLink": {
+      "message": "最初の1人になる"
+    },
+    "topSponsorsLabel": {
+      "message": "トップスポンサー"
+    },
+    "sponsorThisLabel": {
+      "message": "このプラグインをスポンサーに！それが"
+    },
+    "sponsorThisContinuomLabel": {
+      "message": "スパイウェアや広告から自由になるために！"
+    },
+    "popupConfigurationLabel": {
+      "message": "設定"
+    },
+    "optionsLinkLabel": {
+      "message": "情報ページを開く"
+    },
+    "aboutTheAuthorLabel": {
+      "message": "作者について"
+    },
+    "moreFeaturesSoonLabel": {
+      "message": "もっとすぐに機能が追加されます！"
+    },
+    "howToUsePluginLabel": {
+      "message": "このプラグインの使い方"
+    },
+    "aboutAuthorDescriptionLabel": {
+      "message": "こんにちは！私はJavaScript、PHP、HTML、CSS、およびjQueryに特化した5年以上の経験を持つフルスタックソフトウェア開発者です。リレーショナルデータベース、データベーススキーマ設計、MySQLに対する私の幅広い経験は、私が最も複雑な問題を容易に効率的に解決できることを可能にします。"
+    },
+    "checkOutMyLinkedInLabel": {
+      "message": "LinkedInで私をチェックしてみてください"
+    },
+    "freeOfSpywareLabel": {
+      "message": "スパイウェアと広告から自由です。"
+    },
+    "helpPluginsBeFree": {
+      "message": "私のプラグインが "
+    },
+    "sponsorMeOnPatreonLabel": {
+      "message": "PATREONで私をスポンサーに！"
+    },
+    "haveAnIdeaLabel": {
+      "message": "アイデアはありますか？"
+    },
+    "suggestFeaturesOrPluginsLabel": {
+      "message": "機能やプラグインを提案する"
+    },
+    "keepUpToDateLabel": {
+      "message": "最新の情報を入手しよう！"
+    },
+    "joinMailingListLabel": {
+      "message": "メーリングリストに参加して、私のプラグインや機能のニュースを送信します"
+    },
+    "emailAdressLabel": {
+      "message": "メールアドレス"
+    },
+    "subscribeLabel": {
+      "message": "購読する"
+    },
+    "indicatesRequiredLabel": {
+      "message": "必須を示します"
     }
   }
   

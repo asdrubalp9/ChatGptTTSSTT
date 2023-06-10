@@ -76,6 +76,72 @@
     },
     "resetDefault": {
       "message": "Auf Standard zurücksetzen"
+    },
+    "noBackersLabel": {
+      "message": "Es gibt noch keine Unterstützer,"
+    },
+    "noBackersLabelLink": {
+      "message": "Sei der Erste"
+    },
+    "topSponsorsLabel": {
+      "message": "TOP SPONSOREN"
+    },
+    "sponsorThisLabel": {
+      "message": "UNTERSTÜTZE DIESES PLUGIN! damit es"
+    },
+    "sponsorThisContinuomLabel": {
+      "message": "frei von Spyware und Werbung ist!"
+    },
+    "popupConfigurationLabel": {
+      "message": "Konfiguration"
+    },
+    "optionsLinkLabel": {
+      "message": "Informationsseite öffnen"
+    },
+    "aboutTheAuthorLabel": {
+      "message": "Über den Autor"
+    },
+    "moreFeaturesSoonLabel": {
+      "message": "BALD MEHR FUNKTIONEN!"
+    },
+    "howToUsePluginLabel": {
+      "message": "Wie man dieses Plugin verwendet"
+    },
+    "aboutAuthorDescriptionLabel": {
+      "message": "Hallo! Ich bin ein Fullstack Software Entwickler mit mehr als 5 Jahren Erfahrung, spezialisiert auf JavaScript, PHP, HTML, CSS und jQuery. Meine umfangreiche Erfahrung mit relationalen Datenbanken, Datenbankschemadesign und MySQL ermöglicht es mir, auch die komplexesten Probleme mit Leichtigkeit und Effizienz zu lösen."
+    },
+    "checkOutMyLinkedInLabel": {
+      "message": "Besuche mich auf LinkedIn"
+    },
+    "freeOfSpywareLabel": {
+      "message": "frei von Spyware und Werbung."
+    },
+    "helpPluginsBeFree": {
+      "message": "Hilf meinen Plugins, "
+    },
+    "sponsorMeOnPatreonLabel": {
+      "message": "UNTERSTÜTZE MICH AUF PATREON"
+    },
+    "haveAnIdeaLabel": {
+      "message": "Hast du eine Idee?"
+    },
+    "suggestFeaturesOrPluginsLabel": {
+      "message": "Schlage Funktionen oder Plugins vor"
+    },
+    "keepUpToDateLabel": {
+      "message": "Bleiben Sie auf dem Laufenden!"
+    },
+    "joinMailingListLabel": {
+      "message": "Treten Sie der Mailingliste bei und ich sende Ihnen Neuigkeiten zu meinen Plugins und Funktionen"
+    },
+    "emailAdressLabel": {
+      "message": "E-Mail-Adresse"
+    },
+    "subscribeLabel": {
+      "message": "Abonnieren"
+    },
+    "indicatesRequiredLabel": {
+      "message": "zeigt ein erforderliches Feld an"
     }
   }
   

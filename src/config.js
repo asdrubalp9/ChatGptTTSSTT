@@ -36,35 +36,35 @@ const config = [
     options: [
       {
         value: "en-US",
-        label: chrome.i18n.getMessage("English (United States)")
+        label: chrome.i18n.getMessage("englishUS")
       },
       {
         value: "es-ES",
-        label: chrome.i18n.getMessage("Spanish (Spain)")
+        label: chrome.i18n.getMessage("spanishSpain")
       },
       {
         value: "fr-FR",
-        label: chrome.i18n.getMessage("French (France)")
+        label: chrome.i18n.getMessage("frenchFrance")
       },
       {
         value: "de-DE",
-        label: chrome.i18n.getMessage("German (Germany)")
+        label: chrome.i18n.getMessage("germanGermany")
       },
       {
         value: "it-IT",
-        label: chrome.i18n.getMessage("Italian (Italy)")
+        label: chrome.i18n.getMessage("italianItaly")
       },
       {
         value: "ja-JP",
-        label: chrome.i18n.getMessage("Japanese (Japan)")
+        label: chrome.i18n.getMessage("japaneseJapan")
       },
       {
         value: "pt-BR",
-        label: chrome.i18n.getMessage("Portuguese (Brazil)")
+        label: chrome.i18n.getMessage("portugueseBrazil")
       },
       {
         value: "zh-CN",
-        label: chrome.i18n.getMessage("Chinese (China)")
+        label: chrome.i18n.getMessage("chineseChina")
       },
     ],
   },
@@ -152,35 +152,35 @@ const config = [
     options: [
       {
         value: "en-US",
-        label: chrome.i18n.getMessage("English (United States)")
+        label: chrome.i18n.getMessage("englishUS")
       },
       {
         value: "es-ES",
-        label: chrome.i18n.getMessage("Spanish (Spain)")
+        label: chrome.i18n.getMessage("spanishSpain")
       },
       {
         value: "fr-FR",
-        label: chrome.i18n.getMessage("French (France)")
+        label: chrome.i18n.getMessage("frenchFrance")
       },
       {
         value: "de-DE",
-        label: chrome.i18n.getMessage("German (Germany)")
+        label: chrome.i18n.getMessage("germanGermany")
       },
       {
         value: "it-IT",
-        label: chrome.i18n.getMessage("Italian (Italy)")
+        label: chrome.i18n.getMessage("italianItaly")
       },
       {
         value: "ja-JP",
-        label: chrome.i18n.getMessage("Japanese (Japan)")
+        label: chrome.i18n.getMessage("japaneseJapan")
       },
       {
         value: "pt-BR",
-        label: chrome.i18n.getMessage("Portuguese (Brazil)")
+        label: chrome.i18n.getMessage("portugueseBrazil")
       },
       {
         value: "zh-CN",
-        label: chrome.i18n.getMessage("Chinese (China)")
+        label: chrome.i18n.getMessage("chineseChina")
       },
     ],
   },

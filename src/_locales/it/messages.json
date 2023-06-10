@@ -76,6 +76,72 @@
     },
     "resetDefault": {
       "message": "Ripristina le impostazioni predefinite"
+    },
+    "noBackersLabel": {
+      "message": "Il n'y a pas encore de soutiens,"
+    },
+    "noBackersLabelLink": {
+      "message": "soyez le premier"
+    },
+    "topSponsorsLabel": {
+      "message": "MEILLEURS SPONSORS"
+    },
+    "sponsorThisLabel": {
+      "message": "SPONSORISEZ CE PLUGIN! pour qu'il soit"
+    },
+    "sponsorThisContinuomLabel": {
+      "message": "libre de logiciels espions et de publicités!"
+    },
+    "popupConfigurationLabel": {
+      "message": "Configuration"
+    },
+    "optionsLinkLabel": {
+      "message": "Ouvrir la page à propos"
+    },
+    "aboutTheAuthorLabel": {
+      "message": "À propos de l'auteur"
+    },
+    "moreFeaturesSoonLabel": {
+      "message": "PLUS DE FONCTIONNALITÉS BIENTÔT!"
+    },
+    "howToUsePluginLabel": {
+      "message": "Comment utiliser ce plugin"
+    },
+    "aboutAuthorDescriptionLabel": {
+      "message": "Bonjour! Je suis un développeur de logiciels Fullstack avec plus de 5 ans d'expérience, spécialisé en JavaScript, PHP, HTML, CSS et jQuery. Ma grande expérience avec les bases de données relationnelles, la conception de schémas de base de données et MySQL me permet de résoudre même les problèmes les plus complexes avec facilité et efficacité."
+    },
+    "checkOutMyLinkedInLabel": {
+      "message": "Vérifiez-moi sur LinkedIn"
+    },
+    "freeOfSpywareLabel": {
+      "message": "libre de logiciels espions et de publicités."
+    },
+    "helpPluginsBeFree": {
+      "message": "Aidez mes plugins à devenir "
+    },
+    "sponsorMeOnPatreonLabel": {
+      "message": "SPONSORISEZ-MOI SUR PATREON"
+    },
+    "haveAnIdeaLabel": {
+      "message": "Vous avez une idée?"
+    },
+    "suggestFeaturesOrPluginsLabel": {
+      "message": "Suggérez des fonctionnalités ou des plugins"
+    },
+    "keepUpToDateLabel": {
+      "message": "Restez à jour!"
+    },
+    "joinMailingListLabel": {
+      "message": "Rejoignez la liste de diffusion et je vous enverrai des nouvelles de mes plugins et fonctionnalités"
+    },
+    "emailAdressLabel": {
+      "message": "Adresse e-mail"
+    },
+    "subscribeLabel": {
+      "message": "S'abonner"
+    },
+    "indicatesRequiredLabel": {
+      "message": "indique requis"
     }
   }
   

@@ -76,5 +76,71 @@
   },
   "resetDefault": {
     "message": "Reset to default"
+  },
+  "noBackersLabel": {
+    "message": "There are no backers yet,"
+  },
+  "noBackersLabelLink": {
+    "message": "become the first one"
+  },
+  "topSponsorsLabel": {
+    "message": "TOP SPONSORS"
+  },
+  "sponsorThisLabel": {
+    "message": "SPONSOR THIS PLUGIN! for it to be"
+  },
+  "sponsorThisContinuomLabel": {
+    "message": "free of spyware and ads!"
+  },
+  "popupConfigurationLabel": {
+    "message": "Configuration"
+  },
+  "optionsLinkLabel": {
+    "message": "Open about page"
+  },
+  "aboutTheAuthorLabel": {
+    "message": "About the author"
+  },
+  "moreFeaturesSoonLabel": {
+    "message": "MORE FEATURES SOON!"
+  },
+  "howToUsePluginLabel": {
+    "message": "How to use this plugin"
+  },
+  "aboutAuthorDescriptionLabel": {
+    "message": "Hello! I'm a Fullstack Software Developer with over 5 years of experience, specialized in JavaScript, PHP, HTML, CSS, and jQuery. My extensive experience with relational databases, database schema design, and MySQL enables me to tackle even the most complex problems with ease and efficiency."
+  },
+  "checkOutMyLinkedInLabel": {
+    "message": "Check me out on linkedIn"
+  },
+  "freeOfSpywareLabel": {
+    "message": "free of spyware and ads."
+  },
+  "helpPluginsBeFree": {
+    "message": "Help my plugins become "
+  },
+  "sponsorMeOnPatreonLabel": {
+    "message": "SPONSOR ME ON PATREON"
+  },
+  "haveAnIdeaLabel": {
+    "message": "Have an idea?"
+  },
+  "suggestFeaturesOrPluginsLabel": {
+    "message": "Suggest features or plugins"
+  },
+  "keepUpToDateLabel": {
+    "message": "Keep up to date!"
+  },
+  "joinMailingListLabel": {
+    "message": "Join the mailing list and I'll send you news of my plugins and features"
+  },
+  "emailAdressLabel": {
+    "message": "Email address"
+  },
+  "subscribeLabel": {
+    "message": "Subscribe"
+  },
+  "indicatesRequiredLabel": {
+    "message": "indicates required"
   }
 }
