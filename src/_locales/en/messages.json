@@ -71,6 +71,9 @@
   "cssSelectorsInstruction": {
     "message": "Use css selectors to select the content of the HTML you want to redact and select the option to redact or not redact the content of the selected HTML element. To paste the content, just press ctrl+shift+Z and it will paste it in the prompt or press the button bellow the download chat button."
   },
+  "STTDescription": {
+    "message": "For voice to text, you have to press the microphone button at the prompt area or press L, once the window is open, you can press R to listen again, A to approve what it listened and escape to close the window."
+  },
   "resetDefault": {
     "message": "Reset to default"
   }

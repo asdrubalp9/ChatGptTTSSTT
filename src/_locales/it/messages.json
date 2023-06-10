@@ -71,6 +71,9 @@
     "cssSelectorsInstruction": {
       "message": "Utilizza i selettori CSS per selezionare il contenuto dell'HTML che vuoi censurare e seleziona l'opzione per censurare o non censurare il contenuto dell'elemento HTML selezionato. <br> Per incollare il contenuto, premi semplicemente ctrl+shift+Z e lo incollerà nel prompt o premi il pulsante sotto il pulsante di download della chat."
     },
+    "STTDescription": {
+      "message": "Per la conversione da voce a testo, devi premere il pulsante del microfono nell'area del prompt o premere L, una volta che la finestra è aperta, puoi premere R per ascoltare di nuovo, A per approvare ciò che ha ascoltato e escape per chiudere la finestra."
+    },
     "resetDefault": {
       "message": "Ripristina le impostazioni predefinite"
     }

@@ -71,6 +71,9 @@
   "cssSelectorsInstruction": {
     "message": "Utilice selectores CSS para seleccionar el contenido del HTML que desea redactar y seleccione la opción para redactar o no redactar el contenido del elemento HTML seleccionado. Para pegar el contenido, simplemente presione ctrl+shift+Z y se pegará en el indicador o presione el botón debajo del botón de descarga de chat."
   },
+  "STTDescription": {
+    "message": "Para convertir la voz a texto, tienes que presionar el botón del micrófono en el área de indicaciones o presionar L, una vez la ventana está abierta, puedes presionar R para escuchar de nuevo, A para aprobar lo escuchado y escape para cerrar la ventana."
+  },
   "resetDefault": {
     "message": "Restablecer a predeterminado"
   }

@@ -71,6 +71,9 @@
     "cssSelectorsInstruction": {
       "message": "Utilisez des sélecteurs CSS pour sélectionner le contenu du HTML que vous souhaitez rédiger et sélectionnez l'option pour rédiger ou non rédiger le contenu de l'élément HTML sélectionné. Pour coller le contenu, appuyez simplement sur ctrl+shift+Z et il sera collé dans l'invite ou appuyez sur le bouton en dessous du bouton de téléchargement du chat."
     },
+    "STTDescription": {
+      "message": "Pour la conversion de la voix en texte, vous devez appuyer sur le bouton du microphone dans la zone d'invite ou appuyer sur L, une fois que la fenêtre est ouverte, vous pouvez appuyer sur R pour réécouter, A pour approuver ce qu'il a écouté et échappement pour fermer la fenêtre."
+    },
     "resetDefault": {
       "message": "Réinitialiser par défaut"
     }

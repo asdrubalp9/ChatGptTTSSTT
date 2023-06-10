@@ -71,6 +71,9 @@
     "cssSelectorsInstruction": {
       "message": "Verwenden Sie CSS-Selektoren, um den Inhalt des HTML auszuwählen, den Sie zurücknehmen möchten, und wählen Sie die Option, den Inhalt des ausgewählten HTML-Elements zurückzunehmen oder nicht zurückzunehmen. Zum Einfügen des Inhalts drücken Sie einfach Strg+Umschalt+Z, und er wird in der Eingabeaufforderung eingefügt, oder drücken Sie die Taste unter der Chat-Download-Taste."
     },
+    "STTDescription": {
+      "message": "Um Sprache in Text umzuwandeln, müssen Sie die Mikrofontaste im Aufforderungsbereich drücken oder L drücken, sobald das Fenster geöffnet ist. Sie können R drücken, um erneut zuzuhören, A drücken, um das Gehörte zu bestätigen und Escape, um das Fenster zu schließen."
+    },
     "resetDefault": {
       "message": "Auf Standard zurücksetzen"
     }
