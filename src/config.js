@@ -5,7 +5,7 @@ const config = [
   },
   {
     name: 'autoTalk',
-    label: 'Talk as soon as chatGPT ends responding',
+    label: chrome.i18n.getMessage('talkAfterResponse'),
     htmlId: 'autoTalk',
     htmlclass: '',
     value: '',
@@ -14,19 +14,19 @@ const config = [
     Hint: '',
     options: [
       {
-        label: 'Always',
+        label: chrome.i18n.getMessage('always'),
         value: 'always',
       },
       {
-        label: 'Never',
+        label: chrome.i18n.getMessage('never'),
         value: 'never',
       },
     ],
   },
   {
     name: 'TTSlanguage',
-    label: 'Text To Speech language',
-    placeholder: 'Text To Speech language',
+    label: chrome.i18n.getMessage('TTSLanguage'),
+    placeholder: chrome.i18n.getMessage('TTSLanguage'),
     htmlId: 'TTSlanguage',
     htmlclass: '',
     value: '',
@@ -36,43 +36,43 @@ const config = [
     options: [
       {
         value: "en-US",
-        label: "English (United States)"
+        label: chrome.i18n.getMessage("English (United States)")
       },
       {
         value: "es-ES",
-        label: "Spanish (Spain)"
+        label: chrome.i18n.getMessage("Spanish (Spain)")
       },
       {
         value: "fr-FR",
-        label: "French (France)"
+        label: chrome.i18n.getMessage("French (France)")
       },
       {
         value: "de-DE",
-        label: "German (Germany)"
+        label: chrome.i18n.getMessage("German (Germany)")
       },
       {
         value: "it-IT",
-        label: "Italian (Italy)"
+        label: chrome.i18n.getMessage("Italian (Italy)")
       },
       {
         value: "ja-JP",
-        label: "Japanese (Japan)"
+        label: chrome.i18n.getMessage("Japanese (Japan)")
       },
       {
         value: "pt-BR",
-        label: "Portuguese (Brazil)"
+        label: chrome.i18n.getMessage("Portuguese (Brazil)")
       },
       {
         value: "zh-CN",
-        label: "Chinese (China)"
+        label: chrome.i18n.getMessage("Chinese (China)")
       },
     ],
   },
   
   {
     name: 'velocidad',
-    label: 'Set talking speed',
-    placeholder: 'Set talking speed',
+    label: chrome.i18n.getMessage('setTalkingSpeed'),
+    placeholder: chrome.i18n.getMessage('setTalkingSpeed'),
     htmlId: 'velocidad',
     htmlclass: '',
     value: '',
@@ -88,8 +88,8 @@ const config = [
     min:0, 
     max: 2,
     step: 0.1,
-    label: 'Ajustar tono de voz',
-    placeholder: 'Ajustar tono de voz',
+    label: chrome.i18n.getMessage("setVoiceTone"),
+    placeholder: chrome.i18n.getMessage("setVoiceTone"),
     htmlId: 'setTonada',
     htmlclass: '',
     value: '',
@@ -112,15 +112,15 @@ const config = [
 
   {
     type: 'separator',
-    label: 'Speech to text settings',
+    label: chrome.i18n.getMessage("STTSettings"),
   },
   {
     type: 'p',
-    label: 'For voice to text, you have to press the microphone button at the prompt area or press L, once the window is open, you can press R to listen again, A to approve what it listened and escape to close the window.',
+    label: chrome.i18n.getMessage("STTDescription"),
   },
   {
     name: 'autoFocus',
-    label: 'Auto focus on textarea when the text is approved',
+    label: chrome.i18n.getMessage("autoFocusAfterApproval"),
     htmlId: 'autoFocus',
     htmlclass: '',
     value: '',
@@ -129,11 +129,11 @@ const config = [
     Hint: '',
     options: [
       {
-        label: 'Always',
+        label: chrome.i18n.getMessage('always'),
         value: 'always',
       },
       {
-        label: 'Never',
+        label: chrome.i18n.getMessage('never'),
         value: 'never',
       },
     ],
@@ -141,8 +141,8 @@ const config = [
   
   {
     name: 'STTlanguage',
-    label: 'Speech Recognition language',
-    placeholder: 'Speech Recognition language',
+    label: chrome.i18n.getMessage("SRlanguage"),
+    placeholder: chrome.i18n.getMessage("SRlanguage"),
     htmlId: 'STTlanguage',
     htmlclass: '',
     value: '',
@@ -152,35 +152,35 @@ const config = [
     options: [
       {
         value: "en-US",
-        label: "English (United States)"
+        label: chrome.i18n.getMessage("English (United States)")
       },
       {
         value: "es-ES",
-        label: "Spanish (Spain)"
+        label: chrome.i18n.getMessage("Spanish (Spain)")
       },
       {
         value: "fr-FR",
-        label: "French (France)"
+        label: chrome.i18n.getMessage("French (France)")
       },
       {
         value: "de-DE",
-        label: "German (Germany)"
+        label: chrome.i18n.getMessage("German (Germany)")
       },
       {
         value: "it-IT",
-        label: "Italian (Italy)"
+        label: chrome.i18n.getMessage("Italian (Italy)")
       },
       {
         value: "ja-JP",
-        label: "Japanese (Japan)"
+        label: chrome.i18n.getMessage("Japanese (Japan)")
       },
       {
         value: "pt-BR",
-        label: "Portuguese (Brazil)"
+        label: chrome.i18n.getMessage("Portuguese (Brazil)")
       },
       {
         value: "zh-CN",
-        label: "Chinese (China)"
+        label: chrome.i18n.getMessage("Chinese (China)")
       },
     ],
   },
