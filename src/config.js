@@ -1,11 +1,11 @@
 const config = [
   {
     type: 'separator',
-    label: 'Configuración de Text to speech',
+    label: chrome.i18n.getMessage('configTextToSpeech'),
   },
   {
     name: 'autoTalk',
-    label: 'Talk as soon as chatGPT ends responding',
+    label: chrome.i18n.getMessage('talkAfterResponse'),
     htmlId: 'autoTalk',
     htmlclass: '',
     value: '',
@@ -14,20 +14,20 @@ const config = [
     Hint: '',
     options: [
       {
-        label: 'Always',
+        label: chrome.i18n.getMessage('always'),
         value: 'always',
       },
       {
-        label: 'Never',
+        label: chrome.i18n.getMessage('never'),
         value: 'never',
       },
     ],
   },
   {
-    name: 'language',
-    label: 'Text To Speech language',
-    placeholder: 'Text To Speech language',
-    htmlId: 'language',
+    name: 'TTSlanguage',
+    label: chrome.i18n.getMessage('TTSLanguage'),
+    placeholder: chrome.i18n.getMessage('TTSLanguage'),
+    htmlId: 'TTSlanguage',
     htmlclass: '',
     value: '',
     defaultValue: 'es-ES',
@@ -36,53 +36,47 @@ const config = [
     options: [
       {
         value: "en-US",
-        label: "English (United States)"
+        label: chrome.i18n.getMessage("englishUS")
       },
       {
         value: "es-ES",
-        label: "Spanish (Spain)"
+        label: chrome.i18n.getMessage("spanishSpain")
       },
       {
         value: "fr-FR",
-        label: "French (France)"
+        label: chrome.i18n.getMessage("frenchFrance")
       },
       {
         value: "de-DE",
-        label: "German (Germany)"
+        label: chrome.i18n.getMessage("germanGermany")
       },
       {
         value: "it-IT",
-        label: "Italian (Italy)"
+        label: chrome.i18n.getMessage("italianItaly")
       },
       {
         value: "ja-JP",
-        label: "Japanese (Japan)"
+        label: chrome.i18n.getMessage("japaneseJapan")
       },
       {
         value: "pt-BR",
-        label: "Portuguese (Brazil)"
+        label: chrome.i18n.getMessage("portugueseBrazil")
       },
       {
         value: "zh-CN",
-        label: "Chinese (China)"
+        label: chrome.i18n.getMessage("chineseChina")
       },
+      {
+        value: "hi-IN",
+        label: chrome.i18n.getMessage("hindiIndia")
+      }
     ],
   },
-  // {
-  //   name: 'setVoz',
-  //   label: 'Text To Speech language',
-  //   placeholder: 'Text To Speech language',
-  //   htmlId: 'setVoz',
-  //   htmlclass: '',
-  //   value: '',
-  //   defaultValue: 'es-ES',
-  //   type: 'voiceSelector',
-  //   Hint: '',
-  // },
+  
   {
     name: 'velocidad',
-    label: 'Set talking speed',
-    placeholder: 'Set talking speed',
+    label: chrome.i18n.getMessage('setTalkingSpeed'),
+    placeholder: chrome.i18n.getMessage('setTalkingSpeed'),
     htmlId: 'velocidad',
     htmlclass: '',
     value: '',
@@ -98,8 +92,8 @@ const config = [
     min:0, 
     max: 2,
     step: 0.1,
-    label: 'Ajustar tono de voz',
-    placeholder: 'Ajustar tono de voz',
+    label: chrome.i18n.getMessage("setVoiceTone"),
+    placeholder: chrome.i18n.getMessage("setVoiceTone"),
     htmlId: 'setTonada',
     htmlclass: '',
     value: '',
@@ -107,41 +101,129 @@ const config = [
     type: 'number',
     Hint: '',
   },
-
+// {
+  //   name: 'setVoz',
+  //   label: 'Text To Speech language',
+  //   placeholder: 'Text To Speech language',
+  //   htmlId: 'setVoz',
+  //   htmlclass: '',
+  //   value: '',
+  //   defaultValue: 'es-ES',
+  //   type: 'voiceSelector',
+  //   Hint: '',
+  // },
 
 
   {
     type: 'separator',
-    label: 'Speech to text settings',
+    label: chrome.i18n.getMessage("STTSettings"),
   },
   {
-    name: 'oneLiner',
-    label: 'Eliminate breakspaces, double spaces and new lines',
-    htmlId: 'oneLiner',
+    type: 'p',
+    label: chrome.i18n.getMessage("STTDescription"),
+  },
+  {
+    name: 'autoFocus',
+    label: chrome.i18n.getMessage("autoFocusAfterApproval"),
+    htmlId: 'autoFocus',
     htmlclass: '',
     value: '',
-    defaultValue: 'always',
+    defaultValue: 'never',
     type: 'radio',
     Hint: '',
     options: [
       {
-        label: 'Always',
+        label: chrome.i18n.getMessage('always'),
         value: 'always',
       },
       {
-        label: 'Never',
+        label: chrome.i18n.getMessage('never'),
         value: 'never',
       },
     ],
   },
+  
   {
-    type: 'separator',
-    label: 'Element Redaction',
+    name: 'STTlanguage',
+    label: chrome.i18n.getMessage("SRlanguage"),
+    placeholder: chrome.i18n.getMessage("SRlanguage"),
+    htmlId: 'STTlanguage',
+    htmlclass: '',
+    value: '',
+    defaultValue: 'es-ES',
+    type: 'select',
+    Hint: '',
+    options: [
+      {
+        value: "en-US",
+        label: chrome.i18n.getMessage("englishUS")
+      },
+      {
+        value: "es-ES",
+        label: chrome.i18n.getMessage("spanishSpain")
+      },
+      {
+        value: "fr-FR",
+        label: chrome.i18n.getMessage("frenchFrance")
+      },
+      {
+        value: "de-DE",
+        label: chrome.i18n.getMessage("germanGermany")
+      },
+      {
+        value: "it-IT",
+        label: chrome.i18n.getMessage("italianItaly")
+      },
+      {
+        value: "ja-JP",
+        label: chrome.i18n.getMessage("japaneseJapan")
+      },
+      {
+        value: "pt-BR",
+        label: chrome.i18n.getMessage("portugueseBrazil")
+      },
+      {
+        value: "zh-CN",
+        label: chrome.i18n.getMessage("chineseChina")
+      },
+      {
+        value: "hi-IN",
+        label: chrome.i18n.getMessage("hindiIndia")
+      }
+    ],
   },
-  {
-    type: 'p',
-    label: 'Use css selectors to select the content of the HTML you want to redact and select the option to redact or not redact the content of the selected HTML element. <br> To paste the content, just press ctrl+shift+Z and it will paste it in the prompt or press the button bellow the download chat button.',
-  },
+  
+  // {
+  //   name: 'continuousMode',
+  //   label: 'Set continuous mode',
+  //   placeholder: 'Set continuous mode',
+  //   htmlId: 'continuousMode',
+  //   htmlclass: '',
+  //   value: '',
+  //   defaultValue: 'false',
+  //   type: 'checkbox',
+  //   Hint: 'Whether continuous results are returned for each recognition, or only a single result',
+  // },
+  
+  // {
+  //   name: 'interimResults',
+  //   label: 'Set interim results',
+  //   placeholder: 'Set interim results',
+  //   htmlId: 'interimResults',
+  //   htmlclass: '',
+  //   value: '',
+  //   defaultValue: 'false',
+  //   type: 'checkbox',
+  //   Hint: 'Whether interim results should be returned (true) or not (false)',
+  // },
+  // {
+  //   type: 'separator',
+  //   label: 'Element Redaction',
+  // },
+  // {
+  //   type: 'p',
+  //   label: 'Use css selectors to select the content of the HTML you want to redact and select the option to redact or not redact the content of the selected HTML element. <br> To paste the content, just press ctrl+shift+Z and it will paste it in the prompt or press the button bellow the download chat button.',
+  // },
   // {
   //   type: 'button',
   //   class:"btn btn-warning",

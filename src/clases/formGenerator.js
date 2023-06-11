@@ -435,7 +435,7 @@ class FormGenerator {
     input.checked = Boolean(storedValue);
 
     input.addEventListener('change', (e) => {
-      chrome.storage.sync.set({ [field.name]: e.target.checked }, function () {
+      chrome.storage.sync.set({ [field.name]: e.target.checked }, () => {
         this.toast(`Value is set to ${e.target.checked}`);
       });
 

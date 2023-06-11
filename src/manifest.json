@@ -1,17 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "Talk to ChatGPT",
+  "name": "SonicGPT Free MultiLanguage ChatGPT",
   "version": "1.0",
-  "description": "Talk to ChatGPT",
+  "description": "Talk and listen to ChatGPT in your language! in any language!",
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
-    "downloads",
     "audio",
     "storage",
-    "scripting",
-    "tabs",
-    "notifications"
+    "scripting"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -30,7 +25,7 @@
     "48": "icon48.png",
     "128": "icon128.png"
   },
-  "default_locale": "es",
+  "default_locale": "en",
   "content_scripts": [
     {
       "matches": ["*://*.openai.com/*"],

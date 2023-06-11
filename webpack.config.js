@@ -2,6 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 
 module.exports = (env, argv) => {
@@ -41,6 +42,10 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
+      new WebpackBuildNotifierPlugin({
+        title: "TTS PLUGIN",
+        suppressSuccess: false,
+      }),
       ...(isZipable ? [new ZipPlugin({
           filename: 'ChatGptRedactor.zip',
           compression: 'DEFLATE',

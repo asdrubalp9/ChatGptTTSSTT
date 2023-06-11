@@ -1,6 +1,6 @@
 import { config } from '../config.js';
 import ConfigHandler from './ConfigHandler.js';
-import ElementMonitor from './ElementMonitor.js'; // import the ElementMonitor class
+import ElementMonitor from './ElementMonitor.js';
 import TextoAVoz from './TextoAVoz.js';
 
 export default class TalkingButtons extends TextoAVoz {
@@ -17,11 +17,17 @@ export default class TalkingButtons extends TextoAVoz {
 
     initTalkingButtons() {
         console.log('init talking buttons')
-        this.elementMonitor = new ElementMonitor(/^$/i, /(3.4|4|GPT)/i, "createTalkingButton", document, 'main div.overflow-hidden > div > div > div > div', 200);
-        document.addEventListener(this.elementMonitor.eventName, () => {
-            console.log('event listener talking buttons')
+        const elementMonitor = new ElementMonitor(/^$/i, /(3.4|4|GPT)/i, "createTalkingButton", document, 'main div.overflow-hidden > div > div > div > div', 200);
+        document.addEventListener(elementMonitor.eventName, () => {
+            console.log('event listener createTalkingButton')
             this.createTalkingButton();
         });
+        const addExtraTalkingBtns = new ElementMonitor(/(Stop generating)/i, /(Regenerate response|New response|There was an error generating a response|Generate new response)/i, "addExtraTalkingBtns", document, 'FORM', 200);
+        document.addEventListener(addExtraTalkingBtns.eventName, () => {
+            console.log('event listener addExtraTalkingBtns')
+            this.createTalkingButton();
+        });
+
 
         const checkMainIsPresent = setInterval(() => {
             const element = document.querySelector('main .group.bg-gray-50:nth-child(odd)');
@@ -34,7 +40,6 @@ export default class TalkingButtons extends TextoAVoz {
     }
 
     createTalkingButton() {
-        console.log('createTalkingButton')
         const sectores = document.querySelectorAll('main .group.bg-gray-50:nth-child(odd)')
         sectores.forEach(sector => {
 

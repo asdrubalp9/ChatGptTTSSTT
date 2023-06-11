@@ -1,11 +1,215 @@
 {
-    "defaultLanguage": {
-      "message": "en-US",
-      "description": "Default language for the extension"
-    },
-    "options": {
-      "message": "English (United States)",
-      "description": "Language option displayed in the settings"
-    }
+  "configTextToSpeech": {
+    "message": "Text to speech settings"
+  },
+  "talkAfterResponse": {
+    "message": "Talk as soon as chatGPT ends responding"
+  },
+  "always": {
+    "message": "Always"
+  },
+  "never": {
+    "message": "Never"
+  },
+  "TTSLanguage": {
+    "message": "Text To Speech language"
+  },
+  "englishUS": {
+    "message": "English (United States)"
+  },
+  "spanishSpain": {
+    "message": "Spanish (Spain)"
+  },
+  "frenchFrance": {
+    "message": "French (France)"
+  },
+  "germanGermany": {
+    "message": "German (Germany)"
+  },
+  "italianItaly": {
+    "message": "Italian (Italy)"
+  },
+  "japaneseJapan": {
+    "message": "Japanese (Japan)"
+  },
+  "portugueseBrazil": {
+    "message": "Portuguese (Brazil)"
+  },
+  "chineseChina": {
+    "message": "Chinese (China)"
+  },
+  "setTalkingSpeed": {
+    "message": "Set talking speed"
+  },
+  "setVoiceTone": {
+    "message": "Adjust voice tone"
+  },
+  "STTSettings": {
+    "message": "Speech to text settings"
+  },
+  "autoFocusAfterApproval": {
+    "message": "Auto focus on textarea when the text is approved"
+  },
+  "SRlanguage": {
+    "message": "Speech Recognition language"
+  },
+  "setContinuousMode": {
+    "message": "Set continuous mode"
+  },
+  "continuousModeHint": {
+    "message": "Whether continuous results are returned for each recognition, or only a single result"
+  },
+  "setInterimResults": {
+    "message": "Set interim results"
+  },
+  "interimResultsHint": {
+    "message": "Whether interim results should be returned (true) or not (false)"
+  },
+  "elementRedaction": {
+    "message": "Element Redaction"
+  },
+  "cssSelectorsInstruction": {
+    "message": "Use css selectors to select the content of the HTML you want to redact and select the option to redact or not redact the content of the selected HTML element. To paste the content, just press ctrl+shift+Z and it will paste it in the prompt or press the button bellow the download chat button."
+  },
+  "STTDescription": {
+    "message": "For voice to text, you have to press the microphone button at the prompt area or press L, once the window is open, you can press R to listen again, A to approve what it listened and escape to close the window."
+  },
+  "resetDefault": {
+    "message": "Reset to default"
+  },
+  "noBackersLabel": {
+    "message": "There are no backers yet,"
+  },
+  "noBackersLabelLink": {
+    "message": "become the first one"
+  },
+  "topSponsorsLabel": {
+    "message": "TOP SPONSORS"
+  },
+  "sponsorThisLabel": {
+    "message": "SPONSOR THIS PLUGIN! for it to be"
+  },
+  "sponsorThisContinuomLabel": {
+    "message": "free of spyware and ads!"
+  },
+  "popupConfigurationLabel": {
+    "message": "Configuration"
+  },
+  "optionsLinkLabel": {
+    "message": "Open about page"
+  },
+  "aboutTheAuthorLabel": {
+    "message": "About the author"
+  },
+  "moreFeaturesSoonLabel": {
+    "message": "MORE FEATURES SOON!"
+  },
+  "howToUsePluginLabel": {
+    "message": "How to use this plugin"
+  },
+  "aboutAuthorDescriptionLabel": {
+    "message": "Hello! I'm a Fullstack Software Developer with over 5 years of experience, specialized in JavaScript, PHP, HTML, CSS, and jQuery. My extensive experience with relational databases, database schema design, and MySQL enables me to tackle even the most complex problems with ease and efficiency."
+  },
+  "checkOutMyLinkedInLabel": {
+    "message": "Check me out on linkedIn"
+  },
+  "freeOfSpywareLabel": {
+    "message": "free of spyware and ads."
+  },
+  "helpPluginsBeFree": {
+    "message": "Help my plugins become "
+  },
+  "sponsorMeOnPatreonLabel": {
+    "message": "SPONSOR ME ON PATREON"
+  },
+  "haveAnIdeaLabel": {
+    "message": "Have an idea?"
+  },
+  "suggestFeaturesOrPluginsLabel": {
+    "message": "Suggest features or plugins"
+  },
+  "keepUpToDateLabel": {
+    "message": "Keep up to date!"
+  },
+  "joinMailingListLabel": {
+    "message": "Join the mailing list and I'll send you news of my plugins and features"
+  },
+  "emailAdressLabel": {
+    "message": "Email address"
+  },
+  "subscribeLabel": {
+    "message": "Subscribe"
+  },
+  "indicatesRequiredLabel": {
+    "message": "indicates required"
+  },
+  "hindiIndia": {
+    "message": "Hindi (India)"
+  },
+  "PressAToApprove": {
+    "message": "Press A to approve"   
+  },
+  "PressRToRestart": {
+    "message": "Restart pressing R"
+  },
+  "PressEscToCancel": {
+    "message": "Cancel pressing ESC"
+  },
+  "HowToLabel": {
+    "message": "How to"
+  },
+  "beInTheLoopLabel": {
+    "message": "Be in the loop!"
+  },
+  "FeaturesLabel": {
+    "message": "Features"
+  },
+  "feature1Label": {
+    "message": "Experience a fully hands-free interaction with ChatGPT. Our plugin features a configurable option that allows ChatGPT to automatically read aloud all responses as they are generated. This feature is particularly useful for individuals with motor limitations, fostering an inclusive user experience."
+  },
+  "feature2Label": {
+    "message": "Multilingual by nature, our plugin lets you speak and listen in eight languages: English, Spanish, German, Portuguese, French, Italian, Japanese and Hindi. Whether you want to communicate in your mother tongue or explore a new one, we're here to make it possible."
+  },
+  "feature3Label": {
+    "message": "Boost your efficiency with our hotkeys. These keys allow for swift and effective interaction, taking your experience to an entirely new level. This accessible design facilitates the use of the plugin, especially for those with motor challenges."
+  },
+  "feature4Label": {
+    "message": "Customize your experience with the ability to adjust the voice tone and speed to your liking. Whether you prefer a quick, energetic conversation or a smooth, slow chat, we provide the tools to make it happen."
+  },
+  "feature5Label": {
+    "message": "Our auto-text approval feature after listening eliminates the need for manual transcription, which is especially helpful for people with visual or motor disabilities. This accessibility-focused approach helps us ensure all users can enjoy a seamless interaction with ChatGPT."
+  },
+  "feature6Label": {
+    "message": "Best of all, all these amazing features are offered entirely for free. Be it for voice-to-text conversion or text-to-voice, we strive to provide the best tools without imposing any cost barrier. With our plugin, an inclusive and accessible interaction with ChatGPT is within everyone's reach."
+  },
+  "defaultConfigurationLabel": {
+    "message": "There's a default configuration already, but you can customize it to your liking. Just click on the plugin icon and adjust the values as you wish."
+  },
+  "chatGptSpeakingLabel": {
+    "message": "To enable or disable the function of ChatGPT speaking out its response as soon as it finishes, just click on the icon."
+  },
+  "microphoneButtonLabel": {
+    "message": "To speak, you can click on the microphone button in the prompt area, and a window will open in listening mode. You can start speaking and the text will appear in the modal."
+  },
+  "approveTextLabel": {
+    "message": "After the text appears in the modal, you can click on the green button to approve the text and it will appear in the chat prompt. You can also hit the dark button to try again, or press the red button to cancel."
+  },
+  "listeningCircleLabel": {
+    "message": "If the circle in the modal turns orange, it means you can speak and it will convert your speech into text."
+  },
+  "notListeningLabel": {
+    "message": "When it shows this, it means it's no longer listening and you can approve the text or press R or the dark button to reactivate listening mode."
+  },
+  "hotkeysLabel": {
+    "message": "There are also hotkeys to make interaction faster. You can press ESC to cancel listening mode, R to restart, A to approve the text, and L to avoid having to click on the microphone (the cursor should not be in the prompt area)."
+  },
+  "cancelGptSpeakingLabel": {
+    "message": "Additionally, if ChatGPT is speaking its response, you can cancel it by pressing escape or clicking on the red button, or pause it by clicking on the pause button."
+  },
+  "refreshPageLabel": {
+    "message": "If you notice that the plugin is not working properly, you just need to refresh the page by pressing ctrl+r or the f5 key."
+  },
+  "shortDescriptionLabel": {
+    "message": "Talk and listen to ChatGPT in your language!"
   }
-  
+}
