@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
-import copy from 'vite-plugin-copy'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
+const path = require('path');
 
 export default defineConfig({
   build: {
@@ -12,7 +13,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    copy({
+    viteStaticCopy({
       targets: [
         { src: path.join(__dirname, 'src', 'manifest.json'), dest: path.join(__dirname, 'dist') },
         { src: path.join(__dirname, 'src', 'icon16.png'), dest: path.join(__dirname, 'dist') },
@@ -24,7 +25,6 @@ export default defineConfig({
         { src: path.join(__dirname, 'src', 'clases'), dest: path.join(__dirname, 'dist', 'clases') },
         { src: path.join(__dirname, 'src', '_locales'), dest: path.join(__dirname, 'dist', '_locales') },
       ],
-      hook: 'writeBundle' // ensure the files are copied after the bundle is written
     }),
   ],
   css: {

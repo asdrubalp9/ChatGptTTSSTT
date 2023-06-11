@@ -5,7 +5,7 @@ export default class VozATexto {
     constructor() {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         this.recognition = new SpeechRecognition();
-        this.recognition.lang = 'es-ES';
+        this.recognition.lang = 'en-US';
         this.recognition.interimResults = false;
         this.microphoneStream = null;
         this.settings = {};
@@ -26,7 +26,9 @@ export default class VozATexto {
             const tagName = document.activeElement.tagName.toLowerCase();
             if (tagName !== 'input' && tagName !== 'textarea') {
                 if (e.key === 'Escape') {
-                    this.stopListening();
+                    if(this.listeningDiv){
+                        this.stopListening();
+                    }
                 }
             }
         })
@@ -34,9 +36,7 @@ export default class VozATexto {
             const tagName = document.activeElement.tagName.toLowerCase();
             if (tagName !== 'input' && tagName !== 'textarea') {
                 if (e.key === 'l') {
-                    if(!this.listeningDiv){
-                        this.startListening();
-                    }
+                    this.startListening();
                 }
             }
         })
@@ -54,7 +54,9 @@ export default class VozATexto {
             const tagName = document.activeElement.tagName.toLowerCase();
             if (tagName !== 'input' && tagName !== 'textarea') {
                 if (e.key === 'a') {
-                    this.aprovedText();
+                    if(this.listeningDiv){
+                        this.aprovedText();
+                    }
                 }
             }
         })

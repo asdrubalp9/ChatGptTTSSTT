@@ -34,6 +34,7 @@
     "zip-webpack-plugin": "^4.0.1"
   },
   "dependencies": {
+    "vite-plugin-static-copy": "^0.16.0",
     "webpack-build-notifier": "^2.3.0"
   }
 }

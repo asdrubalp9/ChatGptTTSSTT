@@ -5,7 +5,7 @@ export default class TextoAVoz {
     this.utterance = new SpeechSynthesisUtterance();
     this.settings = {};
     this.state = 'playing';
-    this.utterance.lang = "es-ES";
+    this.utterance.lang = "en-US";
     this.initialized = this.init();
 
     chrome.storage.onChanged.addListener((changes, areaName) => {
@@ -67,12 +67,12 @@ export default class TextoAVoz {
   }
 
   setVelocidad() {
-    this.utterance.rate = this.settings.velocidad.value;
+    this.utterance.rate = this.settings.velocidad;
 
   }
 
   setTonada() {
-    this.utterance.pitch = this.settings.setTonada.value;
+    this.utterance.pitch = this.settings.setTonada;
   }
   
   textToSpeechWindow(content) {

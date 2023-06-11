@@ -44,7 +44,7 @@ module.exports = (env, argv) => {
     plugins: [
       new WebpackBuildNotifierPlugin({
         title: "TTS PLUGIN",
-        suppressSuccess: false, // don't spam success notifications
+        suppressSuccess: false,
       }),
       ...(isZipable ? [new ZipPlugin({
           filename: 'ChatGptRedactor.zip',
