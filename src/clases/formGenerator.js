@@ -339,16 +339,18 @@ class FormGenerator {
     inputElement.placeholder = field?.placeholder || '';
 
     const storedValue = await this.getStoredValue(field.name, field.defaultValue);
-    console.log('storedValue', storedValue);
-    inputElement.value = storedValue.value;
+    inputElement.value = storedValue;
 
     inputElement.addEventListener('change', (e) => {
       
+      // const setting = {
+      //                     [field.name]: {
+      //                                     //setting: e.target.closest('.row').querySelector('.row [type="radio"]:checked').value,
+      //                                     value: e.target.value,
+      //                                   }
+      //                   }
       const setting = {
-                          [field.name]: {
-                                          //setting: e.target.closest('.row').querySelector('.row [type="radio"]:checked').value,
-                                          value: e.target.value,
-                                        }
+                          [field.name]: e.target.value,
                         }
       chrome.storage.sync.set(setting, () => {
         this.toast(`Value is set to ${e.target.value}`);

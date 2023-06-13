@@ -4,9 +4,7 @@
   "version": "1.0",
   "description": "Talk and listen to ChatGPT in your language! in any language!",
   "permissions": [
-    "audio",
-    "storage",
-    "scripting"
+    "storage"
   ],
   "action": {
     "default_popup": "popup.html",

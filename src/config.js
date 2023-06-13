@@ -1,11 +1,13 @@
+import { geti18nMessage } from "./helpers";
+
 const config = [
   {
     type: 'separator',
-    label: chrome.i18n.getMessage('configTextToSpeech'),
+    label: geti18nMessage('configTextToSpeech'),
   },
   {
     name: 'autoTalk',
-    label: chrome.i18n.getMessage('talkAfterResponse'),
+    label: geti18nMessage('talkAfterResponse'),
     htmlId: 'autoTalk',
     htmlclass: '',
     value: '',
@@ -14,19 +16,19 @@ const config = [
     Hint: '',
     options: [
       {
-        label: chrome.i18n.getMessage('always'),
+        label: geti18nMessage('always'),
         value: 'always',
       },
       {
-        label: chrome.i18n.getMessage('never'),
+        label: geti18nMessage('never'),
         value: 'never',
       },
     ],
   },
   {
     name: 'TTSlanguage',
-    label: chrome.i18n.getMessage('TTSLanguage'),
-    placeholder: chrome.i18n.getMessage('TTSLanguage'),
+    label: geti18nMessage('TTSLanguage'),
+    placeholder: geti18nMessage('TTSLanguage'),
     htmlId: 'TTSlanguage',
     htmlclass: '',
     value: '',
@@ -36,47 +38,47 @@ const config = [
     options: [
       {
         value: "en-US",
-        label: chrome.i18n.getMessage("englishUS")
+        label: geti18nMessage("englishUS")
       },
       {
         value: "es-ES",
-        label: chrome.i18n.getMessage("spanishSpain")
+        label: geti18nMessage("spanishSpain")
       },
       {
         value: "fr-FR",
-        label: chrome.i18n.getMessage("frenchFrance")
+        label: geti18nMessage("frenchFrance")
       },
       {
         value: "de-DE",
-        label: chrome.i18n.getMessage("germanGermany")
+        label: geti18nMessage("germanGermany")
       },
       {
         value: "it-IT",
-        label: chrome.i18n.getMessage("italianItaly")
+        label: geti18nMessage("italianItaly")
       },
       {
         value: "ja-JP",
-        label: chrome.i18n.getMessage("japaneseJapan")
+        label: geti18nMessage("japaneseJapan")
       },
       {
         value: "pt-BR",
-        label: chrome.i18n.getMessage("portugueseBrazil")
+        label: geti18nMessage("portugueseBrazil")
       },
       {
         value: "zh-CN",
-        label: chrome.i18n.getMessage("chineseChina")
+        label: geti18nMessage("chineseChina")
       },
       {
         value: "hi-IN",
-        label: chrome.i18n.getMessage("hindiIndia")
+        label: geti18nMessage("hindiIndia")
       }
     ],
   },
   
   {
     name: 'velocidad',
-    label: chrome.i18n.getMessage('setTalkingSpeed'),
-    placeholder: chrome.i18n.getMessage('setTalkingSpeed'),
+    label: geti18nMessage('setTalkingSpeed'),
+    placeholder: geti18nMessage('setTalkingSpeed'),
     htmlId: 'velocidad',
     htmlclass: '',
     value: '',
@@ -92,8 +94,8 @@ const config = [
     min:0, 
     max: 2,
     step: 0.1,
-    label: chrome.i18n.getMessage("setVoiceTone"),
-    placeholder: chrome.i18n.getMessage("setVoiceTone"),
+    label: geti18nMessage("setVoiceTone"),
+    placeholder: geti18nMessage("setVoiceTone"),
     htmlId: 'setTonada',
     htmlclass: '',
     value: '',
@@ -116,15 +118,15 @@ const config = [
 
   {
     type: 'separator',
-    label: chrome.i18n.getMessage("STTSettings"),
+    label: geti18nMessage("STTSettings"),
   },
   {
     type: 'p',
-    label: chrome.i18n.getMessage("STTDescription"),
+    label: geti18nMessage("STTDescription"),
   },
   {
     name: 'autoFocus',
-    label: chrome.i18n.getMessage("autoFocusAfterApproval"),
+    label: geti18nMessage("autoFocusAfterApproval"),
     htmlId: 'autoFocus',
     htmlclass: '',
     value: '',
@@ -133,11 +135,11 @@ const config = [
     Hint: '',
     options: [
       {
-        label: chrome.i18n.getMessage('always'),
+        label: geti18nMessage('always'),
         value: 'always',
       },
       {
-        label: chrome.i18n.getMessage('never'),
+        label: geti18nMessage('never'),
         value: 'never',
       },
     ],
@@ -145,8 +147,8 @@ const config = [
   
   {
     name: 'STTlanguage',
-    label: chrome.i18n.getMessage("SRlanguage"),
-    placeholder: chrome.i18n.getMessage("SRlanguage"),
+    label: geti18nMessage("SRlanguage"),
+    placeholder: geti18nMessage("SRlanguage"),
     htmlId: 'STTlanguage',
     htmlclass: '',
     value: '',
@@ -156,39 +158,39 @@ const config = [
     options: [
       {
         value: "en-US",
-        label: chrome.i18n.getMessage("englishUS")
+        label: geti18nMessage("englishUS")
       },
       {
         value: "es-ES",
-        label: chrome.i18n.getMessage("spanishSpain")
+        label: geti18nMessage("spanishSpain")
       },
       {
         value: "fr-FR",
-        label: chrome.i18n.getMessage("frenchFrance")
+        label: geti18nMessage("frenchFrance")
       },
       {
         value: "de-DE",
-        label: chrome.i18n.getMessage("germanGermany")
+        label: geti18nMessage("germanGermany")
       },
       {
         value: "it-IT",
-        label: chrome.i18n.getMessage("italianItaly")
+        label: geti18nMessage("italianItaly")
       },
       {
         value: "ja-JP",
-        label: chrome.i18n.getMessage("japaneseJapan")
+        label: geti18nMessage("japaneseJapan")
       },
       {
         value: "pt-BR",
-        label: chrome.i18n.getMessage("portugueseBrazil")
+        label: geti18nMessage("portugueseBrazil")
       },
       {
         value: "zh-CN",
-        label: chrome.i18n.getMessage("chineseChina")
+        label: geti18nMessage("chineseChina")
       },
       {
         value: "hi-IN",
-        label: chrome.i18n.getMessage("hindiIndia")
+        label: geti18nMessage("hindiIndia")
       }
     ],
   },
