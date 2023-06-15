@@ -1,7 +1,11 @@
 import FormGenerator from './clases/FormGenerator.js';
 import { config } from './config.js';
 import bootstrap from 'bootstrap';
+import ConfigHandler from './clases/ConfigHandler.js'
 
+const configHandler = ConfigHandler
+
+document.getElementById('version').textContent = configHandler.displayVersion();
 
 const formGenerator = new FormGenerator('optionScreen', config);
 formGenerator.generateForm().then(() => {

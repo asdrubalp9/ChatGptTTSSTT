@@ -20,6 +20,11 @@ export default class ConfigHandler {
     return handler;
   }
 
+  static displayVersion() {
+    let manifestData = chrome.runtime.getManifest ? chrome.runtime.getManifest() : browser.runtime.getManifest();
+    return manifestData.version;
+  }
+
   getSettings() {
     return new Promise((resolve, reject) => {
       
