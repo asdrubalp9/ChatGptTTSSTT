@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SonicGPT Free MultiLanguage ChatGPT",
-  "version": "1.02",
+  "version": "1.03",
   "description": "Talk and listen to ChatGPT in your language! in any language!",
   "permissions": [
     "storage"
@@ -13,9 +13,6 @@
       "48": "icon48.png",
       "128": "icon128.png"
     }
-  },
-  "background": {
-    "service_worker": "background.js"
   },
   "options_page": "options.html",
   "icons": {
@@ -32,5 +29,8 @@
   ],
   "host_permissions": [
     "*://chat.openai.com/*"
-  ]
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 }

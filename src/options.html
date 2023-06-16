@@ -1,480 +1,433 @@
 <html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<!--
-  <meta name="theme-color" content="#712cf9">
--->
+    <style>
+      .container {
+      max-width: 960px;
+    }
 
+    .icon-link > .bi {
+      width: .75em;
+      height: .75em;
+    }
 
-  <style>
-    .container {
-    max-width: 960px;
-  }
+    .site-header {
+      background-color: rgba(0, 0, 0, .85);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+    .site-header a {
+      color: #8e8e8e;
+      transition: color .15s ease-in-out;
+    }
+    .site-header a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
 
-  .icon-link > .bi {
-    width: .75em;
-    height: .75em;
-  }
+    .product-device {
+      position: absolute;
+      right: 10%;
+      bottom: -30%;
+      width: 300px;
+      height: 540px;
+      background-color: #333;
+      border-radius: 21px;
+      transform: rotate(30deg);
+    }
 
-  /*
-  * Custom translucent site header
-  */
+    .product-device::before {
+      position: absolute;
+      top: 10%;
+      right: 10px;
+      bottom: 10%;
+      left: 10px;
+      content: "";
+      background-color: rgba(255, 255, 255, .1);
+      border-radius: 5px;
+    }
 
-  .site-header {
-    background-color: rgba(0, 0, 0, .85);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-  }
-  .site-header a {
-    color: #8e8e8e;
-    transition: color .15s ease-in-out;
-  }
-  .site-header a:hover {
-    color: #fff;
-    text-decoration: none;
-  }
+    .product-device-2 {
+      top: -25%;
+      right: auto;
+      bottom: 0;
+      left: 5%;
+      background-color: #e5e5e5;
+    }
 
-  /*
-  * Dummy devices (replace them with your own or something else entirely!)
-  */
-
-  .product-device {
-    position: absolute;
-    right: 10%;
-    bottom: -30%;
-    width: 300px;
-    height: 540px;
-    background-color: #333;
-    border-radius: 21px;
-    transform: rotate(30deg);
-  }
-
-  .product-device::before {
-    position: absolute;
-    top: 10%;
-    right: 10px;
-    bottom: 10%;
-    left: 10px;
-    content: "";
-    background-color: rgba(255, 255, 255, .1);
-    border-radius: 5px;
-  }
-
-  .product-device-2 {
-    top: -25%;
-    right: auto;
-    bottom: 0;
-    left: 5%;
-    background-color: #e5e5e5;
-  }
-
-
-  /*
-  * Extra utilities
-  */
-
-  .flex-equal > * {
-    flex: 1;
-  }
-  @media (min-width: 768px) {
-    .flex-md-equal > * {
+    .flex-equal > * {
       flex: 1;
     }
-  }
-
-  .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
+    @media (min-width: 768px) {
+      .flex-md-equal > * {
+        flex: 1;
+      }
     }
-  }
 
-  .b-example-divider {
-    width: 100%;
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-  }
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
 
-  .b-example-vr {
-    flex-shrink: 0;
-    width: 1.5rem;
-    height: 100vh;
-  }
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
 
-  .bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-  }
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
 
-  .nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
-    overflow-y: hidden;
-  }
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
 
-  .nav-scroller .nav {
-    display: flex;
-    flex-wrap: nowrap;
-    padding-bottom: 1rem;
-    margin-top: -1px;
-    overflow-x: auto;
-    text-align: center;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
 
-  .btn-bd-primary {
-    --bd-violet-bg: #712cf9;
-    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
 
-    --bs-btn-font-weight: 600;
-    --bs-btn-color: var(--bs-white);
-    --bs-btn-bg: var(--bd-violet-bg);
-    --bs-btn-border-color: var(--bd-violet-bg);
-    --bs-btn-hover-color: var(--bs-white);
-    --bs-btn-hover-bg: #6528e0;
-    --bs-btn-hover-border-color: #6528e0;
-    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-    --bs-btn-active-color: var(--bs-btn-hover-color);
-    --bs-btn-active-bg: #5a23c8;
-    --bs-btn-active-border-color: #5a23c8;
-  }
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
 
-  .bd-mode-toggle {
-    z-index: 1500;
-  }
-  .droportrait {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  </style>
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
 
-  <!-- Custom styles for this template -->
-  <link href="css/product.css" rel="stylesheet">
-  
-</head>
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+    .droportrait {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #mc_embed_signup {
+      background: #fff;
+      clear: left;
+      font: 14px Helvetica, Arial, sans-serif;
+      width: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    
 
-<body>
-  
+    <header class="site-header sticky-top py-1">
+      <nav class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="#howto" data-i18n="HowToLabel"></a>
+        <a class="py-2 d-none d-md-inline-block" href="#author" data-i18n="aboutTheAuthorLabel"></a>
+        <a class="py-2 d-none d-md-inline-block" href="#theLoop" data-i18n="haveAnIdeaLabel"></a>
+        <a class="py-2 d-none d-md-inline-block" href="#theLoop" data-i18n="beInTheLoopLabel"></a>
+      </nav>
+    </header>
 
-  <header class="site-header sticky-top py-1">
-    <nav class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="#howto" data-i18n="HowToLabel">How to</a>
-      <a class="py-2 d-none d-md-inline-block" href="#author" data-i18n="aboutTheAuthorLabel">About the author</a>
-      <a class="py-2 d-none d-md-inline-block" href="#theLoop" data-i18n="haveAnIdeaLabel">Have an idea?</a>
-      <a class="py-2 d-none d-md-inline-block" href="#theLoop" data-i18n="beInTheLoopLabel">Be in the loop!</a>
-    </nav>
-  </header>
-
-  <main class="container-fluid">
-    <div class="row bg-body-tertiary d-flex justify-content-between d-flex justify-content-around" >
-      <div class="col-md-3 mx-auto d-flex justify-content-center align-items-center">
-        <img src="images/icon128.png" alt="logo" style="height: 302px;">
-      </div>
-      <div class="col-md-6 d-flex align-items-center justify-content-center text-center">
-        <div>
-          <h1 class="display-4 fw-normal text-center">
-            SonicGPT
-          </h1>
-          <p class="lead fw-normal" data-i18n="shortDescriptionLabel">
-          </p>
-          <p class="lead fw-normal" data-i18n="FeaturesLabel">
-            Features
-          </p>
-          <ul class="text-start">
-            <li data-i18n="feature1Label">
-            </li>
-            <li data-i18n="feature2Label">
-            </li>
-            <li data-i18n="feature3Label">
-            </li>
-            <li data-i18n="feature4Label">
-            </li>
-            <li data-i18n="feature5Label">
-            </li>
-            <li data-i18n="feature6Label">
-            </li>
-          </ul>
-          <p class=" fw-normal text-center text-danger" href="#" data-i18n="moreFeaturesSoonLabel">MORE FEATURES COMING SOON!</p>
+    <main class="container-fluid">
+      <div class="row bg-body-tertiary d-flex justify-content-between d-flex justify-content-around" >
+        <div class="col-md-3 mx-auto d-flex justify-content-center align-items-center">
+          <img src="images/icon128.png" alt="logo" style="height: 302px;">
         </div>
-      </div>
-    </div>
-    <a name="howto"></a>
-    <div class="row bg-body-tertiary d-flex justify-content-between d-flex justify-content-around" >
-      <div class="col-md-6 d-flex align-items-center justify-content-center text-center">
-        <div>
-          <h1 class="display-4 fw-normal text-center" data-i18n="howToUsePluginLabel">
-          </h1>
-          <ul class="text-start">
-            <li>
-              <span data-i18n="defaultConfigurationLabel">Ya existen una configuración por defecto, pero puedes cambiarla a tu gusto, solo haz click en el icono del plugin y luego cambia los valores a tu gusto</span>
-            </li>
-            <li>
-              <span data-i18n="chatGptSpeakingLabel">para habilitar o deshabilitar la función de que ChatGPT hable lo que dijo apenas termino de escribirlo, solo haz click en el icono </span>
-              <img src="images/stfubtn.png" />
-            </li>
-            <li>
-              <span data-i18n="microphoneButtonLabel">Para hablar puedes hacer click en el boton del microfono que esta en el prompt area</span>
-              <img src="images/micBtn.png" />
-            </li>
-            <li>
-              <img src="images/modal.png" />
-            </li>
-            <li>
-              <span data-i18n="approveTextLabel">Despues de que aparezca el texto en el modal, puedes hacer click en el boton verde, para aprobar el texto y que aparezca en el chat prompt, o puedes darle al boton negro para intentarlo de nuevo o presionar el rojo para cancelar.</span>
-            </li>
-            <li>
-              <span data-i18n="listeningCircleLabel">Si en el modal se ve que el circulo esta naranja, significa que puedes hablar y va a convertir lo que digas en texto </span>
-              <img src="images/listening.png" />
-            </li>
-            <li>
-              <span data-i18n="notListeningLabel">Cuando esta en </span>
-              <img src="images/notListening.png" />
-              <span data-i18n="notListeningLabel2"> significa que ya no anda escuchando y ya puedes aprobar el texto o presionar R o el boton oscuro para activar de nuevo el modo escucha</span>
-            </li>
-            <li>
-              <span data-i18n="hotkeysLabel">Tambien existen hotkeys para hacer la interacción mas rapida, puedes presionar ESC para cancelar el modo escucha, R para reiniciar, A para aprobar el texto, y L para no tener que hacer click en el microfono (El cursor no debe estar en el prompt area).</span>
-            </li>
-            <li>
-              <span data-i18n="cancelGptSpeakingLabel">Adicionalmente, si ChatGPT esta hablando su respuesta, puedes cancelar presionando escape o hacer click en el boton rojo para cancelar o en el boton de pausa para pausar la charla.</span>
-            </li>
-            <li>
-              <span data-i18n="refreshPageLabel">Si notas que el plugin no funciona correctamente, solo debes refrescar la página presionado ctrl+r o la tecla f5</span>
-            </li>
-          </ul>
-          <p class=" fw-normal text-center text-danger" href="#" data-i18n="moreFeaturesSoonLabel"></p>
-        </div>
-      </div>
-    </div>
-    <a name="author"></a>
-    <div class="position-relative row overflow-hidden px-3 px-md-5 pt-5 pt-md-5 text-center bg-body-tertiary">
-      <div class="col-md-8 d-flex justify-content-center align-items-center flex-column">
-        <h1 class="display-4 fw-normal" data-i18n="aboutTheAuthorLabel">About the author</h1>
-        <p class="lead fw-normal" data-i18n="aboutAuthorDescriptionLabel">
-          Hello! I'm a Fullstack Software Developer with over 5 years of experience, specialized in JavaScript, PHP, HTML, CSS,
-          and jQuery. My extensive experience with relational databases, database schema design, and MySQL enables me to tackle
-          even the most complex problems with ease and efficiency.
-        </p>
-        <a class="btn btn-outline-info my-3" href="https://www.linkedin.com/in/asdrubalp09/" data-i18n="checkOutMyLinkedInLabel">
-          Check me out on linkedIn
-        </a>
-        <p class="lead fw-normal">
-          <span data-i18n="helpPluginsBeFree"> </span>
-          <span class="fw-bold" data-i18n="freeOfSpywareLabel">free of spyware and ads.</span> <br />
-        </p>
-        <div class="row">
-          <div class="col-6 d-flex justify-content-center align-items-center">
-            <a href="https://www.patreon.com/Asdrubaldev" class="btn btn-outline-danger" data-i18n="sponsorMeOnPatreonLabel"></a>
-          </div>
-          <div class="col-6 d-flex justify-content-center align-items-center">
-            <a href="https://www.buymeacoffee.com/Drup9" target="_blank"><img
-                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
-                style="height: 60px !important;width: 217px !important;"></a>
+        <div class="col-md-6 d-flex align-items-center justify-content-center text-center">
+          <div>
+            <h1 class="display-4 fw-normal text-center">
+              SonicGPT
+            </h1>
+            <p class="lead fw-normal" data-i18n="shortDescriptionLabel">
+            </p>
+            <p class="lead fw-normal" data-i18n="FeaturesLabel">
+            </p>
+            <ul class="text-start">
+              <li data-i18n="feature1Label">
+              </li>
+              <li data-i18n="feature2Label">
+              </li>
+              <li data-i18n="feature3Label">
+              </li>
+              <li data-i18n="feature4Label">
+              </li>
+              <li data-i18n="feature5Label">
+              </li>
+              <li data-i18n="feature6Label">
+              </li>
+            </ul>
+            <p class=" fw-normal text-center text-danger" href="#" data-i18n="moreFeaturesSoonLabel"></p>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <img class="druportrait" src="images/druportrait.png">
+      <a name="howto"></a>
+      <div class="row bg-body-tertiary d-flex justify-content-between d-flex justify-content-around" >
+        <div class="col-md-6 d-flex align-items-center justify-content-center text-center">
+          <div>
+            <h1 class="display-4 fw-normal text-center" data-i18n="howToUsePluginLabel">
+            </h1>
+            <ul class="text-start">
+              <li>
+                <span data-i18n="defaultConfigurationLabel"></span>
+              </li>
+              <li>
+                <span data-i18n="chatGptSpeakingLabel"></span>
+                <img src="images/stfubtn.png" />
+              </li>
+              <li>
+                <span data-i18n="microphoneButtonLabel"></span>
+                <img src="images/micBtn.png" />
+              </li>
+              <li>
+                <img src="images/modal.png" />
+              </li>
+              <li>
+                <span data-i18n="approveTextLabel">Despues de que aparezca el texto en el modal, puedes hacer click en el boton verde, para aprobar el texto y que aparezca en el chat prompt, o puedes darle al boton negro para intentarlo de nuevo o presionar el rojo para cancelar.</span>
+              </li>
+              <li>
+                <span data-i18n="listeningCircleLabel">Si en el modal se ve que el circulo esta naranja, significa que puedes hablar y va a convertir lo que digas en texto </span>
+                <img src="images/listening.png" />
+              </li>
+              <li>
+                <span data-i18n="notListeningLabel">Cuando esta en </span>
+                <img src="images/notListening.png" />
+                <span data-i18n="notListeningLabel2"> significa que ya no anda escuchando y ya puedes aprobar el texto o presionar R o el boton oscuro para activar de nuevo el modo escucha</span>
+              </li>
+              <li>
+                <span data-i18n="hotkeysLabel">Tambien existen hotkeys para hacer la interacción mas rapida, puedes presionar ESC para cancelar el modo escucha, R para reiniciar, A para aprobar el texto, y L para no tener que hacer click en el microfono (El cursor no debe estar en el prompt area).</span>
+              </li>
+              <li>
+                <span data-i18n="cancelGptSpeakingLabel">Adicionalmente, si ChatGPT esta hablando su respuesta, puedes cancelar presionando escape o hacer click en el boton rojo para cancelar o en el boton de pausa para pausar la charla.</span>
+              </li>
+              <li>
+                <span data-i18n="refreshPageLabel">Si notas que el plugin no funciona correctamente, solo debes refrescar la página presionado ctrl+r o la tecla f5</span>
+              </li>
+            </ul>
+            <p class=" fw-normal text-center text-danger" href="#" data-i18n="moreFeaturesSoonLabel"></p>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <a name="theLoop"></a>
-        <div class="my-3 p-3">
-          <h2 class="display-5" data-i18n="haveAnIdeaLabel"></h2>
-          <p class="lead" data-i18n="suggestFeaturesOrPluginsLabel"></p>
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLScXg9NB41EN2X9coWQKKaxFaXAc8j07LAB_hKEtt5PjCJEqYg/viewform?embedded=true"
-            width="640" height="591" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <a name="author"></a>
+      <div class="position-relative row overflow-hidden px-3 px-md-5 pt-5 pt-md-5 text-center bg-body-tertiary">
+        <div class="col-md-8 d-flex justify-content-center align-items-center flex-column">
+          <h1 class="display-4 fw-normal" data-i18n="aboutTheAuthorLabel">About the author</h1>
+          <p class="lead fw-normal" data-i18n="aboutAuthorDescriptionLabel">
+            Hello! I'm a Fullstack Software Developer with over 5 years of experience, specialized in JavaScript, PHP, HTML, CSS,
+            and jQuery. My extensive experience with relational databases, database schema design, and MySQL enables me to tackle
+            even the most complex problems with ease and efficiency.
+          </p>
+          <a class="btn btn-outline-info my-3" href="https://www.linkedin.com/in/asdrubalp09/" data-i18n="checkOutMyLinkedInLabel">
+            Check me out on linkedIn
+          </a>
+          <p class="lead fw-normal">
+            <span data-i18n="helpPluginsBeFree"> </span>
+            <span class="fw-bold" data-i18n="freeOfSpywareLabel">free of spyware and ads.</span> <br />
+          </p>
+          <div class="row">
+            <div class="col-6 d-flex justify-content-center align-items-center">
+              <a href="https://www.patreon.com/Asdrubaldev" class="btn btn-outline-danger" data-i18n="sponsorMeOnPatreonLabel"></a>
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center">
+              <a href="https://www.buymeacoffee.com/Drup9" target="_blank"><img
+                  src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+                  style="height: 60px !important;width: 217px !important;"></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img class="druportrait" src="images/druportrait.png">
         </div>
       </div>
 
-      <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5" data-i18n="keepUpToDateLabel">Keep up to date!</h2>
-          <p class="lead" data-i18n="joinMailingListLabel">Join the mailing list and I'll send you news of my plugins and features</p>
-          <!-- Begin Mailchimp Signup Form -->
-          <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-          <style type="text/css">
-            #mc_embed_signup {
-              background: #fff;
-              clear: left;
-              font: 14px Helvetica, Arial, sans-serif;
-              width: 100%;
-            }
-          
-            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-          	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-          </style>
-          <div id="mc_embed_signup" class="card p-4">
-            <form
-              action="https://gmail.us21.list-manage.com/subscribe/post?u=f7acfb084b9bbdbce866b0f94&amp;id=aa326c3955&amp;f_id=003c58e1f0"
-              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
-              novalidate>
-              <div id="mc_embed_signup_scroll">
-                <h2 data-i18n="subscribeLabel"></h2>
-                <div class="mc-field-group row">
-                  <div class="my-3 d-flex col-8 mx-auto">
-                    <label for="mce-EMAIL" class="form-label" >
-                          <span data-i18n="emailAdressLabel"></span>
-                          <span class="asterisk">*</span>
-                    </label>
-                    <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" required>
-                    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <a name="theLoop"></a>
+          <div class="my-3 p-3">
+            <h2 class="display-5" data-i18n="haveAnIdeaLabel"></h2>
+            <p class="lead" data-i18n="suggestFeaturesOrPluginsLabel"></p>
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLScXg9NB41EN2X9coWQKKaxFaXAc8j07LAB_hKEtt5PjCJEqYg/viewform?embedded=true"
+              width="640" height="591" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          </div>
+        </div>
+
+        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div class="my-3 p-3">
+            <h2 class="display-5" data-i18n="keepUpToDateLabel">Keep up to date!</h2>
+            <p class="lead" data-i18n="joinMailingListLabel">Join the mailing list and I'll send you news of my plugins and features</p>
+            <!-- Begin Mailchimp Signup Form -->
+            <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
+            <div id="mc_embed_signup" class="card p-4">
+              <form
+                action="https://gmail.us21.list-manage.com/subscribe/post?u=f7acfb084b9bbdbce866b0f94&amp;id=aa326c3955&amp;f_id=003c58e1f0"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+                novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <h2 data-i18n="subscribeLabel"></h2>
+                  <div class="mc-field-group row">
+                    <div class="my-3 d-flex col-8 mx-auto">
+                      <label for="mce-EMAIL" class="form-label" >
+                            <span data-i18n="emailAdressLabel"></span>
+                            <span class="asterisk">*</span>
+                      </label>
+                      <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL" required>
+                      <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                    </div>
                   </div>
-                </div>
-                <div class="indicates-required ">
-                  <p class="text-end m-0 pr-2">
-                    <span class="asterisk">*</span>
-                    <span data-i18n="indicatesRequiredLabel"></span>
-                  </p>
-                </div>
-                <div id="mce-responses" class="clear foot">
-                  <div class="response" id="mce-error-response" style="display:none"></div>
-                  <div class="response" id="mce-success-response" style="display:none"></div>
-                </div>
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                  <input type="text"
-                    name="b_f7acfb084b9bbdbce866b0f94_aa326c3955" tabindex="-1" value="">
-                </div>
-                <div class="optionalParent">
-                  <div class="clear foot">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary mt-3">
-                    <p class="brandingLogo">
-                        <a href="http://eepurl.com/isCz52"
-                            title="Mailchimp - email marketing made easy and fun">
-                            <img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg">
-                        </a>
+                  <div class="indicates-required ">
+                    <p class="text-end m-0 pr-2">
+                      <span class="asterisk">*</span>
+                      <span data-i18n="indicatesRequiredLabel"></span>
                     </p>
                   </div>
+                  <div id="mce-responses" class="clear foot">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text"
+                      name="b_f7acfb084b9bbdbce866b0f94_aa326c3955" tabindex="-1" value="">
+                  </div>
+                  <div class="optionalParent">
+                    <div class="clear foot">
+                      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary mt-3">
+                      <p class="brandingLogo">
+                          <a href="http://eepurl.com/isCz52"
+                              title="Mailchimp - email marketing made easy and fun">
+                              <img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg">
+                          </a>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+            <script
+              type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
+            <!--End mc_embed_signup-->
           </div>
-          <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-          <script
-            type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
-          <!--End mc_embed_signup-->
+        </div>   
+      </div>
+  <!--     
+      <div class="position-relative row overflow-hidden px-3 px-md-5 pt-5 pt-md-5 text-center bg-body-tertiary">
+        <div class="col-md-8 d-flex justify-content-center align-items-center flex-column">
+          <h1 class="display-4 fw-normal">About the author</h1>
+          <p class="lead fw-normal">
+            Hello! I'm a Fullstack Software Developer with over 5 years of experience, specialized in JavaScript, PHP, HTML,
+            CSS,
+            and jQuery. My extensive experience with relational databases, database schema design, and MySQL enables me to
+            tackle
+            even the most complex problems with ease and efficiency.
+          </p>
+          <a class="btn btn-outline-info my-3" href="https://www.linkedin.com/in/asdrubalp09/">
+            Check me out on linkedIn
+          </a>
+          <p class="lead fw-normal">
+            Help my plugins become
+            <span class="fw-bold">free of spyware and ads.</span> <br />
+          </p>
+          <a href="https://www.patreon.com/Asdrubaldev" class="btn btn-outline-danger">SPONSOR ME ON PATREON</a>
         </div>
-      </div>   
-    </div>
-<!--     
-    <div class="position-relative row overflow-hidden px-3 px-md-5 pt-5 pt-md-5 text-center bg-body-tertiary">
-      <div class="col-md-8 d-flex justify-content-center align-items-center flex-column">
-        <h1 class="display-4 fw-normal">About the author</h1>
-        <p class="lead fw-normal">
-          Hello! I'm a Fullstack Software Developer with over 5 years of experience, specialized in JavaScript, PHP, HTML,
-          CSS,
-          and jQuery. My extensive experience with relational databases, database schema design, and MySQL enables me to
-          tackle
-          even the most complex problems with ease and efficiency.
-        </p>
-        <a class="btn btn-outline-info my-3" href="https://www.linkedin.com/in/asdrubalp09/">
-          Check me out on linkedIn
-        </a>
-        <p class="lead fw-normal">
-          Help my plugins become
-          <span class="fw-bold">free of spyware and ads.</span> <br />
-        </p>
-        <a href="https://www.patreon.com/Asdrubaldev" class="btn btn-outline-danger">SPONSOR ME ON PATREON</a>
+        <div class="col-md-4">
+          <img class="druportrait" src="images/druportrait.png">
+        </div>
+      </div> -->
+    </main>
+  <!-- 
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
+            viewBox="0 0 24 24">
+            <title>Product</title>
+            <circle cx="12" cy="12" r="10"></circle>
+            <path
+              d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
+            </path>
+          </svg>
+          <small class="d-block mb-3 text-body-secondary">© 2017–2023</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Features</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="#">Cool stuff</a></li>
+            <li><a class="link-secondary" href="#">Random feature</a></li>
+            <li><a class="link-secondary" href="#">Team feature</a></li>
+            <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+            <li><a class="link-secondary" href="#">Another one</a></li>
+            <li><a class="link-secondary" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="#">Resource name</a></li>
+            <li><a class="link-secondary" href="#">Resource</a></li>
+            <li><a class="link-secondary" href="#">Another resource</a></li>
+            <li><a class="link-secondary" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Resources</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="#">Business</a></li>
+            <li><a class="link-secondary" href="#">Education</a></li>
+            <li><a class="link-secondary" href="#">Government</a></li>
+            <li><a class="link-secondary" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>About</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="#">Team</a></li>
+            <li><a class="link-secondary" href="#">Locations</a></li>
+            <li><a class="link-secondary" href="#">Privacy</a></li>
+            <li><a class="link-secondary" href="#">Terms</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="col-md-4">
-        <img class="druportrait" src="images/druportrait.png">
-      </div>
-    </div> -->
-  </main>
-<!-- 
-  <footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-          stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
-          viewBox="0 0 24 24">
-          <title>Product</title>
-          <circle cx="12" cy="12" r="10"></circle>
-          <path
-            d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
-          </path>
-        </svg>
-        <small class="d-block mb-3 text-body-secondary">© 2017–2023</small>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Cool stuff</a></li>
-          <li><a class="link-secondary" href="#">Random feature</a></li>
-          <li><a class="link-secondary" href="#">Team feature</a></li>
-          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-          <li><a class="link-secondary" href="#">Another one</a></li>
-          <li><a class="link-secondary" href="#">Last time</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Resource name</a></li>
-          <li><a class="link-secondary" href="#">Resource</a></li>
-          <li><a class="link-secondary" href="#">Another resource</a></li>
-          <li><a class="link-secondary" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Business</a></li>
-          <li><a class="link-secondary" href="#">Education</a></li>
-          <li><a class="link-secondary" href="#">Government</a></li>
-          <li><a class="link-secondary" href="#">Gaming</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Team</a></li>
-          <li><a class="link-secondary" href="#">Locations</a></li>
-          <li><a class="link-secondary" href="#">Privacy</a></li>
-          <li><a class="link-secondary" href="#">Terms</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer> -->
-
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
-
-<script src="popup.js"></script>
-<script>
-    console.log('AAAAAAAAAAAAAAA')
-    var objects = document.getElementsByTagName('*'), i;
-    for(i = 0; i < objects.length; i++) {
-        if (objects[i].dataset && objects[i].dataset.i18n) {
-            objects[i].innerText = chrome.i18n.getMessage(objects[i].dataset.i18n);
-        }
-    }
-    
-</script>
-
-</body>
-
+    </footer> -->
+    <script src="./options.js" type="module"></script>
+  </body>
 </html>
