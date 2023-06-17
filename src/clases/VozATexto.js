@@ -1,75 +1,26 @@
 import { geti18nMessage } from "./../helpers";
 import { HTMLInjector, delegateEventListener, waitForElement } from './../helpers.js';
-import { config } from './../config.js';
 import ConfigHandler from './ConfigHandler.js';
 export default class VozATexto {
     constructor() {
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        this.recognition = new SpeechRecognition();
-        this.recognition.lang = 'en-US';
-        this.recognition.interimResults = false;
-        this.microphoneStream = null;
+        this.recognition = null;
         this.settings = {};
         this.textArea = null;
-        // this.init();
+        this.isListening = false;
+        
         this.initVozATexto()
-        this.initConfigHandler();
 
         this.listeningDiv = null
-
-        chrome.storage.onChanged.addListener((changes, areaName) => {
-            if (areaName === 'sync') {
-                this.updateSettings(changes);
-            }
-        });
-
-        document.addEventListener('keyup', (e) => {
-            const tagName = document.activeElement.tagName.toLowerCase();
-            if (tagName !== 'input' && tagName !== 'textarea') {
-                if (e.key === 'Escape') {
-                    if(this.listeningDiv){
-                        this.stopListening();
-                    }
-                }
-            }
-        })
-        document.addEventListener('keyup', (e) => {
-            const tagName = document.activeElement.tagName.toLowerCase();
-            if (tagName !== 'input' && tagName !== 'textarea') {
-                if (e.key === 'l') {
-                    this.startListening();
-                }
-            }
-        })
-        document.addEventListener('keyup', (e) => {
-            const tagName = document.activeElement.tagName.toLowerCase();
-            if (tagName !== 'input' && tagName !== 'textarea') {
-                if (e.key === 'r') {
-                    if(this.listeningDiv){
-                        this.listen();
-                    }
-                }
-            }
-        })
-        document.addEventListener('keyup', (e) => {
-            const tagName = document.activeElement.tagName.toLowerCase();
-            if (tagName !== 'input' && tagName !== 'textarea') {
-                if (e.key === 'a') {
-                    if(this.listeningDiv){
-                        this.aprovedText();
-                    }
-                }
-            }
-        })
     }
 
     async initConfigHandler() {
-        this.configHandler = await new ConfigHandler();
+        this.configHandler = await new ConfigHandler.create();
+        await this.setLanguage()
     }
 
     textToSpeechWindow(content) {
         const div = document.createElement('div');
-        div.id = 'textToSpeechWindow';
+        div.classList.add('textToSpeechWindow')
         div.innerHTML = content;
         document.body.appendChild(div);
         return div;
@@ -78,7 +29,7 @@ export default class VozATexto {
     addListeningScreen() {
         const htmlContent = `
         <style>
-            #textToSpeechWindow {   
+            .textToSpeechWindow {   
                 border-radius: 26px;
                 background-color: white;
                 position: fixed;
@@ -97,7 +48,7 @@ export default class VozATexto {
                 width: 50px;
                 height: 50px;
                 display: block;
-                margin: 0 auto;
+                margin: 20px auto;
             }
             .d-fd-column {
                 display: flex;
@@ -140,6 +91,7 @@ export default class VozATexto {
                 width: 100%;
                 word-break: break-word;
                 text-align: center;
+                margin:20px 0;
             }
         </style>
             <div class="d-flex justify-content-center flex-column gap-10">
@@ -182,21 +134,20 @@ export default class VozATexto {
     aprovedText(){
         const text = document.getElementById('transcript').innerText;
         this.stopListening();
-        // this.screen.remove();
         this.textArea.value = text;
         this.textArea.style.height = '264px';
-        console.log('this.configHandler.settings.STTlanguage.autoFocus', this.configHandler.settings, this.configHandler.settings.autoFocus)
+        
         if(this.configHandler.settings.autoFocus == 'always'){
             this.textArea.focus();
         }
     }
     
-    async startListening() {
+    startListening() {
+        
         if (this.recognition && this.recognition.state === 'listening') {
             this.recognition.stop();
         }
         this.addListeningScreen();//
-
         this.listen();
     }
     
@@ -229,17 +180,54 @@ export default class VozATexto {
     }
 
     stopListening() {
-        // Detener todos los tracks del stream
+
         if (this.microphoneStream) {
             this.microphoneStream.getTracks().forEach(track => track.stop());
-            this.microphoneStream = null; // Limpiar la referencia al stream
+            this.microphoneStream = null; 
         }
-        document.querySelectorAll('#textToSpeechWindow').forEach(el => el.remove());
+        document.querySelectorAll('.textToSpeechWindow').forEach(el => el.remove());
         this.screen = null
         this.recognition.stop();
     }
 
     initVozATexto() {
+        console.log('initVozATexto')
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        this.recognition = new SpeechRecognition();
+        this.recognition.interimResults = false;
+        this.microphoneStream = null;
+        // chrome.storage.onChanged.addListener((changes, areaName) => {
+        //     if (areaName === 'sync') {
+        //         this.updateSettings(changes);
+        //     }
+        // });
+
+        document.addEventListener('keyup', (e) => {
+            const tagName = document.activeElement.tagName.toLowerCase();
+            if (tagName !== 'input' && tagName !== 'textarea') {
+                if (e.key === 'Escape') {
+                    if(this.listeningDiv){
+                        this.stopListening();
+                    }
+                }
+                if (e.key === 'l') {
+                    this.startListening();
+                }
+                if (e.key === 'r') {
+                    if(this.listeningDiv){
+                        this.listen();
+                    }
+                }
+                if (e.key === 'a') {
+                    if(this.listeningDiv){
+                        this.aprovedText();
+                    }
+                }
+            }
+        })
+
+        this.initConfigHandler();
+
         const MicBtnHTML = `
             <button id="micBtn" class="absolute p-1 rounded-md text-gray-500 bottom-1.5 md:bottom-2.5 hover:bg-gray-100 enabled:dark:hover:text-gray-400 dark:hover:bg-gray-900 disabled:hover:bg-transparent dark:disabled:hover:bg-transparent" style="right: 3em;top: 5px; padding: 0 10px;">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style=" height: 20px; fill: #d0d0d7;"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"></path></svg>
@@ -259,31 +247,6 @@ export default class VozATexto {
         });
     }
 
-    async init() {
-        await this.getSettings();
-        this.setInterimResults()
-        this.setLanguage()
-        this.setContinuousMode()
-    }
-
-    getSettings() {
-        return new Promise((resolve, reject) => {
-            const configKeys = config.filter((field) => field?.name !== undefined);
-            const configKeyNames = configKeys.map(key => key.name);
-            chrome.storage.sync.get(configKeyNames, (result) => {
-                if (chrome.runtime.lastError) {
-                    reject(chrome.runtime.lastError);
-                } else {
-                for (const key of configKeys) {
-                    this.settings[key.name] = result[key.name] || key.defaultValue;
-                }
-                    console.log("texto a voz settings loaded:", this.settings);
-                    resolve();
-                }
-            });
-        });
-    }
-
     updateSettings(changes) {
         for (let key in changes) {
             let storageChange = changes[key];
@@ -296,9 +259,19 @@ export default class VozATexto {
         //console.log('STT config this.recognition.interimResults', this.recognition.interimResults)
     }
 
-    setLanguage() {
-        this.recognition.lang = this.configHandler.settings.STTlanguage;
-        console.log('STT config this.recognition.lang', this.recognition.lang, this.configHandler.settings.STTlanguage)
+    // setLanguage() {
+    //     this.recognition.lang = this.configHandler.settings.STTlanguage;
+    // }
+    async setLanguage() {
+        return new Promise(async (resolve, reject) => {
+            try {
+                this.recognition.lang = this.configHandler.settings.STTlanguage;
+                resolve();
+            } catch (error) {
+                console.error(error);
+                reject(error);
+            }
+        });
     }
 
     setContinuousMode() {
@@ -307,30 +280,42 @@ export default class VozATexto {
         //console.log('STT config this.recognition.continuous', this.recognition.continuous)
     }
 
-    listen() {
-        this.init()
-        console.log('this.listeningDiv', this.listeningDiv)
+    async listen() {
+        await this.initConfigHandler();
         if(this.listeningDiv){
             this.listeningDiv.focus()
             this.listeningDiv.classList.add('activeListening');
             this.listeningDiv.classList.remove('inactiveListening');
         }
         return new Promise((resolve, reject) => {
-            this.recognition.start();
-            
-            this.recognition.onresult = (event) => {
-                const text = event.results[0][0].transcript;
-                console.log('Result received: ' + text);
-                this.onSpeechResult(event);
-                // this.adjustButtonSizeBasedOnVolume();
-                this.listeningDiv.classList.remove('activeListening');
-                this.listeningDiv.classList.add('inactiveListening');
-                resolve(text);
-            };
-
-            this.recognition.onerror = (event) => {
-                reject('Error occurred in recognition: ' + event.error);
-            };
+            console.log("🚀 ~ file: VozATexto.js:279 ~ VozATexto ~ returnnewPromise ~ this.recognition:", this.recognition)
+            try {
+                this.recognition.start();
+                
+                this.recognition.onresult = (event) => {
+                    const text = event.results[0][0].transcript;
+                    console.log('Result received: ' + text);
+                    this.onSpeechResult(event);
+                    // this.adjustButtonSizeBasedOnVolume();
+                    this.listeningDiv.classList.remove('activeListening');
+                    this.listeningDiv.classList.add('inactiveListening');
+                    resolve(text);
+                };
+    
+                this.recognition.onerror = (event) => {
+                    reject('Error occurred in recognition: ' + event.error);
+                };
+            } catch (error) {
+                
+            }
         });
+    }
+
+    destroy(){
+        this.recognition = null;
+        this.microphoneStream = null; 
+        document.querySelectorAll('.textToSpeechWindow').forEach(el => {console.log(el); el.remove()});
+        this.screen = null
+
     }
 }

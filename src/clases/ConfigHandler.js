@@ -11,12 +11,12 @@ export default class ConfigHandler {
       }
     });
     
-    this.getSettings();
+    //this.getSettings();
   }
 
   static async create() {
     const handler = new ConfigHandler();
-    await handler.initialize();
+    await handler.getSettings();
     return handler;
   }
 
@@ -41,6 +41,12 @@ export default class ConfigHandler {
           resolve();
         }
       });
+    });
+  }
+
+  static async obtenerIdiomaNavegador() {
+    return new Promise((resolve) => {
+      resolve(navigator.languages && navigator.languages.length ? navigator.languages[0] : navigator.language);
     });
   }
 

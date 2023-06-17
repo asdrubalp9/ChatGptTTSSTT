@@ -8,11 +8,16 @@ import { HTMLInjector, delegateEventListener } from './helpers.js';
 
 const plugin = new DrusPlugins();
 
-const vozATexto = new VozATexto();
+let vozATexto = new VozATexto();
 const autoTalker = new AutoTalker();
 // const talkingButtonAdder = new TalkingButtons();
 // talkingButtonAdder.initTalkingButtons()
 
-delegateEventListener('a', 'click', function(event) {
-  // talkingButtonAdder.initTalkingButtons()
+// TODO: cuando haga click en una pagina nueva, que funcione y no se multiplique por mil el modal y funcione el voz a texto
+delegateEventListener('li a', 'click', function(event) {
+  console.log('click, event:', event);
+  vozATexto.destroy()
+  vozATexto = null
+  vozATexto = new VozATexto();
+
 }); 

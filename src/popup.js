@@ -7,6 +7,8 @@ const configHandler = ConfigHandler
 
 document.getElementById('version').textContent = configHandler.displayVersion();
 
+config.find((field) => field.name === 'STTlanguage').defaultValue = configHandler.obtenerIdiomaNavegador();
+config.find((field) => field.name === 'TTSlanguage').defaultValue = configHandler.obtenerIdiomaNavegador();
 const formGenerator = new FormGenerator('optionScreen', config);
 formGenerator.generateForm().then(() => {
   console.log('Form has been generated.');
