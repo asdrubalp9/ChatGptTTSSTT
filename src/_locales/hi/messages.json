@@ -190,5 +190,11 @@
     },
     "accessibilityFocusLabel": {
       "message": "हमारे द्वारा केंद्रित विकल्पों को सक्षम करने के लिए, accessibility फोकस चेकबॉक्स पर क्लिक करें।"
+    },
+    "readingIn": {
+      "message": "में पढ़ रहे हैं"
+    },
+    "listeningIn": {
+      "message": "में सुन रहे हैं"
     }
   }

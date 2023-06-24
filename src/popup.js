@@ -1,4 +1,5 @@
 import FormGenerator from './clases/FormGenerator.js';
+import { geti18nMessage } from "./helpers";
 import { config } from './config.js';
 import bootstrap from 'bootstrap';
 import ConfigHandler from './clases/ConfigHandler.js'
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var objects = document.getElementsByTagName('*'), i;
   for(i = 0; i < objects.length; i++) {
       if (objects[i].dataset && objects[i].dataset.i18n) {
-          objects[i].innerText = chrome.i18n.getMessage(objects[i].dataset.i18n);
+          objects[i].innerText = geti18nMessage(objects[i].dataset.i18n);
       }
   }
 });

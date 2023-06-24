@@ -208,6 +208,12 @@
     },
     "refreshPageLabel": {
       "message": "Wenn Sie feststellen, dass das Plugin nicht ordnungsgemäß funktioniert, müssen Sie nur die Seite aktualisieren, indem Sie Strg+R oder die F5-Taste drücken."
+    },
+    "readingIn": {
+      "message": "Lesen in"
+    },
+    "listeningIn": {
+      "message": "Zuhören in"
     }
   }
   

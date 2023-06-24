@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ZipPlugin = require('zip-webpack-plugin');
@@ -7,7 +8,11 @@ const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 module.exports = (env, argv) => {
   const isZipable = argv?.env?.isZipable || false;
-
+  const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, 'src', 'manifest.json'), 'utf8'));
+  // Obtener el nombre y reemplazar espacios por underscores
+  const name = manifest.name.replace(/\s/g, '_');
+  const date = new Date();
+  const formattedDate = `${date.getFullYear()}${(date.getMonth()+1).toString().padStart(2, '0')}${date.getDate().toString().padStart(2, '0')}`;
   return {
     entry: {
       content: path.join(__dirname, 'src', 'content.js'),
@@ -47,7 +52,7 @@ module.exports = (env, argv) => {
         suppressSuccess: false,
       }),
       ...(isZipable ? [new ZipPlugin({
-          filename: 'ChatGptRedactor.zip',
+          filename: `${name}_${formattedDate}.zip`,
           compression: 'DEFLATE',
           path: '../dist-zip',
         })] : []),

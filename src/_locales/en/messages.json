@@ -211,5 +211,11 @@
   },
   "shortDescriptionLabel": {
     "message": "Talk and listen to ChatGPT in your language!"
+  },
+  "readingIn": {
+    "message": "Reading in"
+  },
+  "listeningIn": {
+    "message": "Listening in"
   }
 }

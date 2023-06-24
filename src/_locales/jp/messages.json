@@ -208,6 +208,12 @@
     },
     "refreshPageLabel": {
       "message": "プラグインが正常に動作していないと思われる場合は、ctrl+rキーを押すかf5キーを押すことでページをリフレッシュするだけで済みます。"
-  }
+    },
+    "readingIn": {
+      "message": "で読んでいます"
+    },
+    "listeningIn": {
+      "message": "で聞いています"
+    }
 }
   

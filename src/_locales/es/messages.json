@@ -208,6 +208,12 @@
   },
   "refreshPageLabel": {
     "message": "Si notas que el plugin no funciona correctamente, solo debes refrescar la página presionado ctrl+r o la tecla f5."
+  },
+  "readingIn": {
+    "message": "Leyendo en"
+  },
+  "ListeningIn": {
+    "message": "Escuchando en"
   }
   
 }
