@@ -1,11 +1,9 @@
 {
   "manifest_version": 3,
   "name": "SonicGPT Free MultiLanguage ChatGPT",
-  "version": "1.03",
+  "version": "1.04",
   "description": "Talk and listen to ChatGPT in your language! in any language!",
   "permissions": [
-    "alarms",
-    "notifications",
     "storage"
   ],
   "action": {
