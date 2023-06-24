@@ -7,14 +7,12 @@ export default class VozATexto {
         this.settings = {};
         this.textArea = null;
         this.isListening = false;
-        
-        this.initVozATexto()
         this.listeningDiv = null
+        this.eventListeners = null
     }
 
     async initConfigHandler() {
         this.configHandler = await new ConfigHandler.create();
-        await this.setLanguage()
     }
 
     textToSpeechWindow(content) {
@@ -26,6 +24,7 @@ export default class VozATexto {
     }
 
     addListeningScreen() {
+        const listeningIn = this.configHandler.settings.STTlanguage
         const htmlContent = `
         <style>
             .textToSpeechWindow {   
@@ -94,6 +93,9 @@ export default class VozATexto {
             }
         </style>
             <div class="d-flex justify-content-center flex-column gap-10">
+                <p class="text-center">
+                ${geti18nMessage('listeningIn')}: ${listeningIn}
+                </p>
                 <div id="listeningState" class="pulse" data-state="playing"></div>
                 <p id="transcript"></p>
                 <div class="row d-flex flex-direction-row justify-content-between gap-20">
@@ -140,16 +142,15 @@ export default class VozATexto {
             this.textArea.focus();
         }
     }
-    
+
     startListening() {
-        
         if (this.recognition && this.recognition.state === 'listening') {
             this.recognition.stop();
         }
         this.addListeningScreen();//
         this.listen();
     }
-    
+
     async adjustButtonSizeBasedOnVolume() {
         const listeningButton = document.getElementById('listeningState');
         try {
@@ -171,78 +172,70 @@ export default class VozATexto {
         }
     }
 
-    onSpeechResult(event) {
-        const transcriptElement = document.getElementById('transcript');
-        const results = event.results;
-        const transcript = results[results.length - 1][0].transcript;
-        transcriptElement.innerHTML = transcript;
-    }
-
     stopListening() {
-
         if (this.microphoneStream) {
             this.microphoneStream.getTracks().forEach(track => track.stop());
             this.microphoneStream = null; 
         }
         document.querySelectorAll('.textToSpeechWindow').forEach(el => el.remove());
         this.screen = null
-        this.recognition.stop();
+        if(this.recognition){
+            this.recognition.stop();
+        }
+    }
+
+    fnEventListeners(evt) {
+        const tagName = document.activeElement.tagName.toLowerCase();
+        if (tagName !== 'input' && tagName !== 'textarea') {
+            if (evt.key === 'Escape') {
+                if(this.listeningDiv){
+                    this.stopListening();
+                }
+            }
+            if (evt.key === 'l') {
+                this.startListening();
+            }
+            if (evt.key === 'r') {
+                if(this.listeningDiv){
+                    this.listen();
+                }
+            }
+            if (evt.key === 'a') {
+                if(this.listeningDiv){
+                    this.aprovedText();
+                }
+            }
+        }
+    }
+
+    startEventListeners(){
+        document.addEventListener('keyup', this.fnEventListeners.bind(this));
+    }
+    stopEventListeners(){
+        document.removeEventListener('keyup', this.fnEventListeners.bind(this));
     }
 
     initVozATexto() {
         console.log('initVozATexto')
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        this.recognition = new SpeechRecognition();
-        this.recognition.interimResults = false;
         this.microphoneStream = null;
-        // chrome.storage.onChanged.addListener((changes, areaName) => {
-        //     if (areaName === 'sync') {
-        //         this.updateSettings(changes);
-        //     }
-        // });
-
-        document.addEventListener('keyup', (e) => {
-            const tagName = document.activeElement.tagName.toLowerCase();
-            if (tagName !== 'input' && tagName !== 'textarea') {
-                if (e.key === 'Escape') {
-                    if(this.listeningDiv){
-                        this.stopListening();
-                    }
-                }
-                if (e.key === 'l') {
-                    this.startListening();
-                }
-                if (e.key === 'r') {
-                    if(this.listeningDiv){
-                        this.listen();
-                    }
-                }
-                if (e.key === 'a') {
-                    if(this.listeningDiv){
-                        this.aprovedText();
-                    }
-                }
-            }
-        })
-
         this.initConfigHandler();
-
+        this.startEventListeners()
         const MicBtnHTML = `
             <button id="micBtn" class="absolute p-1 rounded-md text-gray-500 bottom-1.5 md:bottom-2.5 hover:bg-gray-100 enabled:dark:hover:text-gray-400 dark:hover:bg-gray-900 disabled:hover:bg-transparent dark:disabled:hover:bg-transparent" style="right: 3em;top: 5px; padding: 0 10px;">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style=" height: 20px; fill: #d0d0d7;"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"></path></svg>
             </button>
         `;
         HTMLInjector(MicBtnHTML, 'textarea','afterend');
-        delegateEventListener('#micBtn', 'click', (event) => {
-            waitForElement('form')
-                .then((element) => {
+        waitForElement('form')
+        .then((element) => {
+            this.textArea = document.querySelector('#prompt-textarea');
+            this.textArea.style.paddingRight = '80px';
+            delegateEventListener('#micBtn', 'click', (event) => {
                 this.startListening()
-                this.textArea = document.querySelector('#prompt-textarea');
-                this.textArea.style.paddingRight = '80px';
-            })
-            .catch((error) => {
-                console.error('Error waiting for form element', error);
             });
+        })
+        .catch((error) => {
+            console.error('Error waiting for form element', error);
         });
     }
 
@@ -254,13 +247,13 @@ export default class VozATexto {
     }
 
     setInterimResults() {
+        return new Promise(async (resolve, reject) => {
+            this.recognition.interimResults = true
+            resolve();
+        })
         //this.recognition.interimResults = this.configHandler.settings.interimResults
         //console.log('STT config this.recognition.interimResults', this.recognition.interimResults)
     }
-
-    // setLanguage() {
-    //     this.recognition.lang = this.configHandler.settings.STTlanguage;
-    // }
     async setLanguage() {
         return new Promise(async (resolve, reject) => {
             try {
@@ -279,42 +272,83 @@ export default class VozATexto {
         //console.log('STT config this.recognition.continuous', this.recognition.continuous)
     }
 
+    speechResult(event) {
+        const transcriptElement = document.getElementById('transcript');
+        const results = event.results;
+        const transcript = results[results.length - 1][0].transcript;
+        transcriptElement.innerHTML = transcript;
+    }
+
     async listen() {
-        await this.initConfigHandler();
-        if(this.listeningDiv){
-            this.listeningDiv.focus()
+        console.log('listening');
+        //await this.initConfigHandler();
+        if (this.listeningDiv) {
+            this.listeningDiv.focus();
             this.listeningDiv.classList.add('activeListening');
             this.listeningDiv.classList.remove('inactiveListening');
         }
-        return new Promise((resolve, reject) => {
-            console.log("🚀 ~ file: VozATexto.js:279 ~ VozATexto ~ returnnewPromise ~ this.recognition:", this.recognition)
-            try {
-                this.recognition.start();
-                
-                this.recognition.onresult = (event) => {
-                    const text = event.results[0][0].transcript;
-                    console.log('Result received: ' + text);
-                    this.onSpeechResult(event);
-                    // this.adjustButtonSizeBasedOnVolume();
-                    this.listeningDiv.classList.remove('activeListening');
-                    this.listeningDiv.classList.add('inactiveListening');
-                    resolve(text);
-                };
     
-                this.recognition.onerror = (event) => {
-                    reject('Error occurred in recognition: ' + event.error);
-                };
-            } catch (error) {
-                
+        if (!('webkitSpeechRecognition' in window)) {
+            alert('El reconocimiento de voz no está disponible en este navegador.');
+            console.error('El reconocimiento de voz no está disponible en este navegador.');
+            return;
+        }
+    
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        this.recognition = new SpeechRecognition();
+        this.recognition.interimResults = false;
+    
+        try {
+            await this.setLanguage();
+            await this.setInterimResults();
+            this.recognition.maxAlternatives = 1
+            this.recognition.onresult = (event) => {
+                const text = event.results[0][0].transcript;
+                console.log('Result received: ' + text);
+                this.speechResult(event);
+            };
+            this.recognition.onnomatch = function(event) {
+                console.log('no match')
             }
-        });
+            this.recognition.onspeechend  = (event) => {
+                console.log('speechend')
+                this.listeningDiv.classList.remove('activeListening');
+                this.listeningDiv.classList.add('inactiveListening');
+                this.recognition.stop();
+            }
+            this.recognition.onaudiostart = (event) => {
+                this.listeningDiv.classList.add('activeListening');
+                this.listeningDiv.classList.remove('inactiveListening');
+                console.log('---> onaudiostart', event);
+            };
+    
+            this.recognition.onerror = (event) => {
+                console.log('---> onerror', event);
+            };
+    
+            this.recognition.start();
+
+        } catch (error) {
+            console.log('error', error);
+        }
     }
 
-    destroy(){
-        this.recognition = null;
-        this.microphoneStream = null; 
-        document.querySelectorAll('.textToSpeechWindow').forEach(el => {console.log(el); el.remove()});
-        this.screen = null
-
+    async destroy(){
+        console.log('detroying vozatexto')
+        return new Promise((resolve) => {
+            const micBtn = document.querySelector('#micBtn');
+            if(micBtn){
+                micBtn.remove()
+            }
+            this.stopListening()
+            this.recognition = null;
+            this.microphoneStream = null; 
+            document.querySelectorAll('.textToSpeechWindow').forEach(el => {console.log(el); el.remove()});
+            this.screen = null
+            this.stopEventListeners()
+            setTimeout(() => {
+                resolve()
+            }, 200);
+        });
     }
 }

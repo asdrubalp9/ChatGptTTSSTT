@@ -13,13 +13,11 @@ export default class TextoAVoz {
 
   async init() {
     this.configHandler = await ConfigHandler.create();
-    console.log("🚀 ~ file: TextoAVoz.js:19 ~ TextoAVoz ~ init ~ this.configHandler:", this.configHandler)
     this.startListeningToEscapeKey()
     this.startListening()
   }
 
   handleMessages(request, sender, sendResponse) {
-    console.log("request.command:", request.command);
     if (request.command === "speak") {
       this.speak(request.text);
     }
@@ -55,7 +53,6 @@ export default class TextoAVoz {
 
   setLanguage() {
     this.utterance.lang = this.configHandler.settings.TTSlanguage;
-    console.log("🚀 ~ setLanguage ~ this.configHandler.settings.TTSlanguage:", this.configHandler.settings.TTSlanguage)
   }
 
   setVoz() {
@@ -65,12 +62,10 @@ export default class TextoAVoz {
 
   setVelocidad() {
     this.utterance.rate = this.configHandler.settings.velocidad;
-    console.log("🚀 ~ setVelocidad ~ this.configHandler.settings.settings:", this.configHandler.settings.velocidad)
   }
 
   setTonada() {
     this.utterance.pitch = this.configHandler.settings.setTonada;
-    console.log("🚀 ~ setTonada ~ this.configHandler.settings.settings:", this.configHandler.settings.setTonada)
   }
   
   textToSpeechWindow(content) {
