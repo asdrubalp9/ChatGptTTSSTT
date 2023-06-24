@@ -16,7 +16,7 @@ export default class AutoTalker extends TextoAVoz {
   }
 
   async initConfigHandler() {
-    this.configHandler = await new ConfigHandler();
+    this.configHandler = await ConfigHandler.create();
   }
 
   async initAutoTalker() {
@@ -50,7 +50,7 @@ export default class AutoTalker extends TextoAVoz {
         drusPluginsDiv.appendChild(button);
 
         document.addEventListener(this.elementMonitor.eventName, () => {
-          console.log("order heard. checking config")
+          console.log("order heard. checking config", this.configHandler.settings)
           if (this.configHandler.settings.autoTalk == 'always') {
             console.log("Now I'll talk")
             const sectores = document.querySelectorAll('main .group.bg-gray-50:nth-child(odd)')

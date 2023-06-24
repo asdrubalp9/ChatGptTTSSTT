@@ -1,83 +1,76 @@
 import { geti18nMessage } from "./../helpers";
-import { config } from './../config.js';
+import ConfigHandler from './ConfigHandler.js';
 export default class TextoAVoz {
   constructor() {
+    this.configHandler = null
     this.speechSynth = window.speechSynthesis;
     this.utterance = new SpeechSynthesisUtterance();
-    this.settings = {};
     this.state = 'playing';
-    this.utterance.lang = "en-US"; //agarrar el default del navegador
-    this.utterance.lang = "es-ES";
-    this.initialized = this.init();
-    this.addScreenToCancel()
-    chrome.storage.onChanged.addListener((changes, areaName) => {
-      if (areaName === 'sync') {
-        this.updateSettings(changes);
-      }
-    });
-    document.addEventListener('keyup', (e) => {
-      if (e.key === 'Escape') {
-        this.stopTalking();
-      }
-    })
-
+    this.utterance.lang = null
+    this.initialized = null
+    this.handleKeyup = this.handleKeyup.bind(this); // Haz el binding de 'this'
   }
+
   async init() {
-    await this.getSettings();
-    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-      if (request.command === "speak") {
-        const tts = new TextoAVoz();
-        tts.speak(request.text);
-      }
-    });
-  }
-  
-  getSettings() {
-    return new Promise((resolve, reject) => {
-      
-      const configKeys = config.filter((field) => field?.name !== undefined);
-      const configKeyNames = configKeys.map(key => key.name);
-      chrome.storage.sync.get(configKeyNames, (result) => {
-        if (chrome.runtime.lastError) {
-          reject(chrome.runtime.lastError);
-        } else {
-          for (const key of configKeys) {
-            this.settings[key.name] = result[key.name] || key.defaultValue;
-          }
-          console.log("Texto a voz config:", this.settings);
-          resolve();
-        }
-      });
-    });
+    this.configHandler = await ConfigHandler.create();
+    console.log("🚀 ~ file: TextoAVoz.js:19 ~ TextoAVoz ~ init ~ this.configHandler:", this.configHandler)
+    this.startListeningToEscapeKey()
+    this.startListening()
   }
 
-  updateSettings(changes) {
-    for (let key in changes) {
-      let storageChange = changes[key];
-      this.settings[key] = storageChange.newValue;
+  handleMessages(request, sender, sendResponse) {
+    console.log("request.command:", request.command);
+    if (request.command === "speak") {
+      this.speak(request.text);
     }
   }
 
+  startListening() {
+    const runtime = typeof chrome !== 'undefined' ? chrome.runtime : browser.runtime;
+    if (runtime) {
+      runtime.onMessage.addListener(this.handleMessages.bind(this));
+    }
+  }
+
+  stopListening() {
+    const runtime = typeof chrome !== 'undefined' ? chrome.runtime : browser.runtime;
+    if (runtime) {
+      runtime.onMessage.removeListener(this.handleMessages.bind(this));
+    }
+  }
+
+  handleKeyup(e) {
+    if (e.key === 'Escape') {
+      this.stopTalking();
+    }
+  }
+
+  startListeningToEscapeKey() {
+    document.addEventListener('keyup', this.handleKeyup);
+  }
+
+  stopListeningToEscapeKey() {
+    document.removeEventListener('keyup', this.handleKeyup);
+  }
+
   setLanguage() {
-    this.utterance.lang = this.settings.TTSlanguage;
-    console.log("🚀 ~ setLanguage ~ this.settings.TTSlanguage:", this.settings.TTSlanguage)
-    
+    this.utterance.lang = this.configHandler.settings.TTSlanguage;
+    console.log("🚀 ~ setLanguage ~ this.configHandler.settings.TTSlanguage:", this.configHandler.settings.TTSlanguage)
   }
 
   setVoz() {
     const vocesDisponibles = this.speechSynth.getVoices();
-    this.utterance.voice = vocesDisponibles[this.settings.setVoz];
+    this.utterance.voice = vocesDisponibles[this.configHandler.settings.setVoz];
   }
 
   setVelocidad() {
-    this.utterance.rate = this.settings.velocidad;
-    console.log("🚀 ~ setVelocidad ~ this.settings:", this.settings.velocidad)
-
+    this.utterance.rate = this.configHandler.settings.velocidad;
+    console.log("🚀 ~ setVelocidad ~ this.configHandler.settings.settings:", this.configHandler.settings.velocidad)
   }
 
   setTonada() {
-    this.utterance.pitch = this.settings.setTonada;
-    console.log("🚀 ~ setTonada ~ this.settings:", this.settings.setTonada)
+    this.utterance.pitch = this.configHandler.settings.setTonada;
+    console.log("🚀 ~ setTonada ~ this.configHandler.settings.settings:", this.configHandler.settings.setTonada)
   }
   
   textToSpeechWindow(content) {
@@ -90,7 +83,7 @@ export default class TextoAVoz {
   }
   
   addScreenToCancel() {
-    const readingIn = ''
+    const readingIn = this.configHandler.settings.TTSlanguage
     const htmlContent = `
         <style>
           .flex-center {
@@ -104,20 +97,20 @@ export default class TextoAVoz {
         </style>
         <div class="flex flex-col justify-center row">
           <div class="col-12">
-            <p>
-            ${geti18nMessage('readingIn')}: 
+            <p class="text-center">
+            ${geti18nMessage('readingIn')}: ${readingIn}
             </p>
           </div>
-          <div class="col-6">
+          <div class="col-6 flex">
             <button class="btn flex-center btn-outline-dark flex-grow border border-gray-200" id="speechState" data-state="playing">
               <svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>
             </button>
           </div>
-          <div class="col-6">
+          <div class="col-6 flex column">
             <button class="btn flex-center btn-danger flex-grow" id="cancelSpeech" style="margin:20px 0px 0px;">
               <svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM425 167l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg>
             </button>
-            <p style="text-align:center">
+            <p class="text-center">
               ${geti18nMessage('PressEscToCancel')}
             </p>
           </div>
@@ -147,9 +140,9 @@ export default class TextoAVoz {
     console.log('stopTalking', this.screen)
     if(this.screen){
       this.screen.remove();
-      document.querySelectorAll('.speechWindow').forEach((el) => el.remove());
-      this.speechSynth.cancel();
     }
+    document.querySelectorAll('.speechWindow').forEach((el) => el.remove());
+    this.speechSynth.cancel();
   }
 
   chunkText(text, maxLength) {
@@ -158,6 +151,7 @@ export default class TextoAVoz {
   }
 
   speakChunk(chunks, index) {
+    console.log('speakChunk', chunks[index])
     if (index < chunks.length) {
       this.utterance.text = chunks[index];
       this.speechSynth.speak(this.utterance);
@@ -180,7 +174,7 @@ export default class TextoAVoz {
     this.setTonada()
     const chunks = this.chunkText(texto, 100); // Aquí ajustas el tamaño máximo de cada chunk
     this.speakChunk(chunks, 0);
-    this.addScreenToCancel(); // Puedes agregar esta línea aquí si quieres que aparezca el botón de silenciar una vez que comienza la lectura
+    this.addScreenToCancel(); 
   }
   
 }

@@ -2,13 +2,19 @@ import TalkingButtons from './clases/TalkingButtons.js';
 
 import AutoTalker from './clases/Autotalker.js';
 import VozATexto from './clases/VozATexto.js';
+import TextoAVoz from './clases/TextoAVoz.js';
 import DrusPlugins from './clases/DrusPlugins.js';
 import { HTMLInjector, delegateEventListener } from './helpers.js';
 
 
+
+
 const plugin = new DrusPlugins();
 
-let vozATexto = new VozATexto();
+
+const textoAVoz = new TextoAVoz();
+textoAVoz.init()
+
 const autoTalker = new AutoTalker();
 // const talkingButtonAdder = new TalkingButtons();
 // talkingButtonAdder.initTalkingButtons()

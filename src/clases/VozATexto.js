@@ -9,7 +9,6 @@ export default class VozATexto {
         this.isListening = false;
         
         this.initVozATexto()
-
         this.listeningDiv = null
     }
 

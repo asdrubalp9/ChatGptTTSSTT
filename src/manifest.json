@@ -4,6 +4,8 @@
   "version": "1.03",
   "description": "Talk and listen to ChatGPT in your language! in any language!",
   "permissions": [
+    "alarms",
+    "notifications",
     "storage"
   ],
   "action": {
