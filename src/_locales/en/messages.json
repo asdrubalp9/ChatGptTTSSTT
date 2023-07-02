@@ -147,7 +147,7 @@
     "message": "Hindi (India)"
   },
   "PressAToApprove": {
-    "message": "Press A to approve"   
+    "message": "Press A to approve"
   },
   "PressRToRestart": {
     "message": "Restart pressing R"
@@ -232,5 +232,8 @@
   },
   "dontRemember": {
     "message": "Don't remember anymore"
+  },
+  "pressPToPause": {
+    "message": "Press P to pause"
   }
 }

@@ -1,219 +1,221 @@
 {
-    "configTextToSpeech": {
-      "message": "Configurazione di Text to Speech"
-    },
-    "talkAfterResponse": {
-      "message": "Parla non appena chatGPT finisce di rispondere"
-    },
-    "always": {
-      "message": "Sempre"
-    },
-    "never": {
-      "message": "Mai"
-    },
-    "TTSLanguage": {
-      "message": "Lingua Text To Speech"
-    },
-    "englishUS": {
-      "message": "Inglese (Stati Uniti)"
-    },
-    "spanishSpain": {
-      "message": "Spagnolo (Spagna)"
-    },
-    "frenchFrance": {
-      "message": "Francese (Francia)"
-    },
-    "germanGermany": {
-      "message": "Tedesco (Germania)"
-    },
-    "italianItaly": {
-      "message": "Italiano (Italia)"
-    },
-    "japaneseJapan": {
-      "message": "Giapponese (Giappone)"
-    },
-    "portugueseBrazil": {
-      "message": "Portoghese (Brasile)"
-    },
-    "chineseChina": {
-      "message": "Cinese (Cina)"
-    },
-    "setTalkingSpeed": {
-      "message": "Imposta la velocità di parlato"
-    },
-    "setVoiceTone": {
-      "message": "Regola il tono della voce"
-    },
-    "STTSettings": {
-      "message": "Impostazioni di Speech to text"
-    },
-    "autoFocusAfterApproval": {
-      "message": "Auto focus sulla textarea quando il testo è approvato"
-    },
-    "SRlanguage": {
-      "message": "Lingua del riconoscimento vocale"
-    },
-    "setContinuousMode": {
-      "message": "Imposta modalità continua"
-    },
-    "continuousModeHint": {
-      "message": "Se restituire risultati continui per ogni riconoscimento, o solo un unico risultato"
-    },
-    "setInterimResults": {
-      "message": "Imposta risultati provvisori"
-    },
-    "interimResultsHint": {
-      "message": "Se restituire risultati provvisori (vero) o meno (falso)"
-    },
-    "elementRedaction": {
-      "message": "Censura dell'elemento"
-    },
-    "cssSelectorsInstruction": {
-      "message": "Utilizza i selettori CSS per selezionare il contenuto dell'HTML che vuoi censurare e seleziona l'opzione per censurare o non censurare il contenuto dell'elemento HTML selezionato. <br> Per incollare il contenuto, premi semplicemente ctrl+shift+Z e lo incollerà nel prompt o premi il pulsante sotto il pulsante di download della chat."
-    },
-    "STTDescription": {
-      "message": "Per la conversione da voce a testo, devi premere il pulsante del microfono nell'area del prompt o premere L, una volta che la finestra è aperta, puoi premere R per ascoltare di nuovo, A per approvare ciò che ha ascoltato e escape per chiudere la finestra."
-    },
-    "resetDefault": {
-      "message": "Ripristina le impostazioni predefinite"
-    },
-    "noBackersLabel": {
-      "message": "Il n'y a pas encore de soutiens,"
-    },
-    "noBackersLabelLink": {
-      "message": "soyez le premier"
-    },
-    "topSponsorsLabel": {
-      "message": "MEILLEURS SPONSORS"
-    },
-    "sponsorThisLabel": {
-      "message": "SPONSORISEZ CE PLUGIN! pour qu'il soit"
-    },
-    "sponsorThisContinuomLabel": {
-      "message": "libre de logiciels espions et de publicités!"
-    },
-    "popupConfigurationLabel": {
-      "message": "Configuration"
-    },
-    "optionsLinkLabel": {
-      "message": "Ouvrir la page à propos"
-    },
-    "aboutTheAuthorLabel": {
-      "message": "À propos de l'auteur"
-    },
-    "moreFeaturesSoonLabel": {
-      "message": "PLUS DE FONCTIONNALITÉS BIENTÔT!"
-    },
-    "howToUsePluginLabel": {
-      "message": "Comment utiliser ce plugin"
-    },
-    "aboutAuthorDescriptionLabel": {
-      "message": "Bonjour! Je suis un développeur de logiciels Fullstack avec plus de 5 ans d'expérience, spécialisé en JavaScript, PHP, HTML, CSS et jQuery. Ma grande expérience avec les bases de données relationnelles, la conception de schémas de base de données et MySQL me permet de résoudre même les problèmes les plus complexes avec facilité et efficacité."
-    },
-    "checkOutMyLinkedInLabel": {
-      "message": "Vérifiez-moi sur LinkedIn"
-    },
-    "freeOfSpywareLabel": {
-      "message": "libre de logiciels espions et de publicités."
-    },
-    "helpPluginsBeFree": {
-      "message": "Aidez mes plugins à devenir "
-    },
-    "sponsorMeOnPatreonLabel": {
-      "message": "SPONSORISEZ-MOI SUR PATREON"
-    },
-    "haveAnIdeaLabel": {
-      "message": "Vous avez une idée?"
-    },
-    "suggestFeaturesOrPluginsLabel": {
-      "message": "Suggérez des fonctionnalités ou des plugins"
-    },
-    "keepUpToDateLabel": {
-      "message": "Restez à jour!"
-    },
-    "joinMailingListLabel": {
-      "message": "Rejoignez la liste de diffusion et je vous enverrai des nouvelles de mes plugins et fonctionnalités"
-    },
-    "emailAdressLabel": {
-      "message": "Adresse e-mail"
-    },
-    "subscribeLabel": {
-      "message": "S'abonner"
-    },
-    "indicatesRequiredLabel": {
-      "message": "indique requis"
-    },
-    "hindiIndia": {
-      "message": "Hindi (India)"
-    },
-    "PressAToApprove": {
-      "message": "Premi A per approvare"
-    },
-    "PressRToRestart": {
+  "configTextToSpeech": {
+    "message": "Configurazione di Text to Speech"
+  },
+  "talkAfterResponse": {
+    "message": "Parla non appena chatGPT finisce di rispondere"
+  },
+  "always": {
+    "message": "Sempre"
+  },
+  "never": {
+    "message": "Mai"
+  },
+  "TTSLanguage": {
+    "message": "Lingua Text To Speech"
+  },
+  "englishUS": {
+    "message": "Inglese (Stati Uniti)"
+  },
+  "spanishSpain": {
+    "message": "Spagnolo (Spagna)"
+  },
+  "frenchFrance": {
+    "message": "Francese (Francia)"
+  },
+  "germanGermany": {
+    "message": "Tedesco (Germania)"
+  },
+  "italianItaly": {
+    "message": "Italiano (Italia)"
+  },
+  "japaneseJapan": {
+    "message": "Giapponese (Giappone)"
+  },
+  "portugueseBrazil": {
+    "message": "Portoghese (Brasile)"
+  },
+  "chineseChina": {
+    "message": "Cinese (Cina)"
+  },
+  "setTalkingSpeed": {
+    "message": "Imposta la velocità di parlato"
+  },
+  "setVoiceTone": {
+    "message": "Regola il tono della voce"
+  },
+  "STTSettings": {
+    "message": "Impostazioni di Speech to text"
+  },
+  "autoFocusAfterApproval": {
+    "message": "Auto focus sulla textarea quando il testo è approvato"
+  },
+  "SRlanguage": {
+    "message": "Lingua del riconoscimento vocale"
+  },
+  "setContinuousMode": {
+    "message": "Imposta modalità continua"
+  },
+  "continuousModeHint": {
+    "message": "Se restituire risultati continui per ogni riconoscimento, o solo un unico risultato"
+  },
+  "setInterimResults": {
+    "message": "Imposta risultati provvisori"
+  },
+  "interimResultsHint": {
+    "message": "Se restituire risultati provvisori (vero) o meno (falso)"
+  },
+  "elementRedaction": {
+    "message": "Censura dell'elemento"
+  },
+  "cssSelectorsInstruction": {
+    "message": "Utilizza i selettori CSS per selezionare il contenuto dell'HTML che vuoi censurare e seleziona l'opzione per censurare o non censurare il contenuto dell'elemento HTML selezionato. <br> Per incollare il contenuto, premi semplicemente ctrl+shift+Z e lo incollerà nel prompt o premi il pulsante sotto il pulsante di download della chat."
+  },
+  "STTDescription": {
+    "message": "Per la conversione da voce a testo, devi premere il pulsante del microfono nell'area del prompt o premere L, una volta che la finestra è aperta, puoi premere R per ascoltare di nuovo, A per approvare ciò che ha ascoltato e escape per chiudere la finestra."
+  },
+  "resetDefault": {
+    "message": "Ripristina le impostazioni predefinite"
+  },
+  "noBackersLabel": {
+    "message": "Il n'y a pas encore de soutiens,"
+  },
+  "noBackersLabelLink": {
+    "message": "soyez le premier"
+  },
+  "topSponsorsLabel": {
+    "message": "MEILLEURS SPONSORS"
+  },
+  "sponsorThisLabel": {
+    "message": "SPONSORISEZ CE PLUGIN! pour qu'il soit"
+  },
+  "sponsorThisContinuomLabel": {
+    "message": "libre de logiciels espions et de publicités!"
+  },
+  "popupConfigurationLabel": {
+    "message": "Configuration"
+  },
+  "optionsLinkLabel": {
+    "message": "Ouvrir la page à propos"
+  },
+  "aboutTheAuthorLabel": {
+    "message": "À propos de l'auteur"
+  },
+  "moreFeaturesSoonLabel": {
+    "message": "PLUS DE FONCTIONNALITÉS BIENTÔT!"
+  },
+  "howToUsePluginLabel": {
+    "message": "Comment utiliser ce plugin"
+  },
+  "aboutAuthorDescriptionLabel": {
+    "message": "Bonjour! Je suis un développeur de logiciels Fullstack avec plus de 5 ans d'expérience, spécialisé en JavaScript, PHP, HTML, CSS et jQuery. Ma grande expérience avec les bases de données relationnelles, la conception de schémas de base de données et MySQL me permet de résoudre même les problèmes les plus complexes avec facilité et efficacité."
+  },
+  "checkOutMyLinkedInLabel": {
+    "message": "Vérifiez-moi sur LinkedIn"
+  },
+  "freeOfSpywareLabel": {
+    "message": "libre de logiciels espions et de publicités."
+  },
+  "helpPluginsBeFree": {
+    "message": "Aidez mes plugins à devenir "
+  },
+  "sponsorMeOnPatreonLabel": {
+    "message": "SPONSORISEZ-MOI SUR PATREON"
+  },
+  "haveAnIdeaLabel": {
+    "message": "Vous avez une idée?"
+  },
+  "suggestFeaturesOrPluginsLabel": {
+    "message": "Suggérez des fonctionnalités ou des plugins"
+  },
+  "keepUpToDateLabel": {
+    "message": "Restez à jour!"
+  },
+  "joinMailingListLabel": {
+    "message": "Rejoignez la liste de diffusion et je vous enverrai des nouvelles de mes plugins et fonctionnalités"
+  },
+  "emailAdressLabel": {
+    "message": "Adresse e-mail"
+  },
+  "subscribeLabel": {
+    "message": "S'abonner"
+  },
+  "indicatesRequiredLabel": {
+    "message": "indique requis"
+  },
+  "hindiIndia": {
+    "message": "Hindi (India)"
+  },
+  "PressAToApprove": {
+    "message": "Premi A per approvare"
+  },
+  "PressRToRestart": {
     "message": "Riavvia premendo R"
-    },
-    "PressEscToCancel": {
+  },
+  "PressEscToCancel": {
     "message": "Annulla premendo ESC"
-    },
-    "HowToLabel": {
+  },
+  "HowToLabel": {
     "message": "Come fare"
-    },
-    "beInTheLoopLabel": {
+  },
+  "beInTheLoopLabel": {
     "message": "Rimani nel loop!"
-    },
-    "FeaturesLabel": {
+  },
+  "FeaturesLabel": {
     "message": "Caratteristiche"
-    },
-    "feature1Label": {
+  },
+  "feature1Label": {
     "message": "Vivi un'interazione completamente senza mani con ChatGPT. Il nostro plugin presenta un'opzione configurabile che permette a ChatGPT di leggere ad alta voce tutte le risposte non appena sono generate. Questa funzione è particolarmente utile per le persone con limitazioni motorie, promuovendo un'esperienza utente inclusiva."
-    },
-    "feature2Label": {
+  },
+  "feature2Label": {
     "message": "Natura multilingue, il nostro plugin ti permette di parlare e ascoltare in otto lingue: inglese, spagnolo, tedesco, portoghese, francese, italiano, giapponese e hindi. Che tu voglia comunicare nella tua lingua madre o esplorare una nuova, siamo qui per rendere possibile."
-    },
-    "feature3Label": {
+  },
+  "feature3Label": {
     "message": "Aumenta la tua efficienza con le nostre scorciatoie da tastiera. Questi tasti permettono un'interazione rapida ed efficace, portando la tua esperienza a un livello completamente nuovo. Questo design accessibile facilita l'uso del plugin, soprattutto per chi ha sfide motorie."
-    },
-    "feature4Label": {
+  },
+  "feature4Label": {
     "message": "Personalizza la tua esperienza con la possibilità di regolare il tono e la velocità della voce a tuo piacimento. Che tu preferisca una conversazione rapida ed energica o una chiacchierata lenta e fluida, forniamo gli strumenti per farlo accadere."
-    },
-    "feature5Label": {
+  },
+  "feature5Label": {
     "message": "La nostra funzione di approvazione automatica del testo dopo l'ascolto elimina la necessità di trascrizione manuale, particolarmente utile per le persone con disabilità visive o motorie. Questo approccio focalizzato sull'accessibilità ci aiuta a garantire che tutti gli utenti possano godere di un'interazione fluida con ChatGPT."
-    },
-    "feature6Label": {
+  },
+  "feature6Label": {
     "message": "Il meglio di tutto, tutte queste incredibili funzionalità sono offerte completamente gratis. Che si tratti di conversione voce-testo o testo-voce, ci sforziamo di fornire i migliori strumenti senza imporre alcuna barriera di costo. Con il nostro plugin, un'interazione inclusiva e accessibile con ChatGPT è alla portata di tutti."
-    },
-    "defaultConfigurationLabel": {
+  },
+  "defaultConfigurationLabel": {
     "message": "C'è già una configurazione di default, ma puoi personalizzarla a tuo piacimento. Basta cliccare sull'icona del plugin e regolare i valori come desideri."
-    },
-    "chatGptSpeakingLabel": {
+  },
+  "chatGptSpeakingLabel": {
     "message": "Per abilitare o disabilitare la funzione di ChatGPT che legge ad alta voce la sua risposta non appena finisce, basta cliccare sull'icona."
-    },
-    "microphoneButtonLabel": {
+  },
+  "microphoneButtonLabel": {
     "message": "Per parlare, puoi cliccare sul pulsante del microfono nell'area di prompt, e si aprirà una finestra in modalità ascolto. Puoi iniziare a parlare e il testo apparirà nel modal."
-    },
-    "approveTextLabel": {
+  },
+  "approveTextLabel": {
     "message": "Dopo che il testo appare nel modal, puoi cliccare sul pulsante verde per approvare il testo e apparirà nel prompt della chat. Puoi anche colpire il pulsante scuro per riprovare, o premere il pulsante rosso per annullare."
-    },
-    "listeningCircleLabel": {
+  },
+  "listeningCircleLabel": {
     "message": "Se il cerchio nel modal diventa arancione, significa che puoi parlare e trasformerà il tuo discorso in testo."
-    },
-    "notListeningLabel": {
+  },
+  "notListeningLabel": {
     "message": "Quando mostra questo, significa che non sta più ascoltando e puoi approvare il testo o premere R o il pulsante scuro per riattivare la modalità di ascolto."
-    },
-    "hotkeysLabel": {
+  },
+  "hotkeysLabel": {
     "message": "Ci sono anche scorciatoie da tastiera per rendere l'interazione più rapida. Puoi premere ESC per annullare la modalità di ascolto, R per riavviare, A per approvare il testo, e L per evitare di dover cliccare sul microfono (il cursore non dovrebbe essere nell'area del prompt)."
-    },
-    "cancelGptSpeakingLabel": {
+  },
+  "cancelGptSpeakingLabel": {
     "message": "Inoltre, se ChatGPT sta parlando la sua risposta, puoi annullare premendo escape o cliccando sul pulsante rosso, o metterlo in pausa cliccando sul pulsante di pausa."
-    },
-    "refreshPageLabel": {
+  },
+  "refreshPageLabel": {
     "message": "Se noti che il plugin non funziona correttamente, devi solo aggiornare la pagina premendo ctrl+r o il tasto f5."
-    },
-    "readingIn": {
-      "message": "Leggendo in"
-    },
-    "listeningIn": {
-      "message": "Ascoltando in"
-    }
+  },
+  "readingIn": {
+    "message": "Leggendo in"
+  },
+  "listeningIn": {
+    "message": "Ascoltando in"
+  },
+  "pressPToPause": {
+    "message": "Premi P per mettere in pausa"
   }
-  
+}

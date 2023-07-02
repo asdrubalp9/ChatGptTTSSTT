@@ -10,6 +10,7 @@ export default class TextoAVoz {
     this.initialized = null;
     this.handleKeyup = this.handleKeyup.bind(this); // Haz el binding de 'this'
     this.togglingSpeechState = false;
+    this.addingScreenState = false;
   }
 
   async init() {
@@ -41,6 +42,11 @@ export default class TextoAVoz {
   }
 
   handleKeyup(e) {
+    if (e.key === 'p') {
+      this.toggleSpeechState().then(() => {
+        this.togglingSpeechState = false;
+      });
+    }
     if (e.key === 'Escape') {
       this.stopTalking();
     }
@@ -73,6 +79,10 @@ export default class TextoAVoz {
 
   textToSpeechWindow(content) {
     return new Promise((resolve, reject) => {
+      if (this.addingScreenState) {
+        return;
+      }
+      this.addingScreenState = true;
       const div = document.createElement('div');
       div.classList.add('speechWindow');
       div.style.cssText =
@@ -86,7 +96,6 @@ export default class TextoAVoz {
   }
 
   addScreenToCancel() {
-    console.log('addScreenToCancel');
     const readingIn = this.configHandler.settings.TTSlanguage;
     const htmlContent = `
         <style>
@@ -105,10 +114,13 @@ export default class TextoAVoz {
             ${geti18nMessage('readingIn')}: ${readingIn}
             </p>
           </div>
-          <div class="col-6 flex">
+          <div class="col-6 flex column">
             <button class="btn flex-center btn-outline-dark flex-grow border border-gray-200 speechState" data-state="playing">
               <svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>
             </button>
+            <p class="text-center">
+              ${geti18nMessage('pressPToPause')}
+            </p>
           </div>
           <div class="col-6 flex column">
             <button class="btn flex-center btn-danger flex-grow cancelSpeech" style="margin:20px 0px 0px;">
@@ -121,19 +133,17 @@ export default class TextoAVoz {
         </div>
       `;
     this.textToSpeechWindow(htmlContent).then((html) => {
+      this.addingScreenState = false;
       this.screen = html; // Guardamos el div para poder modificar su contenido en otras funciones
       this.screen.innerHTML = htmlContent; // Cambiamos el contenido del div a un botón
       setTimeout(() => {
-        console.log('adding actions ------------->>>>');
         document.querySelectorAll('.cancelSpeech').forEach((element) => {
           element.addEventListener('click', () => {
-            console.log('click cancelSpeech');
             this.stopTalking();
           });
         });
         document.querySelectorAll('.speechState').forEach((element) => {
           element.addEventListener('click', () => {
-            console.log('click speechState');
             this.toggleSpeechState().then(() => {
               this.togglingSpeechState = false;
             });
@@ -154,11 +164,10 @@ export default class TextoAVoz {
           element.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>`;
           this.state = 'paused';
           this.speechSynth.pause();
-          console.log('pausing speechSynth');
         } else {
           element.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>`;
           this.state = 'playing';
-          console.log('playing speechSynth');
+
           this.speechSynth.resume();
         }
       });
@@ -169,7 +178,6 @@ export default class TextoAVoz {
   }
 
   stopTalking() {
-    console.log('stopTalking', this.screen);
     if (this.screen) {
       this.screen.remove();
       this.screen = null;
@@ -184,13 +192,11 @@ export default class TextoAVoz {
   }
 
   speakChunk(chunks, index) {
-    console.log('speakChunk', chunks[index]);
     if (index < chunks.length) {
       this.utterance.text = chunks[index];
       this.speechSynth.speak(this.utterance);
       this.utterance.onend = () => this.speakChunk(chunks, index + 1);
     } else {
-      console.log('se acabo el texto');
       this.stopTalking();
     }
   }
@@ -201,7 +207,6 @@ export default class TextoAVoz {
   }
 
   prepareSpeech(texto) {
-    console.log('preparing speech');
     this.setLanguage();
     this.setVoz();
     this.setVelocidad();

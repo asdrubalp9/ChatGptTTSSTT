@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SonicGPT, Talk to ChatGPT in MultiLanguage",
-  "version": "1.05",
+  "version": "1.06",
   "description": "Talk and listen to ChatGPT in your language!",
   "permissions": ["storage"],
   "action": {

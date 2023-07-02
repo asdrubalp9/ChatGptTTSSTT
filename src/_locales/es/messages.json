@@ -229,6 +229,8 @@
   },
   "dontRemember": {
     "message": "No recordar más"
+  },
+  "pressPToPause": {
+    "message": "Presiona P para pausar"
   }
-  
 }

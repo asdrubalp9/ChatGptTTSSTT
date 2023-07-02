@@ -1,0 +1,239 @@
+{
+  "configTextToSpeech": {
+    "message": "텍스트 음성 변환 설정"
+  },
+  "talkAfterResponse": {
+    "message": "chatGPT 응답 종료 후 바로 말하기"
+  },
+  "always": {
+    "message": "항상"
+  },
+  "never": {
+    "message": "결코"
+  },
+  "TTSLanguage": {
+    "message": "텍스트 음성 변환 언어"
+  },
+  "englishUS": {
+    "message": "영어 (미국)"
+  },
+  "spanishSpain": {
+    "message": "스페인어 (스페인)"
+  },
+  "frenchFrance": {
+    "message": "프랑스어 (프랑스)"
+  },
+  "germanGermany": {
+    "message": "독일어 (독일)"
+  },
+  "italianItaly": {
+    "message": "이탈리아어 (이탈리아)"
+  },
+  "japaneseJapan": {
+    "message": "일본어 (일본)"
+  },
+  "portugueseBrazil": {
+    "message": "포르투갈어 (브라질)"
+  },
+  "chineseChina": {
+    "message": "중국어 (중국)"
+  },
+  "setTalkingSpeed": {
+    "message": "말하기 속도 설정"
+  },
+  "setVoiceTone": {
+    "message": "목소리 톤 조정"
+  },
+  "STTSettings": {
+    "message": "음성 텍스트 설정"
+  },
+  "autoFocusAfterApproval": {
+    "message": "텍스트 승인 후 텍스트 영역에 자동 초점"
+  },
+  "SRlanguage": {
+    "message": "음성 인식 언어"
+  },
+  "setContinuousMode": {
+    "message": "연속 모드 설정"
+  },
+  "continuousModeHint": {
+    "message": "각 인식에 대해 연속적인 결과가 반환되는지, 또는 단일 결과만 반환되는지 여부"
+  },
+  "setInterimResults": {
+    "message": "중간 결과 설정"
+  },
+  "interimResultsHint": {
+    "message": "중간 결과를 반환해야 하는지(true) 아닌지(false) 여부"
+  },
+  "elementRedaction": {
+    "message": "요소 검열"
+  },
+  "cssSelectorsInstruction": {
+    "message": "CSS 선택자를 사용하여 검열하려는 HTML의 내용을 선택하고, 선택된 HTML 요소의 내용을 검열하거나 검열하지 않는 옵션을 선택합니다. 붙여넣기하려면 ctrl+shift+Z를 누르면 프롬프트에 붙여넣습니다. 또는 다운로드 채팅 버튼 아래의 버튼을 누릅니다."
+  },
+  "STTDescription": {
+    "message": "음성을 텍스트로 변환하려면 프롬프트 영역의 마이크 버튼을 누르거나 L을 누르면 됩니다. 창이 열리면 R을 눌러 다시 듣고, 들은 내용을 승인하려면 A를 누르고, 창을 닫으려면 escape를 누르세요."
+  },
+  "resetDefault": {
+    "message": "기본값으로 재설정"
+  },
+  "noBackersLabel": {
+    "message": "아직 후원자가 없습니다,"
+  },
+  "noBackersLabelLink": {
+    "message": "첫 번째로 되어 보세요"
+  },
+  "topSponsorsLabel": {
+    "message": "톱 스폰서"
+  },
+  "sponsorThisLabel": {
+    "message": "이 플러그인을 스폰서하세요! 그래야"
+  },
+  "sponsorThisContinuomLabel": {
+    "message": "스파이웨어와 광고가 없는 무료 사용이 가능합니다!"
+  },
+  "popupConfigurationLabel": {
+    "message": "구성"
+  },
+  "optionsLinkLabel": {
+    "message": "정보 페이지 열기"
+  },
+  "aboutTheAuthorLabel": {
+    "message": "저자에 대하여"
+  },
+  "moreFeaturesSoonLabel": {
+    "message": "곧 더 많은 기능이 제공됩니다!"
+  },
+  "howToUsePluginLabel": {
+    "message": "이 플러그인을 어떻게 사용하는지"
+  },
+  "aboutAuthorDescriptionLabel": {
+    "message": "안녕하세요! 저는 5년 이상의 경험을 가진 풀스택 소프트웨어 개발자로, JavaScript, PHP, HTML, CSS, jQuery를 전문으로 하고 있습니다. 또한 관계형 데이터베이스, 데이터베이스 스키마 설계, MySQL에 대한 광범위한 경험을 바탕으로 가장 복잡한 문제도 쉽고 효율적으로 해결할 수 있습니다."
+  },
+  "checkOutMyLinkedInLabel": {
+    "message": "링크드인에서 제 프로필을 확인해 보세요"
+  },
+  "freeOfSpywareLabel": {
+    "message": "스파이웨어와 광고가 없습니다."
+  },
+  "helpPluginsBeFree": {
+    "message": "내 플러그인이 "
+  },
+  "sponsorMeOnPatreonLabel": {
+    "message": "PATREON에서 저를 후원하세요"
+  },
+  "haveAnIdeaLabel": {
+    "message": "아이디어가 있나요?"
+  },
+  "suggestFeaturesOrPluginsLabel": {
+    "message": "기능이나 플러그인 제안"
+  },
+  "keepUpToDateLabel": {
+    "message": "최신 상태를 유지하세요!"
+  },
+  "joinMailingListLabel": {
+    "message": "메일링 리스트에 가입하시면 제 플러그인과 기능에 대한 소식을 보내드립니다"
+  },
+  "emailAdressLabel": {
+    "message": "이메일 주소"
+  },
+  "subscribeLabel": {
+    "message": "구독"
+  },
+  "indicatesRequiredLabel": {
+    "message": "필수 항목을 나타냅니다"
+  },
+  "hindiIndia": {
+    "message": "힌디어 (인도)"
+  },
+  "PressAToApprove": {
+    "message": "A를 눌러 승인"
+  },
+  "PressRToRestart": {
+    "message": "R을 눌러 다시 시작"
+  },
+  "PressEscToCancel": {
+    "message": "ESC를 눌러 취소"
+  },
+  "HowToLabel": {
+    "message": "어떻게"
+  },
+  "beInTheLoopLabel": {
+    "message": "루프에 참여하세요!"
+  },
+  "FeaturesLabel": {
+    "message": "기능"
+  },
+  "feature1Label": {
+    "message": "ChatGPT와의 완전히 핸즈프리 상호 작용을 경험해보세요. 플러그인은 설정 가능한 옵션을 통해 ChatGPT가 생성하는 모든 응답을 자동으로 대화로 읽어줍니다. 이 기능은 특히 모터 제한이 있는 개인에게 유용하며, 포괄적인 사용자 경험을 제공합니다."
+  },
+  "feature2Label": {
+    "message": "다국어를 지원하는 플러그인을 통해 8개 언어로 대화하고 들을 수 있습니다: 영어, 스페인어, 독일어, 포르투갈어, 프랑스어, 이탈리아어, 일본어, 힌디어. 원하는 언어로 의사소통하거나 새로운 언어를 탐구하려는 경우, 가능하게 해드립니다."
+  },
+  "feature3Label": {
+    "message": "단축키를 이용하여 효율성을 높일 수 있습니다. 이 키들은 신속하고 효과적인 상호작용을 가능하게 하여 경험을 완전히 새로운 수준으로 끌어올립니다. 이런 접근성 있는 디자인은 플러그인 사용을 용이하게 하며, 특히 모터 도전을 겪고 있는 사람들에게 유용합니다."
+  },
+  "feature4Label": {
+    "message": "목소리 톤과 속도를 조절하여 경험을 사용자 맞춤화할 수 있는 능력을 제공합니다. 이를 통해 사용자는 이해하기 쉬운 속도로 대화를 듣거나 음성의 느낌을 자신의 취향에 맞게 조절할 수 있습니다."
+  },
+  "feature5Label": {
+    "message": "플러그인은 데이터 보호를 중요시하며, 광고나 스파이웨어 없이 사용자의 경험을 최적화하도록 설계되었습니다. 개인 정보 보호와 보안에 대한 우려는 더 이상 걱정하지 않아도 됩니다."
+  },
+  "feature6Label": {
+    "message": "가장 좋은 점은, 이러한 놀라운 기능들이 전부 무료로 제공된다는 것입니다. 음성을 텍스트로 변환하거나 텍스트를 음성으로 변환하는 것에 대해 우리는 최상의 도구를 제공하려고 노력하며, 비용 장벽을 부과하지 않습니다. 우리의 플러그인을 통해, 모든 사람들이 ChatGPT와의 포괄적이고 접근 가능한 상호작용을 즐길 수 있습니다."
+  },
+  "defaultConfigurationLabel": {
+    "message": "기본 구성이 이미 있지만, 원하는 대로 사용자 정의 할 수 있습니다. 플러그인 아이콘을 클릭하고 값을 원하는 대로 조정하십시오."
+  },
+  "chatGptSpeakingLabel": {
+    "message": "ChatGPT가 응답을 완료하자마자 그 응답을 말하는 기능을 활성화 또는 비활성화하려면 아이콘을 클릭하십시오."
+  },
+  "microphoneButtonLabel": {
+    "message": "말하기 위해 프롬프트 영역의 마이크 버튼을 클릭할 수 있으며, 창이 열리고 청취 모드가 됩니다. 말을 하면 모달에 텍스트가 나타납니다."
+  },
+  "approveTextLabel": {
+    "message": "텍스트가 모달에 나타나면 녹색 버튼을 클릭하여 텍스트를 승인하면 채팅 프롬프트에 텍스트가 나타납니다. 또는 다시 시도하려면 어두운 버튼을 누르거나, 빨간색 버튼을 눌러 취소할 수 있습니다."
+  },
+  "listeningCircleLabel": {
+    "message": "모달에서 원이 주황색으로 변하면, 말을 하면 텍스트로 변환됩니다."
+  },
+  "notListeningLabel": {
+    "message": "이런 식으로 나타나면 더 이상 듣고 있지 않다는 뜻이며, 텍스트를 승인하거나 R을 누르거나 어두운 버튼을 눌러 청취 모드를 재활성화할 수 있습니다."
+  },
+  "hotkeysLabel": {
+    "message": "또한 더 빠른 상호작용을 위해 단축키가 있습니다. ESC를 눌러 청취 모드를 취소하거나, R을 눌러 재시작하거나, A를 눌러 텍스트를 승인하고, 마이크를 클릭하지 않고도 (커서가 프롬프트 영역에 있지 않아야 함) L을 눌러 수행할 수 있습니다."
+  },
+  "cancelGptSpeakingLabel": {
+    "message": "또한, ChatGPT가 응답을 말하고 있다면, escape를 누르거나 빨간색 버튼을 클릭하여 취소하거나, 일시 중지 버튼을 클릭하여 일시 중지할 수 있습니다."
+  },
+  "refreshPageLabel": {
+    "message": "플러그인이 제대로 작동하지 않는 것 같다면, ctrl+r을 누르거나 f5 키를 눌러 페이지를 새로 고침해야 합니다."
+  },
+  "shortDescriptionLabel": {
+    "message": "당신의 언어로 ChatGPT에게 말하고 들어보세요!"
+  },
+  "readingIn": {
+    "message": "읽는 중"
+  },
+  "listeningIn": {
+    "message": "들어보는 중"
+  },
+  "pleaseReviewPluginTitle": {
+    "message": "플러그인을 검토해주세요"
+  },
+  "ifYouHaveLikeditReview": {
+    "message": "당신이 우리의 플러그인을 즐겼다면, 우리에게 리뷰를 남겨주세요. 감사합니다!"
+  },
+  "leaveReviewNow": {
+    "message": "지금 리뷰 남기기"
+  },
+  "rememberLater": {
+    "message": "나중에 기억하기"
+  },
+  "dontRemember": {
+    "message": "더 이상 기억하지 않기"
+  },
+  "pressPToPause": {
+    "message": "P를 눌러 일시 중지"
+  }
+}

@@ -1,4 +1,4 @@
-import { geti18nMessage } from "./helpers";
+import { geti18nMessage } from './helpers';
 
 const config = [
   {
@@ -37,44 +37,168 @@ const config = [
     Hint: '',
     options: [
       {
-        value: "en-US",
-        label: geti18nMessage("englishUS")
+        value: 'en-US',
+        label: geti18nMessage('englishUS'),
       },
       {
-        value: "es-ES",
-        label: geti18nMessage("spanishSpain")
+        value: 'es-ES',
+        label: geti18nMessage('spanishSpain'),
       },
       {
-        value: "fr-FR",
-        label: geti18nMessage("frenchFrance")
+        value: 'fr-FR',
+        label: geti18nMessage('frenchFrance'),
       },
       {
-        value: "de-DE",
-        label: geti18nMessage("germanGermany")
+        value: 'de-DE',
+        label: geti18nMessage('germanGermany'),
       },
       {
-        value: "it-IT",
-        label: geti18nMessage("italianItaly")
+        value: 'it-IT',
+        label: geti18nMessage('italianItaly'),
       },
       {
-        value: "ja-JP",
-        label: geti18nMessage("japaneseJapan")
+        value: 'ja-JP',
+        label: geti18nMessage('japaneseJapan'),
       },
       {
-        value: "pt-BR",
-        label: geti18nMessage("portugueseBrazil")
+        value: 'pt-BR',
+        label: geti18nMessage('portugueseBrazil'),
       },
       {
-        value: "zh-CN",
-        label: geti18nMessage("chineseChina")
+        value: 'zh-CN',
+        label: geti18nMessage('chineseChina'),
       },
       {
-        value: "hi-IN",
-        label: geti18nMessage("hindiIndia")
-      }
+        value: 'hi-IN',
+        label: geti18nMessage('hindiIndia'),
+      },
+      {
+        value: 'af-ZA',
+        label: 'Afrikaans (South Africa)',
+      },
+      {
+        value: 'sq-AL',
+        label: 'Shqip (Albania)',
+      },
+      {
+        value: 'ar-SA',
+        label: 'العربية (المملكة العربية السعودية)',
+      },
+      {
+        value: 'hy-AM',
+        label: 'Հայերեն (Հայաստան)',
+      },
+      {
+        value: 'az-AZ',
+        label: 'Azərbaycan (Azərbaycan)',
+      },
+      {
+        value: 'eu-ES',
+        label: 'Euskara (Espainia)',
+      },
+      {
+        value: 'bn-BD',
+        label: 'বাংলা (বাংলাদেশ)',
+      },
+      {
+        value: 'be-BY',
+        label: 'Беларускі (Беларусь)',
+      },
+      {
+        value: 'bs-BA',
+        label: 'Bosanski (Bosna i Hercegovina)',
+      },
+      {
+        value: 'bg-BG',
+        label: 'Български (България)',
+      },
+      {
+        value: 'ca-ES',
+        label: 'Català (Espanya)',
+      },
+      {
+        value: 'ceb-PH',
+        label: 'Cebuano (Pilipinas)',
+      },
+      {
+        value: 'ny-MW',
+        label: 'Chichewa (Malawi)',
+      },
+      {
+        value: 'hr-HR',
+        label: 'Hrvatski (Hrvatska)',
+      },
+      {
+        value: 'cs-CZ',
+        label: 'Čeština (Česká republika)',
+      },
+      {
+        value: 'da-DK',
+        label: 'Dansk (Danmark)',
+      },
+      {
+        value: 'nl-NL',
+        label: 'Nederlands (Nederland)',
+      },
+      {
+        value: 'et-EE',
+        label: 'Eesti (Eesti)',
+      },
+      {
+        value: 'tl-PH',
+        label: 'Filipino (Pilipinas)',
+      },
+      {
+        value: 'fi-FI',
+        label: 'Suomi (Suomi)',
+      },
+      {
+        value: 'gl-ES',
+        label: 'Galego (España)',
+      },
+      {
+        value: 'ka-GE',
+        label: 'ქართული (საქართველო)',
+      },
+      {
+        value: 'el-GR',
+        label: 'Ελληνικά (Ελλάδα)',
+      },
+      {
+        value: 'gu-IN',
+        label: 'ગુજરાતી (ભારત)',
+      },
+      {
+        value: 'ht-HT',
+        label: 'Kreyòl Ayisyen (Ayiti)',
+      },
+      {
+        value: 'iw-IL',
+        label: 'עברית (ישראל)',
+      },
+      {
+        value: 'hu-HU',
+        label: 'Magyar (Magyarország)',
+      },
+      {
+        value: 'is-IS',
+        label: 'Íslenska (Ísland)',
+      },
+      {
+        value: 'id-ID',
+        label: 'Indonesia (Indonesia)',
+      },
+      {
+        value: 'ga-IE',
+        label: 'Gaeilge (Éire)',
+      },
+      {
+        value: 'ru-RU',
+        label: 'Русский (Россия)',
+      },
     ],
   },
-  
+
   {
     name: 'velocidad',
     label: geti18nMessage('setTalkingSpeed'),
@@ -84,18 +208,18 @@ const config = [
     value: '',
     defaultValue: '1',
     type: 'number',
-    min:0, 
+    min: 0,
     max: 5,
     step: 0.1,
     Hint: '',
   },
   {
     name: 'setTonada',
-    min:0, 
+    min: 0,
     max: 2,
     step: 0.1,
-    label: geti18nMessage("setVoiceTone"),
-    placeholder: geti18nMessage("setVoiceTone"),
+    label: geti18nMessage('setVoiceTone'),
+    placeholder: geti18nMessage('setVoiceTone'),
     htmlId: 'setTonada',
     htmlclass: '',
     value: '',
@@ -103,7 +227,7 @@ const config = [
     type: 'number',
     Hint: '',
   },
-// {
+  // {
   //   name: 'setVoz',
   //   label: 'Text To Speech language',
   //   placeholder: 'Text To Speech language',
@@ -115,18 +239,17 @@ const config = [
   //   Hint: '',
   // },
 
-
   {
     type: 'separator',
-    label: geti18nMessage("STTSettings"),
+    label: geti18nMessage('STTSettings'),
   },
   {
     type: 'p',
-    label: geti18nMessage("STTDescription"),
+    label: geti18nMessage('STTDescription'),
   },
   {
     name: 'autoFocus',
-    label: geti18nMessage("autoFocusAfterApproval"),
+    label: geti18nMessage('autoFocusAfterApproval'),
     htmlId: 'autoFocus',
     htmlclass: '',
     value: '',
@@ -144,11 +267,11 @@ const config = [
       },
     ],
   },
-  
+
   {
     name: 'STTlanguage',
-    label: geti18nMessage("SRlanguage"),
-    placeholder: geti18nMessage("SRlanguage"),
+    label: geti18nMessage('SRlanguage'),
+    placeholder: geti18nMessage('SRlanguage'),
     htmlId: 'STTlanguage',
     htmlclass: '',
     value: '',
@@ -157,44 +280,168 @@ const config = [
     Hint: '',
     options: [
       {
-        value: "en-US",
-        label: geti18nMessage("englishUS")
+        value: 'en-US',
+        label: geti18nMessage('englishUS'),
       },
       {
-        value: "es-ES",
-        label: geti18nMessage("spanishSpain")
+        value: 'es-ES',
+        label: geti18nMessage('spanishSpain'),
       },
       {
-        value: "fr-FR",
-        label: geti18nMessage("frenchFrance")
+        value: 'fr-FR',
+        label: geti18nMessage('frenchFrance'),
       },
       {
-        value: "de-DE",
-        label: geti18nMessage("germanGermany")
+        value: 'de-DE',
+        label: geti18nMessage('germanGermany'),
       },
       {
-        value: "it-IT",
-        label: geti18nMessage("italianItaly")
+        value: 'it-IT',
+        label: geti18nMessage('italianItaly'),
       },
       {
-        value: "ja-JP",
-        label: geti18nMessage("japaneseJapan")
+        value: 'ja-JP',
+        label: geti18nMessage('japaneseJapan'),
       },
       {
-        value: "pt-BR",
-        label: geti18nMessage("portugueseBrazil")
+        value: 'pt-BR',
+        label: geti18nMessage('portugueseBrazil'),
       },
       {
-        value: "zh-CN",
-        label: geti18nMessage("chineseChina")
+        value: 'zh-CN',
+        label: geti18nMessage('chineseChina'),
       },
       {
-        value: "hi-IN",
-        label: geti18nMessage("hindiIndia")
-      }
+        value: 'hi-IN',
+        label: geti18nMessage('hindiIndia'),
+      },
+      {
+        value: 'af-ZA',
+        label: 'Afrikaans (South Africa)',
+      },
+      {
+        value: 'sq-AL',
+        label: 'Shqip (Albania)',
+      },
+      {
+        value: 'ar-SA',
+        label: 'العربية (المملكة العربية السعودية)',
+      },
+      {
+        value: 'hy-AM',
+        label: 'Հայերեն (Հայաստան)',
+      },
+      {
+        value: 'az-AZ',
+        label: 'Azərbaycan (Azərbaycan)',
+      },
+      {
+        value: 'eu-ES',
+        label: 'Euskara (Espainia)',
+      },
+      {
+        value: 'bn-BD',
+        label: 'বাংলা (বাংলাদেশ)',
+      },
+      {
+        value: 'be-BY',
+        label: 'Беларускі (Беларусь)',
+      },
+      {
+        value: 'bs-BA',
+        label: 'Bosanski (Bosna i Hercegovina)',
+      },
+      {
+        value: 'bg-BG',
+        label: 'Български (България)',
+      },
+      {
+        value: 'ca-ES',
+        label: 'Català (Espanya)',
+      },
+      {
+        value: 'ceb-PH',
+        label: 'Cebuano (Pilipinas)',
+      },
+      {
+        value: 'ny-MW',
+        label: 'Chichewa (Malawi)',
+      },
+      {
+        value: 'hr-HR',
+        label: 'Hrvatski (Hrvatska)',
+      },
+      {
+        value: 'cs-CZ',
+        label: 'Čeština (Česká republika)',
+      },
+      {
+        value: 'da-DK',
+        label: 'Dansk (Danmark)',
+      },
+      {
+        value: 'nl-NL',
+        label: 'Nederlands (Nederland)',
+      },
+      {
+        value: 'et-EE',
+        label: 'Eesti (Eesti)',
+      },
+      {
+        value: 'tl-PH',
+        label: 'Filipino (Pilipinas)',
+      },
+      {
+        value: 'fi-FI',
+        label: 'Suomi (Suomi)',
+      },
+      {
+        value: 'gl-ES',
+        label: 'Galego (España)',
+      },
+      {
+        value: 'ka-GE',
+        label: 'ქართული (საქართველო)',
+      },
+      {
+        value: 'el-GR',
+        label: 'Ελληνικά (Ελλάδα)',
+      },
+      {
+        value: 'gu-IN',
+        label: 'ગુજરાતી (ભારત)',
+      },
+      {
+        value: 'ht-HT',
+        label: 'Kreyòl Ayisyen (Ayiti)',
+      },
+      {
+        value: 'iw-IL',
+        label: 'עברית (ישראל)',
+      },
+      {
+        value: 'hu-HU',
+        label: 'Magyar (Magyarország)',
+      },
+      {
+        value: 'is-IS',
+        label: 'Íslenska (Ísland)',
+      },
+      {
+        value: 'id-ID',
+        label: 'Indonesia (Indonesia)',
+      },
+      {
+        value: 'ga-IE',
+        label: 'Gaeilge (Éire)',
+      },
+      {
+        value: 'ru-RU',
+        label: 'Русский (Россия)',
+      },
     ],
   },
-  
+
   // {
   //   name: 'continuousMode',
   //   label: 'Set continuous mode',
@@ -206,7 +453,7 @@ const config = [
   //   type: 'checkbox',
   //   Hint: 'Whether continuous results are returned for each recognition, or only a single result',
   // },
-  
+
   // {
   //   name: 'interimResults',
   //   label: 'Set interim results',
@@ -235,6 +482,5 @@ const config = [
   //   },
   // }
 ];
-
 
 export { config };

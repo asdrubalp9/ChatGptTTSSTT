@@ -1,219 +1,221 @@
 {
-    "configTextToSpeech": {
-      "message": "Text zu Sprache Einstellungen"
-    },
-    "talkAfterResponse": {
-      "message": "Sprechen, sobald chatGPT die Antwort beendet hat"
-    },
-    "always": {
-      "message": "Immer"
-    },
-    "never": {
-      "message": "Niemals"
-    },
-    "TTSLanguage": {
-      "message": "Text zu Sprache Sprache"
-    },
-    "englishUS": {
-      "message": "Englisch (Vereinigte Staaten)"
-    },
-    "spanishSpain": {
-      "message": "Spanisch (Spanien)"
-    },
-    "frenchFrance": {
-      "message": "Französisch (Frankreich)"
-    },
-    "germanGermany": {
-      "message": "Deutsch (Deutschland)"
-    },
-    "italianItaly": {
-      "message": "Italienisch (Italien)"
-    },
-    "japaneseJapan": {
-      "message": "Japanisch (Japan)"
-    },
-    "portugueseBrazil": {
-      "message": "Portugiesisch (Brasilien)"
-    },
-    "chineseChina": {
-      "message": "Chinesisch (China)"
-    },
-    "setTalkingSpeed": {
-      "message": "Sprechgeschwindigkeit einstellen"
-    },
-    "setVoiceTone": {
-      "message": "Stimmton anpassen"
-    },
-    "STTSettings": {
-      "message": "Sprache zu Text Einstellungen"
-    },
-    "autoFocusAfterApproval": {
-      "message": "Automatischer Fokus auf Textbereich, wenn der Text genehmigt ist"
-    },
-    "SRlanguage": {
-      "message": "Spracherkennungssprache"
-    },
-    "setContinuousMode": {
-      "message": "Kontinuierlichen Modus einstellen"
-    },
-    "continuousModeHint": {
-      "message": "Ob kontinuierliche Ergebnisse für jede Erkennung zurückgegeben werden oder nur ein einziges Ergebnis"
-    },
-    "setInterimResults": {
-      "message": "Vorläufige Ergebnisse festlegen"
-    },
-    "interimResultsHint": {
-      "message": "Ob vorläufige Ergebnisse zurückgegeben werden sollen (wahr) oder nicht (falsch)"
-    },
-    "elementRedaction": {
-      "message": "Elementzurücknahme"
-    },
-    "cssSelectorsInstruction": {
-      "message": "Verwenden Sie CSS-Selektoren, um den Inhalt des HTML auszuwählen, den Sie zurücknehmen möchten, und wählen Sie die Option, den Inhalt des ausgewählten HTML-Elements zurückzunehmen oder nicht zurückzunehmen. Zum Einfügen des Inhalts drücken Sie einfach Strg+Umschalt+Z, und er wird in der Eingabeaufforderung eingefügt, oder drücken Sie die Taste unter der Chat-Download-Taste."
-    },
-    "STTDescription": {
-      "message": "Um Sprache in Text umzuwandeln, müssen Sie die Mikrofontaste im Aufforderungsbereich drücken oder L drücken, sobald das Fenster geöffnet ist. Sie können R drücken, um erneut zuzuhören, A drücken, um das Gehörte zu bestätigen und Escape, um das Fenster zu schließen."
-    },
-    "resetDefault": {
-      "message": "Auf Standard zurücksetzen"
-    },
-    "noBackersLabel": {
-      "message": "Es gibt noch keine Unterstützer,"
-    },
-    "noBackersLabelLink": {
-      "message": "Sei der Erste"
-    },
-    "topSponsorsLabel": {
-      "message": "TOP SPONSOREN"
-    },
-    "sponsorThisLabel": {
-      "message": "UNTERSTÜTZE DIESES PLUGIN! damit es"
-    },
-    "sponsorThisContinuomLabel": {
-      "message": "frei von Spyware und Werbung ist!"
-    },
-    "popupConfigurationLabel": {
-      "message": "Konfiguration"
-    },
-    "optionsLinkLabel": {
-      "message": "Informationsseite öffnen"
-    },
-    "aboutTheAuthorLabel": {
-      "message": "Über den Autor"
-    },
-    "moreFeaturesSoonLabel": {
-      "message": "BALD MEHR FUNKTIONEN!"
-    },
-    "howToUsePluginLabel": {
-      "message": "Wie man dieses Plugin verwendet"
-    },
-    "aboutAuthorDescriptionLabel": {
-      "message": "Hallo! Ich bin ein Fullstack Software Entwickler mit mehr als 5 Jahren Erfahrung, spezialisiert auf JavaScript, PHP, HTML, CSS und jQuery. Meine umfangreiche Erfahrung mit relationalen Datenbanken, Datenbankschemadesign und MySQL ermöglicht es mir, auch die komplexesten Probleme mit Leichtigkeit und Effizienz zu lösen."
-    },
-    "checkOutMyLinkedInLabel": {
-      "message": "Besuche mich auf LinkedIn"
-    },
-    "freeOfSpywareLabel": {
-      "message": "frei von Spyware und Werbung."
-    },
-    "helpPluginsBeFree": {
-      "message": "Hilf meinen Plugins, "
-    },
-    "sponsorMeOnPatreonLabel": {
-      "message": "UNTERSTÜTZE MICH AUF PATREON"
-    },
-    "haveAnIdeaLabel": {
-      "message": "Hast du eine Idee?"
-    },
-    "suggestFeaturesOrPluginsLabel": {
-      "message": "Schlage Funktionen oder Plugins vor"
-    },
-    "keepUpToDateLabel": {
-      "message": "Bleiben Sie auf dem Laufenden!"
-    },
-    "joinMailingListLabel": {
-      "message": "Treten Sie der Mailingliste bei und ich sende Ihnen Neuigkeiten zu meinen Plugins und Funktionen"
-    },
-    "emailAdressLabel": {
-      "message": "E-Mail-Adresse"
-    },
-    "subscribeLabel": {
-      "message": "Abonnieren"
-    },
-    "indicatesRequiredLabel": {
-      "message": "zeigt ein erforderliches Feld an"
-    },
-    "hindiIndia": {
-      "message": "Hindi (Indien)"
-    },
-    "PressAToApprove": {
-      "message": "Drücken Sie A, um zu bestätigen"
-    },
-    "PressRToRestart": {
-      "message": "Starten Sie neu, indem Sie R drücken"
-    },
-    "PressEscToCancel": {
-      "message": "Abbrechen, indem Sie ESC drücken"
-    },
-    "HowToLabel": {
-      "message": "Wie man"
-    },
-    "beInTheLoopLabel": {
-      "message": "Seien Sie auf dem Laufenden!"
-    },
-    "FeaturesLabel": {
-      "message": "Eigenschaften"
-    },
-    "feature1Label": {
-      "message": "Erleben Sie eine vollständig freihändige Interaktion mit ChatGPT. Unser Plugin verfügt über eine konfigurierbare Option, die es ChatGPT ermöglicht, alle Antworten automatisch laut vorzulesen, sobald sie generiert werden. Diese Funktion ist besonders nützlich für Personen mit motorischen Einschränkungen und fördert ein inklusives Benutzererlebnis."
-    },
-    "feature2Label": {
-      "message": "Multilingual von Natur aus ermöglicht es unser Plugin, in acht Sprachen zu sprechen und zuzuhören: Englisch, Spanisch, Deutsch, Portugiesisch, Französisch, Italienisch, Japanisch und Hindi. Ob Sie in Ihrer Muttersprache kommunizieren oder eine neue Sprache erkunden möchten, wir sind hier, um es möglich zu machen."
-    },
-    "feature3Label": {
-      "message": "Steigern Sie Ihre Effizienz mit unseren Hotkeys. Diese Tasten ermöglichen eine schnelle und effektive Interaktion und bringen Ihr Erlebnis auf ein völlig neues Level. Dieses zugängliche Design erleichtert die Nutzung des Plugins, insbesondere für Menschen mit motorischen Herausforderungen."
-    },
-    "feature4Label": {
-      "message": "Passen Sie Ihre Erfahrung an, indem Sie den Ton und die Geschwindigkeit der Stimme nach Ihren Wünschen einstellen können. Ob Sie ein schnelles, energiegeladenes Gespräch oder einen sanften, langsamen Chat bevorzugen, wir stellen die Werkzeuge zur Verfügung, um dies zu ermöglichen."
-    },
-    "feature5Label": {
-      "message": "Unsere Auto-Text-Bestätigungsfunktion nach dem Zuhören eliminiert die Notwendigkeit einer manuellen Transkription, was besonders hilfreich für Menschen mit Seh- oder motorischen Behinderungen ist. Dieser zugänglichkeitsorientierte Ansatz hilft uns sicherzustellen, dass alle Benutzer eine nahtlose Interaktion mit ChatGPT genießen können."
-    },
-    "feature6Label": {
-      "message": "Am besten ist, dass all diese erstaunlichen Funktionen völlig kostenlos angeboten werden. Ob es sich um eine Sprache-zu-Text-Konvertierung oder Text-zu-Sprache handelt, wir bemühen uns, die besten Tools ohne Kostenbarriere bereitzustellen. Mit unserem Plugin ist eine inklusive und zugängliche Interaktion mit ChatGPT für alle erreichbar."
-    },
-    "defaultConfigurationLabel": {
-      "message": "Es gibt bereits eine Standardkonfiguration, aber Sie können sie nach Ihren Wünschen anpassen. Klicken Sie einfach auf das Plugin-Symbol und passen Sie die Werte an, wie Sie möchten."
-    },
-    "chatGptSpeakingLabel": {
-      "message": "Um die Funktion zu aktivieren oder zu deaktivieren, dass ChatGPT seine Antwort ausspricht, sobald es fertig ist, klicken Sie einfach auf das Symbol."
-    },
-    "microphoneButtonLabel": {
-      "message": "Um zu sprechen, können Sie auf die Mikrofontaste in der Eingabeaufforderung klicken, und ein Fenster wird im Hörmodus geöffnet. Sie können anfangen zu sprechen und der Text wird im Modal angezeigt."
-    },
-    "approveTextLabel": {
-      "message": "Nachdem der Text im Modal angezeigt wird, können Sie auf die grüne Taste klicken, um den Text zu bestätigen, und er wird in der Chat-Eingabeaufforderung angezeigt. Sie können auch die dunkle Taste drücken, um es erneut zu versuchen, oder die rote Taste drücken, um abzubrechen."
-    },
-    "listeningCircleLabel": {
-      "message": "Wenn der Kreis im Modal orange wird, bedeutet das, dass Sie sprechen können und es Ihre Sprache in Text umwandeln wird."
-    },
-    "notListeningLabel": {
-      "message": "Wenn dies angezeigt wird, bedeutet das, dass es nicht mehr zuhört und Sie den Text bestätigen oder R drücken oder die dunkle Taste drücken können, um den Hörmodus wieder zu aktivieren."
-    },
-    "hotkeysLabel": {
-      "message": "Es gibt auch Hotkeys, um die Interaktion schneller zu machen. Sie können ESC drücken, um den Hörmodus zu beenden, R, um neu zu starten, A, um den Text zu bestätigen, und L, um nicht auf das Mikrofon klicken zu müssen (der Cursor sollte nicht im Eingabeaufforderungsbereich sein)."
-    },
-    "cancelGptSpeakingLabel": {
-      "message": "Außerdem können Sie, wenn ChatGPT seine Antwort spricht, dies durch Drücken von Escape oder Klicken auf die rote Taste abbrechen oder durch Klicken auf die Pause-Taste pausieren."
-    },
-    "refreshPageLabel": {
-      "message": "Wenn Sie feststellen, dass das Plugin nicht ordnungsgemäß funktioniert, müssen Sie nur die Seite aktualisieren, indem Sie Strg+R oder die F5-Taste drücken."
-    },
-    "readingIn": {
-      "message": "Lesen in"
-    },
-    "listeningIn": {
-      "message": "Zuhören in"
-    }
+  "configTextToSpeech": {
+    "message": "Text zu Sprache Einstellungen"
+  },
+  "talkAfterResponse": {
+    "message": "Sprechen, sobald chatGPT die Antwort beendet hat"
+  },
+  "always": {
+    "message": "Immer"
+  },
+  "never": {
+    "message": "Niemals"
+  },
+  "TTSLanguage": {
+    "message": "Text zu Sprache Sprache"
+  },
+  "englishUS": {
+    "message": "Englisch (Vereinigte Staaten)"
+  },
+  "spanishSpain": {
+    "message": "Spanisch (Spanien)"
+  },
+  "frenchFrance": {
+    "message": "Französisch (Frankreich)"
+  },
+  "germanGermany": {
+    "message": "Deutsch (Deutschland)"
+  },
+  "italianItaly": {
+    "message": "Italienisch (Italien)"
+  },
+  "japaneseJapan": {
+    "message": "Japanisch (Japan)"
+  },
+  "portugueseBrazil": {
+    "message": "Portugiesisch (Brasilien)"
+  },
+  "chineseChina": {
+    "message": "Chinesisch (China)"
+  },
+  "setTalkingSpeed": {
+    "message": "Sprechgeschwindigkeit einstellen"
+  },
+  "setVoiceTone": {
+    "message": "Stimmton anpassen"
+  },
+  "STTSettings": {
+    "message": "Sprache zu Text Einstellungen"
+  },
+  "autoFocusAfterApproval": {
+    "message": "Automatischer Fokus auf Textbereich, wenn der Text genehmigt ist"
+  },
+  "SRlanguage": {
+    "message": "Spracherkennungssprache"
+  },
+  "setContinuousMode": {
+    "message": "Kontinuierlichen Modus einstellen"
+  },
+  "continuousModeHint": {
+    "message": "Ob kontinuierliche Ergebnisse für jede Erkennung zurückgegeben werden oder nur ein einziges Ergebnis"
+  },
+  "setInterimResults": {
+    "message": "Vorläufige Ergebnisse festlegen"
+  },
+  "interimResultsHint": {
+    "message": "Ob vorläufige Ergebnisse zurückgegeben werden sollen (wahr) oder nicht (falsch)"
+  },
+  "elementRedaction": {
+    "message": "Elementzurücknahme"
+  },
+  "cssSelectorsInstruction": {
+    "message": "Verwenden Sie CSS-Selektoren, um den Inhalt des HTML auszuwählen, den Sie zurücknehmen möchten, und wählen Sie die Option, den Inhalt des ausgewählten HTML-Elements zurückzunehmen oder nicht zurückzunehmen. Zum Einfügen des Inhalts drücken Sie einfach Strg+Umschalt+Z, und er wird in der Eingabeaufforderung eingefügt, oder drücken Sie die Taste unter der Chat-Download-Taste."
+  },
+  "STTDescription": {
+    "message": "Um Sprache in Text umzuwandeln, müssen Sie die Mikrofontaste im Aufforderungsbereich drücken oder L drücken, sobald das Fenster geöffnet ist. Sie können R drücken, um erneut zuzuhören, A drücken, um das Gehörte zu bestätigen und Escape, um das Fenster zu schließen."
+  },
+  "resetDefault": {
+    "message": "Auf Standard zurücksetzen"
+  },
+  "noBackersLabel": {
+    "message": "Es gibt noch keine Unterstützer,"
+  },
+  "noBackersLabelLink": {
+    "message": "Sei der Erste"
+  },
+  "topSponsorsLabel": {
+    "message": "TOP SPONSOREN"
+  },
+  "sponsorThisLabel": {
+    "message": "UNTERSTÜTZE DIESES PLUGIN! damit es"
+  },
+  "sponsorThisContinuomLabel": {
+    "message": "frei von Spyware und Werbung ist!"
+  },
+  "popupConfigurationLabel": {
+    "message": "Konfiguration"
+  },
+  "optionsLinkLabel": {
+    "message": "Informationsseite öffnen"
+  },
+  "aboutTheAuthorLabel": {
+    "message": "Über den Autor"
+  },
+  "moreFeaturesSoonLabel": {
+    "message": "BALD MEHR FUNKTIONEN!"
+  },
+  "howToUsePluginLabel": {
+    "message": "Wie man dieses Plugin verwendet"
+  },
+  "aboutAuthorDescriptionLabel": {
+    "message": "Hallo! Ich bin ein Fullstack Software Entwickler mit mehr als 5 Jahren Erfahrung, spezialisiert auf JavaScript, PHP, HTML, CSS und jQuery. Meine umfangreiche Erfahrung mit relationalen Datenbanken, Datenbankschemadesign und MySQL ermöglicht es mir, auch die komplexesten Probleme mit Leichtigkeit und Effizienz zu lösen."
+  },
+  "checkOutMyLinkedInLabel": {
+    "message": "Besuche mich auf LinkedIn"
+  },
+  "freeOfSpywareLabel": {
+    "message": "frei von Spyware und Werbung."
+  },
+  "helpPluginsBeFree": {
+    "message": "Hilf meinen Plugins, "
+  },
+  "sponsorMeOnPatreonLabel": {
+    "message": "UNTERSTÜTZE MICH AUF PATREON"
+  },
+  "haveAnIdeaLabel": {
+    "message": "Hast du eine Idee?"
+  },
+  "suggestFeaturesOrPluginsLabel": {
+    "message": "Schlage Funktionen oder Plugins vor"
+  },
+  "keepUpToDateLabel": {
+    "message": "Bleiben Sie auf dem Laufenden!"
+  },
+  "joinMailingListLabel": {
+    "message": "Treten Sie der Mailingliste bei und ich sende Ihnen Neuigkeiten zu meinen Plugins und Funktionen"
+  },
+  "emailAdressLabel": {
+    "message": "E-Mail-Adresse"
+  },
+  "subscribeLabel": {
+    "message": "Abonnieren"
+  },
+  "indicatesRequiredLabel": {
+    "message": "zeigt ein erforderliches Feld an"
+  },
+  "hindiIndia": {
+    "message": "Hindi (Indien)"
+  },
+  "PressAToApprove": {
+    "message": "Drücken Sie A, um zu bestätigen"
+  },
+  "PressRToRestart": {
+    "message": "Starten Sie neu, indem Sie R drücken"
+  },
+  "PressEscToCancel": {
+    "message": "Abbrechen, indem Sie ESC drücken"
+  },
+  "HowToLabel": {
+    "message": "Wie man"
+  },
+  "beInTheLoopLabel": {
+    "message": "Seien Sie auf dem Laufenden!"
+  },
+  "FeaturesLabel": {
+    "message": "Eigenschaften"
+  },
+  "feature1Label": {
+    "message": "Erleben Sie eine vollständig freihändige Interaktion mit ChatGPT. Unser Plugin verfügt über eine konfigurierbare Option, die es ChatGPT ermöglicht, alle Antworten automatisch laut vorzulesen, sobald sie generiert werden. Diese Funktion ist besonders nützlich für Personen mit motorischen Einschränkungen und fördert ein inklusives Benutzererlebnis."
+  },
+  "feature2Label": {
+    "message": "Multilingual von Natur aus ermöglicht es unser Plugin, in acht Sprachen zu sprechen und zuzuhören: Englisch, Spanisch, Deutsch, Portugiesisch, Französisch, Italienisch, Japanisch und Hindi. Ob Sie in Ihrer Muttersprache kommunizieren oder eine neue Sprache erkunden möchten, wir sind hier, um es möglich zu machen."
+  },
+  "feature3Label": {
+    "message": "Steigern Sie Ihre Effizienz mit unseren Hotkeys. Diese Tasten ermöglichen eine schnelle und effektive Interaktion und bringen Ihr Erlebnis auf ein völlig neues Level. Dieses zugängliche Design erleichtert die Nutzung des Plugins, insbesondere für Menschen mit motorischen Herausforderungen."
+  },
+  "feature4Label": {
+    "message": "Passen Sie Ihre Erfahrung an, indem Sie den Ton und die Geschwindigkeit der Stimme nach Ihren Wünschen einstellen können. Ob Sie ein schnelles, energiegeladenes Gespräch oder einen sanften, langsamen Chat bevorzugen, wir stellen die Werkzeuge zur Verfügung, um dies zu ermöglichen."
+  },
+  "feature5Label": {
+    "message": "Unsere Auto-Text-Bestätigungsfunktion nach dem Zuhören eliminiert die Notwendigkeit einer manuellen Transkription, was besonders hilfreich für Menschen mit Seh- oder motorischen Behinderungen ist. Dieser zugänglichkeitsorientierte Ansatz hilft uns sicherzustellen, dass alle Benutzer eine nahtlose Interaktion mit ChatGPT genießen können."
+  },
+  "feature6Label": {
+    "message": "Am besten ist, dass all diese erstaunlichen Funktionen völlig kostenlos angeboten werden. Ob es sich um eine Sprache-zu-Text-Konvertierung oder Text-zu-Sprache handelt, wir bemühen uns, die besten Tools ohne Kostenbarriere bereitzustellen. Mit unserem Plugin ist eine inklusive und zugängliche Interaktion mit ChatGPT für alle erreichbar."
+  },
+  "defaultConfigurationLabel": {
+    "message": "Es gibt bereits eine Standardkonfiguration, aber Sie können sie nach Ihren Wünschen anpassen. Klicken Sie einfach auf das Plugin-Symbol und passen Sie die Werte an, wie Sie möchten."
+  },
+  "chatGptSpeakingLabel": {
+    "message": "Um die Funktion zu aktivieren oder zu deaktivieren, dass ChatGPT seine Antwort ausspricht, sobald es fertig ist, klicken Sie einfach auf das Symbol."
+  },
+  "microphoneButtonLabel": {
+    "message": "Um zu sprechen, können Sie auf die Mikrofontaste in der Eingabeaufforderung klicken, und ein Fenster wird im Hörmodus geöffnet. Sie können anfangen zu sprechen und der Text wird im Modal angezeigt."
+  },
+  "approveTextLabel": {
+    "message": "Nachdem der Text im Modal angezeigt wird, können Sie auf die grüne Taste klicken, um den Text zu bestätigen, und er wird in der Chat-Eingabeaufforderung angezeigt. Sie können auch die dunkle Taste drücken, um es erneut zu versuchen, oder die rote Taste drücken, um abzubrechen."
+  },
+  "listeningCircleLabel": {
+    "message": "Wenn der Kreis im Modal orange wird, bedeutet das, dass Sie sprechen können und es Ihre Sprache in Text umwandeln wird."
+  },
+  "notListeningLabel": {
+    "message": "Wenn dies angezeigt wird, bedeutet das, dass es nicht mehr zuhört und Sie den Text bestätigen oder R drücken oder die dunkle Taste drücken können, um den Hörmodus wieder zu aktivieren."
+  },
+  "hotkeysLabel": {
+    "message": "Es gibt auch Hotkeys, um die Interaktion schneller zu machen. Sie können ESC drücken, um den Hörmodus zu beenden, R, um neu zu starten, A, um den Text zu bestätigen, und L, um nicht auf das Mikrofon klicken zu müssen (der Cursor sollte nicht im Eingabeaufforderungsbereich sein)."
+  },
+  "cancelGptSpeakingLabel": {
+    "message": "Außerdem können Sie, wenn ChatGPT seine Antwort spricht, dies durch Drücken von Escape oder Klicken auf die rote Taste abbrechen oder durch Klicken auf die Pause-Taste pausieren."
+  },
+  "refreshPageLabel": {
+    "message": "Wenn Sie feststellen, dass das Plugin nicht ordnungsgemäß funktioniert, müssen Sie nur die Seite aktualisieren, indem Sie Strg+R oder die F5-Taste drücken."
+  },
+  "readingIn": {
+    "message": "Lesen in"
+  },
+  "listeningIn": {
+    "message": "Zuhören in"
+  },
+  "pressPToPause": {
+    "message": "Drücken Sie P, um zu pausieren"
   }
-  
+}
