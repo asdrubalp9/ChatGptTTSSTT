@@ -4,13 +4,18 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "prebuild": "node prebuild.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch --mode=production",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "build": "webpack --mode=production --env=isZipable",
     "dev:vite": "vite build --mode production --watch",
-    "build:vite": "vite build --mode production"
+    "build:vite": "vite build --mode production",
+    "build:chrome": "npm run prebuild chrome && webpack --mode=production --env=isZipable --env=browser=chrome",
+    "build:firefox": "npm run prebuild firefox && webpack --mode=production --env=isZipable --env=browser=firefox",
+    "watch:chrome": "npm run prebuild chrome && webpack --watch --mode=production",
+    "watch:firefox": "npm run prebuild firefox && webpack --watch --mode=production"
   },
   "keywords": [],
   "author": "",

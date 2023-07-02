@@ -13,13 +13,18 @@ export default class VozATexto {
         this.configHandler = await new ConfigHandler.create();
     }
 
-    textToSpeechWindow(content) {
+    speechToTextWindow(content) {
+        console.log('adding speechToTextWindow')
         return new Promise((resolve, reject) => {
             const div = document.createElement('div');
-            div.classList.add('textToSpeechWindow')
+            div.classList.add('speechToTextWindow')
             div.innerHTML = content;
+            console.log('Added speechToTextWindow')
             document.body.appendChild(div);
-            //return div;
+            setTimeout(() => {
+                console.log('setTimeout speechToTextWindow')
+                resolve(div)
+            }, 500);
         });
     }
 
@@ -27,7 +32,7 @@ export default class VozATexto {
         const listeningIn = this.configHandler.settings.STTlanguage
         const htmlContent = `
         <style>
-            .textToSpeechWindow {   
+            .speechToTextWindow {   
                 border-radius: 26px;
                 background-color: white;
                 position: fixed;
@@ -122,12 +127,13 @@ export default class VozATexto {
             </div>
         `;
         this.textArea = document.querySelector('#prompt-textarea');
-        this.textToSpeechWindow(htmlContent)
-        .then(() => {
+        this.speechToTextWindow(htmlContent)
+        .then(()=>{
+            console.log('theen')
             document.querySelector('.restart').addEventListener('click', () => this.listen());
             document.querySelector('.cancelListening').addEventListener('click', () => this.stopListening());
             document.querySelector('.aproveText').addEventListener('click', () => this.aprovedText());
-        });
+        })
     }
 
     updateListeningElement(clase = 'activeListening') {
@@ -194,7 +200,7 @@ export default class VozATexto {
             this.microphoneStream.getTracks().forEach(track => track.stop());
             this.microphoneStream = null; 
         }
-        document.querySelectorAll('.textToSpeechWindow').forEach(el => el.remove());
+        document.querySelectorAll('.speechToTextWindow').forEach(el => el.remove());
         if(this.recognition){
             this.recognition.stop();
         }

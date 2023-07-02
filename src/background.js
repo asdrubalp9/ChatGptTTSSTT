@@ -1,4 +1,5 @@
 import ReviewReminder from './clases/ReviewReminder.js';
+import ConfigHandler from './clases/ConfigHandler.js';
 
 chrome.runtime.onInstalled.addListener(function() {
     chrome.contextMenus.create({
@@ -16,8 +17,12 @@ chrome.runtime.onInstalled.addListener(function() {
   
 
   (async function() {
-    const reviewUrl = 'https://chrome.google.com/webstore/detail/gpt4-promptcounter/hllmajaolaombcgdgdfodckdmhaphbli';
-    const reviewReminder = new ReviewReminder(reviewUrl);
-    await reviewReminder.initReminder();
+    const configHandler = await ConfigHandler.create();
+    const manifestData = configHandler.manifest;
+    const reviewUrl = manifestData.plugin_url; 
+    console.log('reviewUrl', reviewUrl)
+    if (reviewUrl) {
+      const reviewReminder = new ReviewReminder(reviewUrl);
+      await reviewReminder.initReminder();
+    }
   })();
-  

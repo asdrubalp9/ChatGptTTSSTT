@@ -1,7 +1,5 @@
 import { config } from './../config.js';
-// import browser from "webextension-polyfill";
 import browser from "./../browser-polyfill.min.js";
-//import * as browser from './webextension-polyfill.js';
 
 export default class ConfigHandler {
   constructor() {

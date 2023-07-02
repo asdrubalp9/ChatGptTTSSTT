@@ -217,5 +217,20 @@
   },
   "listeningIn": {
     "message": "Listening in"
+  },
+  "pleaseReviewPluginTitle": {
+    "message": "Please review our plugin"
+  },
+  "ifYouHaveLikeditReview": {
+    "message": "If you have enjoyed our plugin, please leave us a review. Thank you!"
+  },
+  "leaveReviewNow": {
+    "message": "Leave a review now"
+  },
+  "rememberLater": {
+    "message": "Remember later"
+  },
+  "dontRemember": {
+    "message": "Don't remember anymore"
   }
 }

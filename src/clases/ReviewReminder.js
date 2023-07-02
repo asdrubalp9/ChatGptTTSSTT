@@ -1,5 +1,5 @@
 import ConfigHandler from './ConfigHandler.js';
-
+import { geti18nMessage } from "./../helpers";
 export default class ReviewReminder {
     constructor(reviewUrl) {
         this.reviewUrl = reviewUrl;
@@ -45,12 +45,12 @@ export default class ReviewReminder {
         this.extension.notifications.create('reminder_notification', {
             "type": "basic",
             "iconUrl": "images/icon128.png",
-            "title": "Por favor, revise nuestro plugin",
-            "message": "Si te ha gustado nuestro plugin, por favor, déjanos una review. ¡Gracias!",
+            "title": geti18nMessage('pleaseReviewPluginTitle'),
+            "message": geti18nMessage('ifYouHaveLikeditReview'),
             "buttons": [
-                {"title": "Dejar un review ahora", "iconUrl": "images/icon128.png"},
-                {"title": "Recordar más tarde", "iconUrl": "images/icon128.png"},
-                {"title": "No recordar más", "iconUrl": "images/icon128.png"}
+                {"title": geti18nMessage("leaveReviewNow"), "iconUrl": "images/icon128.png"},
+                {"title": geti18nMessage("RememberLater"), "iconUrl": "images/icon128.png"},
+                {"title": geti18nMessage("dontRemember"), "iconUrl": "images/icon128.png"}
             ]
         });
 

@@ -69,15 +69,20 @@ export default class TextoAVoz {
   }
   
   textToSpeechWindow(content) {
-    const div = document.createElement('div');
-    div.classList.add('speechWindow');
-    div.style.cssText = 'border-radius: 26px; background-color: white; position: fixed; padding: 3em; top: 50%; left: 50%; transform: translate(-50%, -50%);-webkit-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);';
-    div.innerHTML = content;
-    document.body.appendChild(div);
-    return div; // Devolvemos el div para poder modificar su contenido en otras funciones
+    return new Promise((resolve, reject) => {
+      const div = document.createElement('div');
+      div.classList.add('speechWindow');
+      div.style.cssText = 'border-radius: 26px; background-color: white; position: fixed; padding: 3em; top: 50%; left: 50%; transform: translate(-50%, -50%);-webkit-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);';
+      div.innerHTML = content;
+      document.body.appendChild(div);
+      setTimeout(() => {
+        resolve(div)
+      }, 500);
+    });
   }
   
   addScreenToCancel() {
+    console.log('addScreenToCancel')
     const readingIn = this.configHandler.settings.TTSlanguage
     const htmlContent = `
         <style>
@@ -97,12 +102,12 @@ export default class TextoAVoz {
             </p>
           </div>
           <div class="col-6 flex">
-            <button class="btn flex-center btn-outline-dark flex-grow border border-gray-200" id="speechState" data-state="playing">
+            <button class="btn flex-center btn-outline-dark flex-grow border border-gray-200 speechState" data-state="playing">
               <svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>
             </button>
           </div>
           <div class="col-6 flex column">
-            <button class="btn flex-center btn-danger flex-grow" id="cancelSpeech" style="margin:20px 0px 0px;">
+            <button class="btn flex-center btn-danger flex-grow cancelSpeech" style="margin:20px 0px 0px;">
               <svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3zM425 167l55 55 55-55c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-55 55 55 55c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-55-55-55 55c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l55-55-55-55c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0z"/></svg>
             </button>
             <p class="text-center">
@@ -111,30 +116,58 @@ export default class TextoAVoz {
           </div>
         </div>
       `;
-    const div = this.textToSpeechWindow(htmlContent);
-    this.screen = div; // Guardamos el div para poder modificar su contenido en otras funciones
-    this.screen.innerHTML = htmlContent; // Cambiamos el contenido del div a un botón
-    document.getElementById('cancelSpeech').addEventListener('click', () => this.stopTalking());
-    document.getElementById('speechState').addEventListener('click', () => this.toggleSpeechState());
+    this.textToSpeechWindow(htmlContent)
+    .then((html) => {
+      this.screen = html; // Guardamos el div para poder modificar su contenido en otras funciones
+      this.screen.innerHTML = htmlContent; // Cambiamos el contenido del div a un botón
+      setTimeout(() => {
+        console.log('adding actions ------------->>>>')
+        document.querySelectorAll('.cancelSpeech').forEach(element => {
+          element.addEventListener('click', () => {
+            console.log('click cancelSpeech')
+            this.stopTalking()
+          });
+        })
+        document.querySelectorAll('.speechState').forEach(element => {
+          element.addEventListener('click', () => {
+            console.log('click speechState')
+            this.toggleSpeechState()
+          });
+        })
+      }, 400);
+
+    })
   }
 
   toggleSpeechState(){
-    const speechState = document.getElementById('speechState');
-    if (this.state === 'playing') {
-      speechState.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>`
-      this.state = 'paused';
-      this.speechSynth.pause();
-    }else{
-      speechState.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>`
-      this.state = 'playing';
-      this.speechSynth.resume();
-    }
+    let stateHasBeenSet = false
+    document.querySelectorAll('.speechState').forEach(element => {
+      if(!stateHasBeenSet){
+        if (this.state === 'playing') {
+          element.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>`
+          this.state = 'paused';
+          this.speechSynth.pause();
+          console.log('pausing speechSynth')
+          stateHasBeenSet = true
+          return;
+        }else{
+          element.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>`
+          this.state = 'playing';
+          console.log('playing speechSynth')
+          this.speechSynth.resume();
+          stateHasBeenSet = true
+          return;
+        }
+
+      }
+    });
   }
 
   stopTalking() {
     console.log('stopTalking', this.screen)
     if(this.screen){
       this.screen.remove();
+      this.screen = null;
     }
     document.querySelectorAll('.speechWindow').forEach((el) => el.remove());
     this.speechSynth.cancel();
@@ -163,6 +196,7 @@ export default class TextoAVoz {
   }
   
   prepareSpeech(texto) {
+    console.log('preparing speech')
     this.setLanguage()
     this.setVoz()
     this.setVelocidad()

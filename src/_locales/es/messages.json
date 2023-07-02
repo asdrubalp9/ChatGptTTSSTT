@@ -214,6 +214,21 @@
   },
   "ListeningIn": {
     "message": "Escuchando en"
+  },
+  "pleaseReviewPluginTitle": {
+    "message": "Por favor, revise nuestro plugin"
+  },
+  "ifYouHaveLikeditReview": {
+    "message": "Si te ha gustado nuestro plugin, por favor, déjanos una review. ¡Gracias!"
+  },
+  "leaveReviewNow": {
+    "message": "Dejar un review ahora"
+  },
+  "rememberLater": {
+    "message": "Recordar más tarde"
+  },
+  "dontRemember": {
+    "message": "No recordar más"
   }
   
 }

@@ -1,0 +1,51 @@
+{
+    "manifest_version": 3,
+    "name": "GPT4 PromptCounter",
+    "version": "1.04",
+    "description": "Count the times you've used a prompt in GPT4 and be notified when ChatGPT response is ready",
+    "permissions": [
+      "notifications",
+      "storage",
+      "scripting",
+      "alarms"
+    ],
+    "host_permissions": [
+      "*://chat.openai.com/*"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      }
+    },
+    "icons": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://chat.openai.com/*"],
+        "js": [ "content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["sounds/ding.mp3"],
+        "matches": ["*://*.openai.com/*"]
+      }
+    ],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    },
+    "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true
+    }
+  }
+  
