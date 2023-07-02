@@ -1,21 +1,28 @@
 export default class ElementMonitor {
-  constructor(condicionInicial, condicionFinal, eventName = "domMutationDetected", eventEmitter = document, trackedSelector = 'FORM', checkInterval = 200) {
-    console.log('ElementMonitor ttsstt')
+  constructor(
+    condicionInicial,
+    condicionFinal,
+    eventName = 'domMutationDetected',
+    eventEmitter = document,
+    trackedSelector = 'FORM',
+    checkInterval = 200,
+  ) {
+    console.log('ElementMonitor ttsstt');
     this.checkInterval = checkInterval;
     this.trackedSelector = trackedSelector || 'FORM';
     this.observer = null;
-    this.eventEmitter = eventEmitter; 
-    this.eventName = eventName; 
-    this.condicionInicial = condicionInicial
-    this.condicionFinal = condicionFinal
+    this.eventEmitter = eventEmitter;
+    this.eventName = eventName;
+    this.condicionInicial = condicionInicial;
+    this.condicionFinal = condicionFinal;
     this.initialized = false;
     this.isMonitoring = false;
     this.isWaiting = false;
   }
 
-  init(callback = () => { }){
+  init(callback = () => {}) {
     if (this.initialized) {
-      return; 
+      return;
     }
     const element = document.querySelector(this.trackedSelector);
     if (element) {
@@ -25,9 +32,9 @@ export default class ElementMonitor {
       this.initialized = true;
       callback();
     } else {
-      setTimeout(() =>{
+      setTimeout(() => {
         console.log(`buscando ${this.eventName} `, element);
-        this.init(callback)
+        this.init(callback);
       }, 200);
     }
   }
@@ -59,11 +66,15 @@ export default class ElementMonitor {
     const config = { attributes: true, childList: true, subtree: true };
     const callback = (mutationsList, observer) => {
       if (this.condicionFinal.test(this.trackedElement.outerHTML)) {
-        console.log('--------------------finished responding ------------------')
+        console.log(
+          '--------------------finished responding ------------------',
+        );
         this.observer.disconnect();
         this.startMonitoring(element);
         this.isWaiting = false;
-        const event = new CustomEvent(this.eventName, { detail: { mutation: "regenerateResponse" } });
+        const event = new CustomEvent(this.eventName, {
+          detail: { mutation: 'regenerateResponse' },
+        });
         this.eventEmitter.dispatchEvent(event);
       }
     };

@@ -26,23 +26,26 @@ export function waitForElement(cssSelector) {
   });
 }
 
-
 export function delegateEventListener(selector, eventType, eventHandler) {
-      // agregar el evento al document (elemento padre)
-      document.addEventListener(eventType, function(event) {
-          // obtener el elemento al que se hizo clic
-          var targetElement = event.target;
+  // agregar el evento al document (elemento padre)
+  document.addEventListener(
+    eventType,
+    function (event) {
+      // obtener el elemento al que se hizo clic
+      var targetElement = event.target;
 
-          // recorrer la cadena de ancestros del elemento hasta encontrar un elemento que coincida con el selector
-          while (targetElement != null) {
-              if (targetElement.matches(selector)) {
-                  eventHandler.call(targetElement, event);
-                  break;
-              }
-              targetElement = targetElement.parentElement;
-          }
-      }, false);
-  }
+      // recorrer la cadena de ancestros del elemento hasta encontrar un elemento que coincida con el selector
+      while (targetElement != null) {
+        if (targetElement.matches(selector)) {
+          eventHandler.call(targetElement, event);
+          break;
+        }
+        targetElement = targetElement.parentElement;
+      }
+    },
+    false,
+  );
+}
 
 // Esta función obtiene el valor almacenado y devuelve una promesa que se resuelve con ese valor.
 export function getStoredValue(key, defaultValue) {
@@ -72,9 +75,8 @@ export function watchStoredValue(key, callback) {
       }
     });
   } else {
-    throw new Error("Unsupported browser");
+    throw new Error('Unsupported browser');
   }
-  
 }
 
 export function geti18nMessage(key) {
@@ -86,6 +88,6 @@ export function geti18nMessage(key) {
     return browser.i18n.getMessage(key);
   } else {
     // Unknown browser
-    throw new Error("Unsupported browser");
+    throw new Error('Unsupported browser');
   }
 }

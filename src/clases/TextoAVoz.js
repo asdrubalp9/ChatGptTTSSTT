@@ -1,37 +1,40 @@
-import { geti18nMessage } from "./../helpers";
+import { geti18nMessage } from './../helpers';
 import ConfigHandler from './ConfigHandler.js';
 export default class TextoAVoz {
   constructor() {
-    this.configHandler = null
+    this.configHandler = null;
     this.speechSynth = window.speechSynthesis;
     this.utterance = new SpeechSynthesisUtterance();
     this.state = 'playing';
-    this.utterance.lang = null
-    this.initialized = null
+    this.utterance.lang = null;
+    this.initialized = null;
     this.handleKeyup = this.handleKeyup.bind(this); // Haz el binding de 'this'
+    this.togglingSpeechState = false;
   }
 
   async init() {
     this.configHandler = await ConfigHandler.create();
-    this.startListeningToEscapeKey()
-    this.startListening()
+    this.startListeningToEscapeKey();
+    this.startListening();
   }
 
   handleMessages(request, sender, sendResponse) {
-    if (request.command === "speak") {
+    if (request.command === 'speak') {
       this.speak(request.text);
     }
   }
 
   startListening() {
-    const runtime = typeof chrome !== 'undefined' ? chrome.runtime : browser.runtime;
+    const runtime =
+      typeof chrome !== 'undefined' ? chrome.runtime : browser.runtime;
     if (runtime) {
       runtime.onMessage.addListener(this.handleMessages.bind(this));
     }
   }
 
   stopListening() {
-    const runtime = typeof chrome !== 'undefined' ? chrome.runtime : browser.runtime;
+    const runtime =
+      typeof chrome !== 'undefined' ? chrome.runtime : browser.runtime;
     if (runtime) {
       runtime.onMessage.removeListener(this.handleMessages.bind(this));
     }
@@ -67,23 +70,24 @@ export default class TextoAVoz {
   setTonada() {
     this.utterance.pitch = this.configHandler.settings.setTonada;
   }
-  
+
   textToSpeechWindow(content) {
     return new Promise((resolve, reject) => {
       const div = document.createElement('div');
       div.classList.add('speechWindow');
-      div.style.cssText = 'border-radius: 26px; background-color: white; position: fixed; padding: 3em; top: 50%; left: 50%; transform: translate(-50%, -50%);-webkit-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);';
+      div.style.cssText =
+        'border-radius: 26px; background-color: white; position: fixed; padding: 3em; top: 50%; left: 50%; transform: translate(-50%, -50%);-webkit-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);-moz-box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.75);';
       div.innerHTML = content;
       document.body.appendChild(div);
       setTimeout(() => {
-        resolve(div)
+        resolve(div);
       }, 500);
     });
   }
-  
+
   addScreenToCancel() {
-    console.log('addScreenToCancel')
-    const readingIn = this.configHandler.settings.TTSlanguage
+    console.log('addScreenToCancel');
+    const readingIn = this.configHandler.settings.TTSlanguage;
     const htmlContent = `
         <style>
           .flex-center {
@@ -116,56 +120,57 @@ export default class TextoAVoz {
           </div>
         </div>
       `;
-    this.textToSpeechWindow(htmlContent)
-    .then((html) => {
+    this.textToSpeechWindow(htmlContent).then((html) => {
       this.screen = html; // Guardamos el div para poder modificar su contenido en otras funciones
       this.screen.innerHTML = htmlContent; // Cambiamos el contenido del div a un botón
       setTimeout(() => {
-        console.log('adding actions ------------->>>>')
-        document.querySelectorAll('.cancelSpeech').forEach(element => {
+        console.log('adding actions ------------->>>>');
+        document.querySelectorAll('.cancelSpeech').forEach((element) => {
           element.addEventListener('click', () => {
-            console.log('click cancelSpeech')
-            this.stopTalking()
+            console.log('click cancelSpeech');
+            this.stopTalking();
           });
-        })
-        document.querySelectorAll('.speechState').forEach(element => {
+        });
+        document.querySelectorAll('.speechState').forEach((element) => {
           element.addEventListener('click', () => {
-            console.log('click speechState')
-            this.toggleSpeechState()
+            console.log('click speechState');
+            this.toggleSpeechState().then(() => {
+              this.togglingSpeechState = false;
+            });
           });
-        })
+        });
       }, 400);
-
-    })
+    });
   }
 
-  toggleSpeechState(){
-    let stateHasBeenSet = false
-    document.querySelectorAll('.speechState').forEach(element => {
-      if(!stateHasBeenSet){
+  toggleSpeechState() {
+    return new Promise((resolve) => {
+      if (this.togglingSpeechState) {
+        return;
+      }
+      this.togglingSpeechState = true;
+      document.querySelectorAll('.speechState').forEach((element) => {
         if (this.state === 'playing') {
-          element.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>`
+          element.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>`;
           this.state = 'paused';
           this.speechSynth.pause();
-          console.log('pausing speechSynth')
-          stateHasBeenSet = true
-          return;
-        }else{
-          element.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>`
+          console.log('pausing speechSynth');
+        } else {
+          element.innerHTML = `<svg style="width: 100px;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"/></svg>`;
           this.state = 'playing';
-          console.log('playing speechSynth')
+          console.log('playing speechSynth');
           this.speechSynth.resume();
-          stateHasBeenSet = true
-          return;
         }
-
-      }
+      });
+      setTimeout(() => {
+        resolve();
+      }, 200);
     });
   }
 
   stopTalking() {
-    console.log('stopTalking', this.screen)
-    if(this.screen){
+    console.log('stopTalking', this.screen);
+    if (this.screen) {
       this.screen.remove();
       this.screen = null;
     }
@@ -179,31 +184,30 @@ export default class TextoAVoz {
   }
 
   speakChunk(chunks, index) {
-    console.log('speakChunk', chunks[index])
+    console.log('speakChunk', chunks[index]);
     if (index < chunks.length) {
       this.utterance.text = chunks[index];
       this.speechSynth.speak(this.utterance);
       this.utterance.onend = () => this.speakChunk(chunks, index + 1);
     } else {
-      console.log('se acabo el texto')
-      this.stopTalking()
+      console.log('se acabo el texto');
+      this.stopTalking();
     }
   }
-  
+
   async speak(text) {
     await this.initialized;
     this.prepareSpeech(text);
   }
-  
+
   prepareSpeech(texto) {
-    console.log('preparing speech')
-    this.setLanguage()
-    this.setVoz()
-    this.setVelocidad()
-    this.setTonada()
+    console.log('preparing speech');
+    this.setLanguage();
+    this.setVoz();
+    this.setVelocidad();
+    this.setTonada();
     const chunks = this.chunkText(texto, 100); // Aquí ajustas el tamaño máximo de cada chunk
     this.speakChunk(chunks, 0);
-    this.addScreenToCancel(); 
+    this.addScreenToCancel();
   }
-  
 }

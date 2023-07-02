@@ -1,50 +1,31 @@
 {
   "manifest_version": 3,
-  "name": "GPT4 PromptCounter",
+  "name": "SonicGPT, Talk to ChatGPT in MultiLanguage",
   "version": "1.05",
-  "description": "Count the times you've used a prompt in GPT4 and be notified when ChatGPT response is ready",
-  "permissions": [
-    "alarms",
-    "notifications",
-    "storage",
-    "tabs",
-    "audio"
-  ],
-  "default_locale": "en",
-  "options_ui": {
-    "page": "options.html",
-    "open_in_tab": true
-  },
+  "description": "Talk and listen to ChatGPT in your language!",
+  "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/icon16.png",
-      "48": "images/icon48.png",
-      "128": "images/icon128.png"
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
     }
   },
+  "options_page": "options.html",
   "icons": {
-    "16": "images/icon16.png",
-    "48": "images/icon48.png",
-    "128": "images/icon128.png"
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   },
-  "web_accessible_resources": [{
-    "resources": ["sounds/ding.mp3"],
-    "matches": ["*://*.openai.com/*"]
-  }],
-  "background": {
-    "service_worker": "background.js",
-    "type": "module"
-  },
+  "default_locale": "en",
   "content_scripts": [
     {
       "matches": ["*://chat.openai.com/*"],
-      "js": [ "content.js"]
+      "js": ["content.js"]
     }
   ],
-  "host_permissions": [
-    "*://chat.openai.com/*"
-  ],
+  "host_permissions": ["*://chat.openai.com/*"],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   }
