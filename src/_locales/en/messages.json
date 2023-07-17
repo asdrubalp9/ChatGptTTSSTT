@@ -235,5 +235,8 @@
   },
   "pressPToPause": {
     "message": "Press P to pause"
+  },
+  "autoTalk": {
+    "message": "Auto-Talk"
   }
 }

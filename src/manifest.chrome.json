@@ -1,22 +1,22 @@
 {
   "manifest_version": 3,
   "name": "SonicGPT, Talk to ChatGPT in MultiLanguage",
-  "version": "1.06",
+  "version": "1.07",
   "description": "Talk and listen to ChatGPT in your language!",
   "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
     }
   },
   "options_page": "options.html",
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
   },
   "default_locale": "en",
   "content_scripts": [
@@ -25,6 +25,7 @@
       "js": ["content.js"]
     }
   ],
+  "plugin_url": "https://chrome.google.com/webstore/detail/mbhplhbpobkpnggnalabldfdjdcgnkie?authuser=0&hl=en",
   "host_permissions": ["*://chat.openai.com/*"],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"

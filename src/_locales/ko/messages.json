@@ -235,5 +235,8 @@
   },
   "pressPToPause": {
     "message": "P를 눌러 일시 중지"
+  },
+  "autoTalk": {
+    "message": "자동-토크"
   }
 }

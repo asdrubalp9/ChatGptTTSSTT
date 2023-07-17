@@ -1,5 +1,6 @@
 import TextoAVoz from './TextoAVoz.js';
 import ConfigHandler from './ConfigHandler.js';
+import { geti18nMessage } from './../helpers';
 import ElementMonitor from './ElementMonitor.js'; // import the ElementMonitor class
 
 export default class AutoTalker extends TextoAVoz {
@@ -42,10 +43,10 @@ export default class AutoTalker extends TextoAVoz {
       if (drusPluginsDiv) {
         this.elementMonitor.init();
         clearInterval(this.checkIntervalId);
-        const button = document.createElement('button');
+        let button = document.createElement('button');
         button.id = 'autoTalk';
         button.style =
-          'position: fixed;top: 1em;right: 1em;border-radius: 50%;height: 50px;width: 50px;display: flex;align-items: center;justify-content: center;';
+          'border-radius: 50%;height: 50px;width: 50px;display: flex;align-items: center;justify-content: center;';
         button.className =
           'btn btn-primary shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]';
         let talkingStatus = '';
@@ -56,12 +57,27 @@ export default class AutoTalker extends TextoAVoz {
         }
         button.innerHTML = talkingStatus;
 
+        let parentDiv = `
+                        <div class="btnHolder shadow-lg" style="
+                            background-color: white;
+                            border-radius: 23px;
+                            padding: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            flex-direction: column;
+                        ">
+                        ${button.outerHTML}
+                        <p>${geti18nMessage('autoTalk')}</p>
+                        </div>`;
+        drusPluginsDiv.insertAdjacentHTML('beforeend', parentDiv);
+        button = document.querySelector('#autoTalk');
         button.onclick = () => {
           let newAutoTalk =
             this.configHandler.settings.autoTalk == 'always'
               ? 'never'
               : 'always';
-          console.log('clikc', newAutoTalk);
+
           this.configHandler
             .setSettings({ autoTalk: newAutoTalk })
             .then(() => {
@@ -72,7 +88,6 @@ export default class AutoTalker extends TextoAVoz {
               console.error('Error al actualizar la configuración: ', error);
             });
         };
-        drusPluginsDiv.appendChild(button);
 
         document.addEventListener(this.elementMonitor.eventName, () => {
           console.log(

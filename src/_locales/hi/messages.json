@@ -199,5 +199,8 @@
   },
   "pressPToPause": {
     "message": "रोकने के लिए P दबाएं"
+  },
+  "autoTalk": {
+    "message": "स्वचालित-बातचीत"
   }
 }

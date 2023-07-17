@@ -217,5 +217,8 @@
   },
   "pressPToPause": {
     "message": "一時停止するにはPを押してください"
+  },
+  "autoTalk": {
+    "message": "オートトーク"
   }
 }

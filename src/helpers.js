@@ -91,3 +91,20 @@ export function geti18nMessage(key) {
     throw new Error('Unsupported browser');
   }
 }
+
+export async function obtenerIdiomaNavegador() {
+  // Esta función retorna el idioma del navegador
+  return new Promise((resolve) => {
+    if (window.chrome && chrome.i18n && chrome.i18n.getAcceptLanguages) {
+      chrome.i18n.getAcceptLanguages(function (languages) {
+        resolve(languages[0]);
+      });
+    } else {
+      resolve(
+        navigator.languages && navigator.languages.length
+          ? navigator.languages[0]
+          : navigator.language,
+      );
+    }
+  });
+}

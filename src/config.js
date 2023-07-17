@@ -1,5 +1,5 @@
-import { geti18nMessage } from './helpers';
-
+import { geti18nMessage, obtenerIdiomaNavegador } from './helpers';
+let defaultValue = await obtenerIdiomaNavegador(); // Ejecutamos la función y obtenemos el resultado
 const config = [
   {
     type: 'separator',
@@ -32,7 +32,7 @@ const config = [
     htmlId: 'TTSlanguage',
     htmlclass: '',
     value: '',
-    defaultValue: 'es-ES',
+    defaultValue: defaultValue,
     type: 'select',
     Hint: '',
     options: [
@@ -234,7 +234,7 @@ const config = [
   //   htmlId: 'setVoz',
   //   htmlclass: '',
   //   value: '',
-  //   defaultValue: 'es-ES',
+  //   defaultValue: defaultValue,
   //   type: 'voiceSelector',
   //   Hint: '',
   // },
@@ -275,7 +275,7 @@ const config = [
     htmlId: 'STTlanguage',
     htmlclass: '',
     value: '',
-    defaultValue: 'es-ES',
+    defaultValue: defaultValue,
     type: 'select',
     Hint: '',
     options: [

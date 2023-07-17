@@ -217,5 +217,8 @@
   },
   "pressPToPause": {
     "message": "Drücken Sie P, um zu pausieren"
+  },
+  "autoTalk": {
+    "message": "Auto-Gespräch"
   }
 }

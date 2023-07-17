@@ -217,5 +217,8 @@
   },
   "pressPToPause": {
     "message": "Appuyez sur P pour faire une pause"
+  },
+  "autoTalk": {
+    "message": "Auto-Parler"
   }
 }
