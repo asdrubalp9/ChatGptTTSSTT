@@ -1,6 +1,6 @@
 export default class DrusPlugins {
   constructor(
-    position = 'fixed',
+    position = 'absolute',
     top = '10px',
     width = '100px',
     height = '100px',

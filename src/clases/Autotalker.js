@@ -1,5 +1,6 @@
 import TextoAVoz from './TextoAVoz.js';
 import ConfigHandler from './ConfigHandler.js';
+import ElementDragger from './ElementDragger.js';
 import { geti18nMessage } from './../helpers';
 import ElementMonitor from './ElementMonitor.js'; // import the ElementMonitor class
 
@@ -72,6 +73,7 @@ export default class AutoTalker extends TextoAVoz {
                         </div>`;
         drusPluginsDiv.insertAdjacentHTML('beforeend', parentDiv);
         button = document.querySelector('#autoTalk');
+        new ElementDragger('#drusPlugins');
         button.onclick = () => {
           let newAutoTalk =
             this.configHandler.settings.autoTalk == 'always'
